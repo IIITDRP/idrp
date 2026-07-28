@@ -1131,12 +1131,6 @@ export const startups: Startup[] = [
     contactEmail: '25bda126@iiitdwd.ac.in',
     techFacultyMentors: [
       {
-        name: 'Dr. Sandesh Phalke',
-        image: '/faculty-sandesh.jfif',
-        linkedin: 'https://www.linkedin.com/in/sandesh-phalke-ph-d-63658b137',
-        email: 's.phalke@iiitdwd.ac.in',
-      },
-      {
         name: 'Dr. Suvadip Hazra',
         image: '/faculty-suvadip.jfif',
         linkedin: 'https://www.linkedin.com/in/dr-suvadip-hazra-60491b67',
@@ -1150,13 +1144,6 @@ export const startups: Startup[] = [
         role: 'Founder',
         linkedin: 'https://www.linkedin.com/in/vikas-singh-0b9b34381',
         email: '25bda126@iiitdwd.ac.in',
-      },
-      {
-        name: 'Kush Kumar',
-        image: '',
-        role: 'Founder',
-        linkedin: 'https://www.linkedin.com/in/kush-kumar-1095ab379',
-        email: '25bda059@iiitdwd.ac.in',
       },
       {
         name: 'Dhanashri Udhavrao Bende',
