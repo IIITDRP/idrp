@@ -117,4 +117,7 @@ export const cifGalleryImages = [
   { src: '/cif/img6.jpeg', alt: 'CIF Tool 6', title: 'General Tools' },
   { src: '/cif/img7.jpeg', alt: 'CIF Tool 7', title: 'General Tools' },
   { src: '/cif/img8.jpeg', alt: 'CIF Tool 8', title: 'Soldering Station' },
+  { src: '/cif/img9.jpeg', alt: 'CIF Tool 9', title: 'Filler Drilling Machine' },
+  { src: '/cif/img10.jpeg', alt: 'CIF Tool 10', title: 'L40 Server' },
+  { src: '/cif/img11.jpeg', alt: 'CIF Tool 11', title: 'Network Attached Storage' },
 ]
