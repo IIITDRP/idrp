@@ -1574,7 +1574,7 @@ export const startups: Startup[] = [
     name: 'Trividhi Labs Pvt Ltd',
     sector: 'DEEP TECH',
     categories: ['INCUBATED'],
-    logo: '/startups/logo/trividhi.png',
+    logo: '/startups/logo/Trividhi.png',
     brief:
       'Trividhi Labs focuses on research-driven innovation in emerging technologies, developing intelligent solutions across AI, robotics, embedded systems, and advanced engineering domains.',
     contactEmail: 'contact@trividhilabs.com',
