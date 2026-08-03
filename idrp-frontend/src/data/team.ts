@@ -59,11 +59,11 @@ export const teamMembers: TeamMember[] = [
     linkedinUrl: 'https://www.linkedin.com/',
   },
   {
-    name: 'Ms. Reshma P',
-    role: 'Program Associate',
-    image: '/team-reshma.jpeg',
-    imageAlt: 'Reshma',
-    linkedinUrl: 'https://www.linkedin.com/',
+    name: 'Miss. Khushi Koppad',
+    role: 'DevOps Engineer',
+    image: '/team-khushi.jpeg',
+    imageAlt: 'Khushi',
+    linkedinUrl: 'https://www.linkedin.com/in/khushi-vikram-koppad-6974422a7/',
   },
   {
     name: 'Ms. Sunita Hebli',
