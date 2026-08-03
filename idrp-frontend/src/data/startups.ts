@@ -169,16 +169,10 @@ export const startups: Startup[] = [
     contactEmail: '24bec062@iiitdwd.ac.in',
     techFacultyMentors: [
       {
-        name: 'Dr. Sandesh Phalke',
-        image: '/faculty-sandesh.jfif',
-        linkedin: 'https://www.linkedin.com/in/sandesh-phalke-ph-d-63658b137',
-        email: 's.phalke@iiitdwd.ac.in',
-      },
-      {
-        name: 'Mr. Mallikarjun Kande',
-        image: '/business-mallikarjun.jfif',
-        linkedin: 'https://www.linkedin.com/in/mallikarjun-kande-18709342',
-        email: 'mallikarjun.kande@space-e.org',
+        name: 'Dr. Rajesh Kumar',
+        image: '/faculty-rajesh.jfif',
+        linkedin: 'https://www.linkedin.com/in/dr-rajesh-kumar-2417ab11b/',
+        email: 'rajeshk@iiitdwd.ac.in',
       },
     ],
     founders: [
@@ -1583,7 +1577,7 @@ export const startups: Startup[] = [
     logo: '/startups/logo/trividhi.png',
     brief:
       'Trividhi Labs focuses on research-driven innovation in emerging technologies, developing intelligent solutions across AI, robotics, embedded systems, and advanced engineering domains.',
-    contactEmail: '',
+    contactEmail: 'contact@trividhilabs.com',
     techFacultyMentors: [
       {
         name: 'Dr. Girish Revadigar',
@@ -1591,7 +1585,22 @@ export const startups: Startup[] = [
         linkedin: 'https://www.linkedin.com/in/girish-revadigar-phd-55a33b28',
       },
     ],
-    founders: [],
+    founders: [
+      {
+        name: 'Dr. Chitra Javali',
+        image: '',
+        role: 'Founder',
+        linkedin: 'https://www.linkedin.com/in/chitra-javali-phd-785ba34b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+        email: '',
+      },
+      {
+        name: 'Dr. Girish Revadigar',
+        image: '',
+        role: 'Founder',
+        linkedin: 'https://linkedin.com/in/girish-revadigar-phd-55a33b28',
+        email: 'girishrevadigar@iiitdwd.ac.in',
+      },
+    ],
     teamMembers: [],
   },
   {
