@@ -1160,7 +1160,7 @@ export const startups: Startup[] = [
     name: 'Gigzy',
     sector: 'PLATFORM TECH',
     categories: ['PRE_INCUBATED'],
-    logo: '/startups/logo/gigzy.png',
+    logo: '/startups/logo/GIGZY.png',
     website: '',
     onePager: '',
     brief:
@@ -1377,7 +1377,7 @@ export const startups: Startup[] = [
     name: 'ManoSetu AI',
     sector: 'AI / MENTAL HEALTH',
     categories: ['PRE_INCUBATED'],
-    logo: '/startups/logo/manosetu-ai.png',
+    logo: '/startups/logo/Manosetu.png',
     brief: 'Bridging modern AI with ancient wisdom for mental health well-being.',
     contactEmail: 'sunil.saumya@iiitdwd.ac.in',
     techFacultyMentors: [
