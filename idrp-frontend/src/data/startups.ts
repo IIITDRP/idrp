@@ -1591,11 +1591,11 @@ export const startups: Startup[] = [
         image: '',
         role: 'Founder',
         linkedin: 'https://www.linkedin.com/in/chitra-javali-phd-785ba34b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-        email: '',
+        email: 'chitra.javali@trividhilabs.com',
       },
       {
         name: 'Dr. Girish Revadigar',
-        image: '',
+        image: '/faculty-girish-revadigar.jpg',
         role: 'Founder',
         linkedin: 'https://linkedin.com/in/girish-revadigar-phd-55a33b28',
         email: 'girishrevadigar@iiitdwd.ac.in',

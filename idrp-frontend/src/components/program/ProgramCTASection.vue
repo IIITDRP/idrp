@@ -5,8 +5,8 @@ type Props = {
   eyebrow?: string
   title: string
   description: string
-  primaryActionLabel: string
-  primaryActionTo: string
+  primaryActionLabel?: string
+  primaryActionTo?: string
   secondaryActionLabel?: string
   secondaryActionTo?: string
 }
@@ -59,9 +59,16 @@ withDefaults(defineProps<Props>(), {
           </p>
 
           <!-- Buttons -->
+           
           <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <BaseButton :to="primaryActionTo" variant="primary" size="lg" class="min-w-[220px]">
-              {{ primaryActionLabel }}
+            <BaseButton
+              v-if="primaryActionLabel && primaryActionTo"
+              :to="primaryActionTo"
+              variant="primary"
+              size="lg"
+              class="min-w-[220px]"
+            >
+            {{ primaryActionLabel }}
             </BaseButton>
 
             <BaseButton

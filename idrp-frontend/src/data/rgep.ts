@@ -62,12 +62,10 @@ export const rgepPage: InitiativePageData = {
   },
 
   cta: {
-    eyebrow: 'Apply to RGEP',
+    eyebrow: 'Get in touch',
     title: 'Take the next step in your innovation journey',
     description:
-      'Connect with IIIT Dharwad Research Park to explore RGEP support, application pathways, and how your idea can progress toward a prototype or MVP.',
-    primaryActionLabel: 'Apply Now',
-    primaryActionTo: '/apply/rgep',
+      'Connect with IIIT Dharwad Research Park to learn more about RGEP, discuss your innovation, and understand how your idea can progress toward a Prototype or MVP.',
     secondaryActionLabel: 'Contact Us',
     secondaryActionTo: '/contact',
   },
