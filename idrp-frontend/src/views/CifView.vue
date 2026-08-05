@@ -3,6 +3,7 @@ import ProgramHeroSection from '@/components/program/ProgramHeroSection.vue'
 import ProgramIntroSection from '@/components/program/ProgramIntroSection.vue'
 import ProgramValueSection from '@/components/program/ProgramValueSection.vue'
 import ProgramCTASection from '@/components/program/ProgramCTASection.vue'
+import IndustryPartnersSection from '@/components/program/IndustryPartnersSection.vue'
 
 import FocusAreasSection from '@/components/common/FocusSection.vue'
 import BeneficiariesSection from '@/components/common/BeneficiariesSection.vue'
@@ -36,6 +37,8 @@ import { focusAreas, beneficiaryGroups, cifGalleryImages, cifMetrics } from '@/d
 
     <FocusAreasSection :areas="focusAreas" />
     <BeneficiariesSection :groups="beneficiaryGroups" />
+
+    <IndustryPartnersSection />
 
     <ProgramEventsSection
       initiative-key="CIF"

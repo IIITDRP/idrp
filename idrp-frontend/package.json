@@ -12,6 +12,7 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.23",
     "@vueuse/head": "^2.0.0",
     "lucide-vue-next": "^1.0.0",
     "pinia": "^3.0.4",
