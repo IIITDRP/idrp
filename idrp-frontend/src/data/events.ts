@@ -135,7 +135,7 @@ export const events: EventItem[] = [
     displayDate: 'August 11, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-1.jpeg',
     imageFit: 'cover',
   },
   {
@@ -150,7 +150,7 @@ export const events: EventItem[] = [
     displayDate: 'September 9, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-2.jpeg',
     imageFit: 'cover',
   },
   {
@@ -165,7 +165,7 @@ export const events: EventItem[] = [
     displayDate: 'October 9, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-3.jpeg',
     imageFit: 'cover',
   },
   {
@@ -180,7 +180,7 @@ export const events: EventItem[] = [
     displayDate: 'November 13, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-4.jpeg',
     imageFit: 'cover',
   },
   {
@@ -195,7 +195,7 @@ export const events: EventItem[] = [
     displayDate: 'January 10, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-5.jpeg',
     imageFit: 'cover',
   },
   {
@@ -210,7 +210,7 @@ export const events: EventItem[] = [
     displayDate: 'February 6, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-6.jpeg',
     imageFit: 'cover',
   },
   {
@@ -225,7 +225,7 @@ export const events: EventItem[] = [
     displayDate: 'March 7, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-7.jpeg',
     imageFit: 'cover',
   },
   {
@@ -240,7 +240,7 @@ export const events: EventItem[] = [
     displayDate: 'April 7, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-8.jpeg',
     imageFit: 'cover',
   },
   {
@@ -287,7 +287,7 @@ export const events: EventItem[] = [
   },
   {
     id: 17,
-    slug: 'design-exploration-9',
+    slug: 'design-exploration-workshop-9',
     title: 'Design Exploration 9',
     category: 'Workshop',
     initiative: 'CBDE',
@@ -297,7 +297,7 @@ export const events: EventItem[] = [
     displayDate: 'May 8, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/design_exploration_workshop/workshop-9.jpeg',
     imageFit: 'cover',
   },
   {

@@ -97,12 +97,10 @@ function closeModal() {
 
       <!-- Categories -->
 
-      <div
-  class="mb-10 flex flex-wrap justify-center gap-3"
-  role="group"
-  aria-label="Industry categories"
->
-
+      <div class="mb-10 flex flex-wrap justify-center gap-3"
+       role="group"
+       aria-label="Industry categories"
+      >
         <button
           type="button"
           v-for="category in categories"
@@ -128,12 +126,12 @@ function closeModal() {
       >
 
         <button
-  v-for="industry in visibleIndustries"
-  :key="industry.id"
-  type="button"
-  @click="openIndustry(industry)"
-  class="flex cursor-pointer flex-col rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-> 
+        v-for="industry in visibleIndustries"
+        :key="industry.id"
+        type="button"
+        @click="openIndustry(industry)"
+        class="flex cursor-pointer flex-col rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        > 
 
           <div
             class="mb-3 inline-flex w-fit rounded-full bg-[var(--color-primary-soft)] px-3 py-1 text-xs font-semibold text-[var(--color-primary)]"
