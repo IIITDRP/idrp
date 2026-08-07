@@ -254,7 +254,7 @@ export const events: EventItem[] = [
     displayDate: 'March 10, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/yu2025cdd.jpeg',
     imageFit: 'cover',
   },
   {
@@ -268,7 +268,7 @@ export const events: EventItem[] = [
     displayDate: 'February 28 and March 11–14 & 18, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/yu2026scp.jpeg',
     imageFit: 'cover',
   },
   {
@@ -282,7 +282,7 @@ export const events: EventItem[] = [
     displayDate: 'April 7, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/yu2026.jpeg',
     imageFit: 'cover',
   },
   {
@@ -311,7 +311,7 @@ export const events: EventItem[] = [
     displayDate: 'June 1, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/tech-bootcamp-day.jpeg',
     imageFit: 'cover',
   },
   {
@@ -325,7 +325,7 @@ export const events: EventItem[] = [
     displayDate: 'June 2, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/bootcamp-backend.jpeg',
     imageFit: 'cover',
   },
   {
@@ -339,7 +339,7 @@ export const events: EventItem[] = [
     displayDate: 'June 3, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/bootcamp-DBMS.jpeg',
     imageFit: 'cover',
   },
   {
@@ -353,7 +353,7 @@ export const events: EventItem[] = [
     displayDate: 'June 4, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/bootcamp-LLM.jpeg',
     imageFit: 'cover',
   },
   {
@@ -367,7 +367,7 @@ export const events: EventItem[] = [
     displayDate: 'June 5, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/bootcamp-DS.jpeg',
     imageFit: 'cover',
   },
   {
@@ -381,7 +381,7 @@ export const events: EventItem[] = [
     displayDate: 'June 15, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/bootcamp-devops.jpeg',
     imageFit: 'cover',
   },
   {
@@ -395,7 +395,7 @@ export const events: EventItem[] = [
     displayDate: 'June 8, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/businessbootcamp.jpeg',
     imageFit: 'cover',
   },
   {
@@ -409,7 +409,7 @@ export const events: EventItem[] = [
     displayDate: 'June 12, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/product-dev.jpeg',
     imageFit: 'cover',
   },
   {
@@ -451,7 +451,7 @@ export const events: EventItem[] = [
     displayDate: 'August 29, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/AIagri.jpeg',
     imageFit: 'cover',
   },
   {
@@ -465,7 +465,7 @@ export const events: EventItem[] = [
     displayDate: 'October 8, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/DScipherion.jpeg',
     imageFit: 'cover',
   },
   {
@@ -479,7 +479,7 @@ export const events: EventItem[] = [
     displayDate: 'October 27, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/empoweringsde.jpeg',
     imageFit: 'cover',
   },
   {
@@ -493,7 +493,7 @@ export const events: EventItem[] = [
     displayDate: 'March 17, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/agenticai.jpeg',
     imageFit: 'cover',
   },
   {
@@ -521,7 +521,7 @@ export const events: EventItem[] = [
     displayDate: 'April 28, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/dpml.jpeg',
     imageFit: 'cover',
   },
   {
@@ -535,7 +535,7 @@ export const events: EventItem[] = [
     displayDate: 'June 25, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/QAIC.jpeg',
     imageFit: 'cover',
   },
   {
@@ -549,7 +549,7 @@ export const events: EventItem[] = [
     displayDate: 'July 7, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/climate-change.jpeg',
     imageFit: 'cover',
   },
   {
@@ -591,7 +591,7 @@ export const events: EventItem[] = [
     displayDate: 'August 8, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/sss4.jpeg',
     imageFit: 'cover',
   },
   {
@@ -605,7 +605,7 @@ export const events: EventItem[] = [
     displayDate: 'October 16, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/sss5.jpeg',
     imageFit: 'cover',
   },
   {
@@ -633,7 +633,7 @@ export const events: EventItem[] = [
     displayDate: 'February 25, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/sss7.jpeg',
     imageFit: 'cover',
   },
   {
@@ -647,7 +647,7 @@ export const events: EventItem[] = [
     displayDate: 'June 20, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/startupschool-9.jpeg',
     imageFit: 'cover',
   },
   {
@@ -661,7 +661,7 @@ export const events: EventItem[] = [
     displayDate: 'March 28, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/tech-series1.jpeg',
     imageFit: 'cover',
   },
   {
@@ -675,7 +675,7 @@ export const events: EventItem[] = [
     displayDate: 'April 22, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/tech-series2.jpeg',
     imageFit: 'cover',
   },
   {
@@ -689,7 +689,7 @@ export const events: EventItem[] = [
     displayDate: 'May 22, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/tech-series3.jpeg',
     imageFit: 'cover',
   },
   {
@@ -703,7 +703,7 @@ export const events: EventItem[] = [
     displayDate: 'February 24, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/cacampus.jpeg',
     imageFit: 'cover',
   },
   {
@@ -717,7 +717,7 @@ export const events: EventItem[] = [
     displayDate: 'April 8, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/infosysvp.jpeg',
     imageFit: 'cover',
   },
   {
@@ -745,7 +745,7 @@ export const events: EventItem[] = [
     displayDate: 'August 21, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/KDEM.jpeg',
     imageFit: 'cover',
   },
   {
@@ -759,7 +759,7 @@ export const events: EventItem[] = [
     displayDate: 'August 21, 2025',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/JAN-AI.jpeg',
     imageFit: 'cover',
   },
   {
@@ -815,7 +815,7 @@ export const events: EventItem[] = [
     displayDate: 'March 10, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/nain2gdd.jpeg',
     imageFit: 'cover',
   },
   {
@@ -829,7 +829,7 @@ export const events: EventItem[] = [
     displayDate: 'May 12, 2026',
     location: 'IIIT Dharwad',
     mode: 'Offline',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/nain2-kickoff.jpeg',
     imageFit: 'cover',
   },
   {
@@ -844,11 +844,24 @@ export const events: EventItem[] = [
     time: '11:00 AM – 12:00 PM',
     location: 'Google Meet',
     mode: 'Online',
-    image: '/events/brochures/event-placeholder.jpg',
+    image: '/events/gallery/eventsImg/tech-series4.jpeg',
     imageFit: 'cover',
     registerUrl: 'https://meet.google.com/jxw-nfpw-rhn',
   },
-
+  {
+    id: 66,
+    slug: 'campus-immersion-program-2026-for-mtech-in-data-science-artificial-intelligence-students',
+    title: 'Campus Immersion Program 2026 for M.Tech in Data Science & Artificial Intelligence students',
+    category: 'Program',
+    description: 'Campus Immersion Program 2026 for M.Tech in Data Science & Artificial Intelligence students conducted at IIIT Dharwad.',
+    startDate: '2026-07-24',
+    endDate: '2026-07-25',
+    displayDate: 'July 24–25, 2026',
+    location: 'IIIT Dharwad',
+    mode: 'Offline',
+    image: '/events/gallery/eventsImg/CIP2026.jpeg',
+    imageFit: 'cover',
+},
 ]
 // ─────────────────────────────────────────────
 // HELPERS
