@@ -11,6 +11,17 @@ export type QuantumBeneficiaryGroup = {
   description: string
 }
 
+export type ResearchPublication = {
+  title: string
+  authors: string[]
+  journal: string
+  publisher: string
+  year: number
+  doi: string
+  researchAreas: string[]
+  summary: string
+}
+
 export const focusAreas: QuantumFocusArea[] = [
   {
     title: 'Quantum & Advanced Computing Awareness',
@@ -54,6 +65,21 @@ export const beneficiaryGroups: QuantumBeneficiaryGroup[] = [
   {
     title: 'Startups & Innovators',
     description: 'Teams exploring deep-tech and future computing opportunities.',
+  },
+]
+
+// Newest publication first.
+export const qaicPublications: ResearchPublication[] = [
+  {
+    title: 'Hybrid Photonic-Quantum Reservoir Computing for Time-Series Prediction',
+    authors: ['Oishik Kar', 'Aswath Babu H.'],
+    journal: 'Physica Scripta',
+    publisher: 'IOP Publishing',
+    year: 2026,
+    doi: '10.1088/1402-4896/ae964f',
+    researchAreas: ['Quantum AI & Computing', 'Photonic Computing', 'Quantum Machine Learning'],
+    summary:
+      'Presents a Hybrid Photonic-Quantum Reservoir Computing (HPQRC) architecture that combines the high-speed parallelism of photonic systems with the nonlinear computational capabilities of quantum reservoir computing for time-series prediction. The architecture is evaluated across chaotic, financial, and biomedical datasets, including Mackey–Glass, Lorenz, S&P 500, and MIT-BIH ECG benchmarks, reporting improved predictive performance and simulation efficiency compared with classical and quantum-only reservoir computing approaches.',
   },
 ]
 

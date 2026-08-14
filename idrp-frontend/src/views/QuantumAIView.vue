@@ -7,10 +7,11 @@ import ProgramCTASection from '@/components/program/ProgramCTASection.vue'
 import FocusAreasSection from '@/components/common/FocusSection.vue'
 import BeneficiariesSection from '@/components/common/BeneficiariesSection.vue'
 import PerformanceMetricsSection from '@/components/common/PerformanceMetricsSection.vue'
+import ResearchPublicationsSection from '@/components/common/ResearchPublicationsSection.vue'
 import ProgramEventsSection from '@/components/program/ProgramEventsSection.vue'
 
 import { quantumAIPage } from '@/data/quantumAI'
-import { focusAreas, beneficiaryGroups, qaicMetrics } from '@/data/quantumAIExtra'
+import { focusAreas, beneficiaryGroups, qaicMetrics, qaicPublications } from '@/data/quantumAIExtra'
 </script>
 
 <template>
@@ -29,6 +30,12 @@ import { focusAreas, beneficiaryGroups, qaicMetrics } from '@/data/quantumAIExtr
 
     <FocusAreasSection :areas="focusAreas" />
     <BeneficiariesSection :groups="beneficiaryGroups" />
+
+    <ResearchPublicationsSection
+      title="Research Publications"
+      description="Peer-reviewed research emerging from the Centre of Excellence in Quantum AI and Computing."
+      :publications="qaicPublications"
+    />
 
     <ProgramEventsSection
       initiative-key="QAIC"
