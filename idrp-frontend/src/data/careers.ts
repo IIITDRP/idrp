@@ -14,7 +14,7 @@ export const jobs: Job[] = [
       'Lead campus placements and internship initiatives, build strategic partnerships with industries and corporates, drive collaborations in research, innovation, and Centres of Excellence, support startup incubation through industry, mentor, and investor connects, and facilitate hackathons, executive engagement programs, and industry visits.',
     eligibility:
       'MBA/PGDM (Engineering background preferred) with 3–7 years of experience in Campus Recruitment, Corporate Relations, Industry Engagement, Business Development, or B2B Sales. Excellent networking, communication, and stakeholder management skills required.',
-    status: 'OPEN',
+    status: 'CLOSED',
     applyUrl: 'https://forms.gle/SprW7biYGfwugwHM7',
   },
 ]

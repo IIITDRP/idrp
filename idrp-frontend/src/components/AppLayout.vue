@@ -423,6 +423,7 @@ const navSections: NavSection[] = [
         children: [
           { label: 'NAIN 2.0', to: '/programs/nain' },
           { label: 'CIF', to: '/programs/cif' },
+          { label: 'LEAP', to: '/programs/leap' },
           { label: 'CoE', heading: true },
           { label: 'QAIC', to: '/programs/coe-quantum-ai', indent: true },
           { label: 'CBDE', to: '/programs/cbde' },

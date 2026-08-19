@@ -43,6 +43,7 @@ export const ROUTE_NAMES = {
   CBDE: 'cbde',
   NAIN: 'nain',
   CIF: 'cif',
+  LEAP: 'leap',
   COE_QUANTUM_AI: 'coe-quantum-ai',
   RGEP: 'rgep',
   EVENT_REGISTER: 'event-register',
@@ -160,6 +161,7 @@ const programRoutes: RouteRecordRaw[] = [
     'New Age Innovation Network (NAIN 2.0)',
   ),
   createPageRoute('/programs/cif', ROUTE_NAMES.CIF, 'CifView', 'Common Instrumentation Facility'),
+  createPageRoute('/programs/leap', ROUTE_NAMES.LEAP, 'LeapView', 'LEAP – Innovation Labs Program'),
   createPageRoute(
     '/programs/coe-quantum-ai',
     ROUTE_NAMES.COE_QUANTUM_AI,

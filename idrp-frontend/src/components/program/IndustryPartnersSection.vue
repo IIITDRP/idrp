@@ -83,7 +83,7 @@ function closeModal() {
     <div class="mx-auto max-w-7xl">
 
       <SectionHeading
-        title="Industry Partners"
+        title="Industry Outreach"
         class="mb-8"
       />
 

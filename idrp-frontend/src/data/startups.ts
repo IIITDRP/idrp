@@ -1737,4 +1737,29 @@ export const startups: Startup[] = [
     ],
     teamMembers: [],
   },
+  {
+    id: 48,
+    name: 'Satatham Kritam Innovative Technology Solutions Pvt Ltd',
+    sector: 'TBD',
+    categories: ['INCUBATED'],
+    logo: '',
+    website: '',
+    onePager: '',
+    brief: '',
+    contactEmail: 'murthyipr@rediffmail.com',
+    techFacultyMentors: [],
+    founders: [
+      {
+        name: 'S K Murthy',
+        image: '',
+        role: 'Founder',
+      },
+      {
+        name: 'Deepa Murthy',
+        image: '',
+        role: 'Founder',
+      },
+    ],
+    teamMembers: [],
+  },
 ]
