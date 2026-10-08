@@ -1,3 +1,9 @@
+import {
+  ADMIN_DEMO_MODE,
+  DEMO_ADMIN_EMAIL,
+  DEMO_ADMIN_PASSWORD,
+  demoAdminFetch,
+} from '@/services/adminDemo'
 import { API_BASE_URL, buildRateLimitMessage, type ApiResponse } from '@/services/httpClient'
 
 export type AdminLoginPayload = {
@@ -19,7 +25,33 @@ const ACCESS_TOKEN_KEY = 'idrp_admin_access_token'
 const REFRESH_TOKEN_KEY = 'idrp_admin_refresh_token'
 const ADMIN_USER_KEY = 'idrp_admin_user'
 
+function loginDemoAdmin(): AdminUser {
+  const demoUser: AdminUser = {
+    adminId: 0,
+    name: 'Demo Admin',
+    email: DEMO_ADMIN_EMAIL,
+    role: 'SUPER_ADMIN',
+    accessToken: 'demo-access-token',
+    refreshToken: 'demo-refresh-token',
+    tokenType: 'Bearer',
+  }
+
+  localStorage.setItem(ACCESS_TOKEN_KEY, demoUser.accessToken)
+  localStorage.setItem(REFRESH_TOKEN_KEY, demoUser.refreshToken)
+  localStorage.setItem(ADMIN_USER_KEY, JSON.stringify(demoUser))
+
+  return demoUser
+}
+
 export async function loginAdmin(payload: AdminLoginPayload): Promise<AdminUser> {
+  if (ADMIN_DEMO_MODE) {
+    if (payload.email.trim().toLowerCase() === DEMO_ADMIN_EMAIL && payload.password === DEMO_ADMIN_PASSWORD) {
+      return loginDemoAdmin()
+    }
+
+    throw new Error('Invalid email or password')
+  }
+
   const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
     method: 'POST',
     headers: {
@@ -50,7 +82,7 @@ export function clearAdminSession() {
 export async function logoutAdmin() {
   const refreshToken = localStorage.getItem(REFRESH_TOKEN_KEY)
 
-  if (refreshToken) {
+  if (refreshToken && !ADMIN_DEMO_MODE) {
     try {
       await fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: 'POST',
@@ -99,6 +131,10 @@ export function handleUnauthorizedSession() {
  * individual admin services don't have to reimplement it.
  */
 export async function adminFetch<T>(path: string, options: RequestInit = {}): Promise<T> {
+  if (ADMIN_DEMO_MODE) {
+    return demoAdminFetch<T>(path, options)
+  }
+
   const token = getAdminAccessToken()
   const isFormData = options.body instanceof FormData
 
