@@ -307,6 +307,14 @@ export const awards: Award[] = [
     bg: 'from-teal-600 to-cyan-500',
   },
   {
+    entity: 'Trividhi Labs',
+    title: 'Top 3 at HDB Blue Techceleration 2026',
+    issuer: 'HDB Blue Techceleration',
+    year: '2026',
+    image: '/awards/trividhi_hdb_blue_2026.png',
+    bg: 'from-teal-600 to-cyan-500',
+  },
+  {
     entity: 'Cipherion',
     title: 'Recognized among the Top 3 fund-ready startups at HDB Blue 2025',
     issuer: 'HDB Techceleration',

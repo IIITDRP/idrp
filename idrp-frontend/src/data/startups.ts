@@ -1740,12 +1740,13 @@ export const startups: Startup[] = [
   {
     id: 48,
     name: 'Satatham Kritam Innovative Technology Solutions Pvt Ltd',
-    sector: 'TBD',
+    sector: 'LEGAL TECH',
     categories: ['INCUBATED'],
-    logo: '',
+    logo: '/startups/logo/SatathamKritam.png',
     website: '',
     onePager: '',
-    brief: '',
+    brief:
+      'Satatham Kritam Innovative Technology Solutions Pvt. Ltd. (SKITS) is an AI and SaaS-based technology company that develops intelligent digital platforms for research, innovation, intellectual property (IP), and commercialization. The company helps researchers, universities, startups, enterprises, and R&D organizations transform complex scientific, technical, patent, and market data into actionable insights, supporting the complete innovation lifecycle from idea evaluation and IP creation to product strategy, licensing, and commercialization.',
     contactEmail: 'murthyipr@rediffmail.com',
     techFacultyMentors: [],
     founders: [
@@ -1753,11 +1754,13 @@ export const startups: Startup[] = [
         name: 'S K Murthy',
         image: '',
         role: 'Founder',
+        email: 'murthyipr@rediffmail.com',
       },
       {
         name: 'Deepa Murthy',
         image: '',
         role: 'Founder',
+        email: 'bk_deepa@rediffmail.com',
       },
     ],
     teamMembers: [],

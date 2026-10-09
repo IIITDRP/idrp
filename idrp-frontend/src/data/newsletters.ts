@@ -131,6 +131,25 @@ export const newsletters: Newsletter[] = [
   pdfUrl: '/newsletters/06-apr-jun-2026-edition.pdf',
   previewImage: '/newsletters/apr-jun-2026-cover.jpg',
 },
+  {
+    id: 7,
+    slug: 'jul-sep-2026-edition',
+    title: 'IIIT Dharwad Research Park Newsletter',
+    issue: '07',
+    date: 'Jul–Sep 2026',
+    description:
+      'Quarterly highlights from programs, ecosystem developments, events, and startup engagement.',
+    preview: 'Browse the Jul–Sep 2026 edition of the IIIT Dharwad Research Park newsletter.',
+    highlights: [
+      'Quarterly updates from the ecosystem',
+      'Program and event highlights',
+      'Founder and community activities',
+      'Institutional and innovation milestones',
+    ],
+    coverGradient: 'linear-gradient(180deg, #4338ca 0%, #3730a3 45%, #1e1b4b 100%)',
+    pdfUrl: '/newsletters/07-jul-sep-2026-edition.pdf',
+    previewImage: '/newsletters/jul-sep-2026-cover.jpg',
+  },
 ]
 
 export const getVisibleNewsletters = () =>

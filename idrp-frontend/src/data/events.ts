@@ -988,6 +988,21 @@ export const events: EventItem[] = [
     imageFit: 'contain',
     registerUrl: 'https://meet.google.com/ish-pwsh-pyd',
   },
+  {
+    id: 75,
+    slug: 'elevate-2026-stage-3-multicity-pitching-evaluation',
+    title: 'ELEVATE 2026 Stage 3 – Multicity Pitching Evaluation',
+    category: 'Program',
+    description:
+      'IIIT Dharwad had the privilege of hosting the Department of Electronics, IT & BT, Government of Karnataka, and Karnataka Startup Cell’s Stage 3 – Multicity Pitching Evaluation of ELEVATE 2026 from 7–10 September 2026. The four-day event provided a platform for innovative startups to present their ideas before expert jury members, contributing to the growth of Karnataka’s startup ecosystem.',
+    startDate: '2026-09-07',
+    endDate: '2026-09-10',
+    displayDate: 'September 7–10, 2026',
+    location: 'IIIT Dharwad',
+    mode: 'Offline',
+    image: '/events/gallery/eventsImg/elevate-2026-stage3.png',
+    imageFit: 'contain',
+  },
 ]
 // ─────────────────────────────────────────────
 // HELPERS
