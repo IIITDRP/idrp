@@ -68,8 +68,8 @@ Use the **full output as-is**. Avoid Base64-URL variants (containing `-`/`_`) �
 | `app.jwt.expiration` | `JWT_EXPIRATION` | no (default `86400000` = 24h) | Access token TTL in ms |
 | `app.admin.bootstrap-email` | `INITIAL_ADMIN_EMAIL` | no | If set (and the `admins` table is empty), auto-creates one SUPER_ADMIN with this email on startup |
 | `app.admin.bootstrap-password` | `INITIAL_ADMIN_PASSWORD` | no | Password for the bootstrap SUPER_ADMIN above |
-| `spring.servlet.multipart.max-file-size` / `max-request-size` | `MAX_FILE_SIZE` / `MAX_REQUEST_SIZE` | no (default `10MB`) | Upload size caps |
-| `app.upload.dir` | `UPLOAD_DIR` | no (default `uploads`) | Local disk folder for uploaded files — **must be a persistent, mounted volume in production**, otherwise uploads are lost on every redeploy/restart |
+| `spring.servlet.multipart.max-file-size` / `max-request-size` | `MAX_FILE_SIZE` / `MAX_REQUEST_SIZE` | no (default `100MB` / `110MB`) | Upload size caps |
+| `app.upload.dir` | `UPLOAD_DIR` | no (default `uploads` locally, `/var/idrp/uploads` in prod) | Local disk folder for uploaded files — **must be a persistent, mounted volume in production**, otherwise uploads are lost on every redeploy/restart |
 | `app.upload.base-url` | `UPLOAD_BASE_URL` | yes (prod) | Public base URL prefixed to uploaded file URLs |
 | `app.cors.allowed-origins` | `CORS_ALLOWED_ORIGINS` | no (default `https://idrp.in,https://www.idrp.in` in prod, `http://localhost:5173` in dev) | Comma-separated list of allowed frontend origins |
 | `app.seed-static-data` | `SEED_STATIC_DATA` | no (default `false`) | Set `true` to import the static frontend content (`src/main/resources/seed/*.json`) into the database on startup — see "Seeding static data" below |

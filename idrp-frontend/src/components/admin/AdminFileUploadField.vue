@@ -77,7 +77,7 @@ const handleUpload = async (event: Event) => {
     />
 
     <p class="mt-1 text-xs text-slate-400">
-      Allowed: {{ kind === 'pdf' ? 'PDF' : 'JPG, PNG, WEBP, GIF' }}, up to 10MB.
+      Allowed: {{ kind === 'pdf' ? 'PDF' : 'JPG, PNG, WEBP, GIF' }}, up to 100MB.
     </p>
 
     <p v-if="uploading" class="mt-2 text-sm text-slate-500">Uploading...</p>

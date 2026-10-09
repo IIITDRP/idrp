@@ -22,7 +22,7 @@ export const DEMO_ADMIN_PASSWORD = 'admin@123'
 const STORAGE_PREFIX = 'idrp_admin_demo_'
 
 // localStorage is ~5MB per origin, so uploads are stored inline as data URLs
-// with a much smaller cap than the backend's 10MB.
+// with a much smaller cap than the backend's 100MB.
 const DEMO_MAX_UPLOAD_BYTES = 2 * 1024 * 1024
 
 type DemoRecord = Record<string, unknown> & { id: number }
@@ -124,7 +124,7 @@ async function handleUpload(body: BodyInit | null | undefined) {
   }
 
   if (file.size > DEMO_MAX_UPLOAD_BYTES) {
-    throw new Error('In demo mode, uploads are limited to 2MB. The live admin panel will allow 10MB.')
+    throw new Error('In demo mode, uploads are limited to 2MB. The live admin panel will allow 100MB.')
   }
 
   return {

@@ -21,7 +21,7 @@ export const ALLOWED_UPLOAD_ACCEPT: Record<UploadKind, string> = {
   pdf: 'application/pdf',
 }
 
-export const MAX_UPLOAD_SIZE_BYTES = 10 * 1024 * 1024
+export const MAX_UPLOAD_SIZE_BYTES = 100 * 1024 * 1024
 
 function fileExtension(fileName: string): string {
   return fileName.includes('.') ? fileName.split('.').pop()!.toLowerCase() : ''
