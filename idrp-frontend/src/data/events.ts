@@ -1003,6 +1003,22 @@ export const events: EventItem[] = [
     image: '/events/gallery/eventsImg/elevate-2026-stage3.png',
     imageFit: 'contain',
   },
+  {
+    id: 76,
+    slug: 'leap-hackathon-hubballi-edition-2026',
+    title: 'Hubballi edition - LEAP Hackathon',
+    category: 'Hackathon',
+    description:
+      'The Karnataka Product Innovation Hackathon brought together 25 teams to build and refine solutions around Smart Logistics & Urban Commerce. From brainstorming and coding to prototyping, testing, and expert feedback, participants transformed ideas into tangible solutions addressing real-world challenges.',
+    startDate: '2026-10-07',
+    endDate: '2026-10-08',
+    displayDate: 'October 7–8, 2026',
+    time: '2 Days',
+    location: 'IIIT Dharwad',
+    mode: 'Offline',
+    image: '/events/gallery/eventsImg/leap-hackathon-hubballi-2026.jpg',
+    imageFit: 'contain',
+  },
 ]
 // ─────────────────────────────────────────────
 // HELPERS
