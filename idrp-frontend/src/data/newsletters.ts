@@ -152,8 +152,8 @@ export const newsletters: Newsletter[] = [
   },
 ]
 
-export const getVisibleNewsletters = () =>
-  newsletters.filter((newsletter) => newsletter.visible !== false)
+export const getVisibleNewsletters = (list: Newsletter[] = newsletters) =>
+  list.filter((newsletter) => newsletter.visible !== false)
 
-export const getNewsletterBySlug = (slug: string) =>
-  newsletters.find((newsletter) => newsletter.slug === slug && newsletter.visible !== false)
+export const getNewsletterBySlug = (slug: string, list: Newsletter[] = newsletters) =>
+  list.find((newsletter) => newsletter.slug === slug && newsletter.visible !== false)

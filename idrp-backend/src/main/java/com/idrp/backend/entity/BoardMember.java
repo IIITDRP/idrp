@@ -33,7 +33,7 @@ public class BoardMember {
     @Column(columnDefinition = "TEXT")
     private String bio;
 
-    @Column(nullable = false, unique = true, length = 150)
+    @Column(length = 150)
     private String email;
 
     @Column(length = 20)
@@ -44,6 +44,9 @@ public class BoardMember {
 
     @Column(name = "linkedin_url", length = 255)
     private String linkedinUrl;
+
+    @Column(name = "profile_url", length = 255)
+    private String profileUrl;
 
     @Column(name = "display_order")
     @Builder.Default

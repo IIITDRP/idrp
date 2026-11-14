@@ -1,10 +1,17 @@
-export type StartupCategory = 'PRE_INCUBATED' | 'INCUBATED' | 'FUNDED'
-export type TabKey = 'all' | StartupCategory
+/** PRD Phase 1 SP-02: every startup has exactly one status. */
+export type StartupStatus = 'PRE_INCUBATED' | 'INCUBATED' | 'FUNDED'
 
-export interface Tab {
-  key: TabKey
-  label: string
-}
+/** PRD Phase 1 SP-03 domain taxonomy (plus OTHER). A startup may carry several. */
+export type StartupDomain =
+  | 'HEALTH_TECH'
+  | 'AI_SAAS'
+  | 'IOT_SMART_ENERGY'
+  | 'TRAVEL_TECH'
+  | 'DEEP_TECH'
+  | 'AUTO_TECH'
+  | 'EDTECH'
+  | 'PLATFORM_TECH'
+  | 'OTHER'
 
 export interface StartupStat {
   value: string
@@ -22,8 +29,10 @@ export interface StartupPerson {
 export interface Startup {
   id: number
   name: string
+  /** Free-text sector shown on the card, e.g. "AI / MENTAL HEALTH". */
   sector: string
-  categories: StartupCategory[]
+  status: StartupStatus
+  domains: StartupDomain[]
   logo?: string
   website?: string
   onePager?: string

@@ -1,31 +1,66 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/iiitd.webp" type="image/webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IDRP | Empowering Ventures</title>
+    <title>IDRP | IIIT Dharwad Research Park</title>
+    <!-- Per-page title, description, OpenGraph and canonical are set at runtime by
+         src/router/seo.ts; these are the defaults crawlers see first. -->
+    <meta
+      name="description"
+      content="IIIT Dharwad Research Park (IDRP) is a deep-tech incubator supporting founders from idea to scale with incubation, mentorship, labs and investor connect."
+    />
+    <meta property="og:site_name" content="IIIT Dharwad Research Park (IDRP)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IDRP | IIIT Dharwad Research Park" />
+    <meta
+      property="og:description"
+      content="Deep-tech incubation, mentorship, labs and investor connect at IIIT Dharwad Research Park."
+    />
+    <meta property="og:image" content="https://www.idrp.in/campus/idrp_building.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0f766e" />
 
-    <script type="text/javascript">
-      // Skip loading session-replay analytics on the admin panel so internal
-      // admin data (startup/mentor/partner records, etc.) is never captured.
-      if (!window.location.pathname.startsWith('/admin')) {
-        ;(function (c, l, a, r, i, t, y) {
-          c[a] =
-            c[a] ||
-            function () {
-              ;(c[a].q = c[a].q || []).push(arguments)
-            }
-          t = l.createElement(r)
-          t.async = 1
-          t.src = 'https://www.clarity.ms/tag/' + i
-          y = l.getElementsByTagName(r)[0]
-          y.parentNode.insertBefore(t, y)
-        })(window, document, 'clarity', 'script', 'w7wtk63nfq')
+    <!-- Analytics (Microsoft Clarity) is NOT loaded here: it is injected by
+         src/services/analyticsConsent.ts only after the visitor consents. -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IIIT Dharwad Research Park",
+        "alternateName": "IDRP",
+        "url": "https://www.idrp.in/",
+        "logo": "https://www.idrp.in/iiitd.webp",
+        "email": "enquiry_idrp@iiitdwd.ac.in",
+        "telephone": "+91-94839-97956",
+        "parentOrganization": {
+          "@type": "CollegeOrUniversity",
+          "name": "Indian Institute of Information Technology Dharwad",
+          "url": "https://iiitdwd.ac.in/"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Pi Block, IIIT Dharwad",
+          "addressLocality": "Dharwad",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/iiitdwd_respark/",
+          "https://www.instagram.com/iiitdwd_respark",
+          "https://x.com/IIITDWD_RESPARK",
+          "https://www.youtube.com/@IIITDWD_RESPARK"
+        ]
       }
     </script>
   </head>
   <body>
+    <noscript>
+      IIIT Dharwad Research Park (IDRP) - deep-tech incubation, mentorship, labs and investor
+      connect. Please enable JavaScript to use this website, or e-mail enquiry_idrp@iiitdwd.ac.in.
+    </noscript>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

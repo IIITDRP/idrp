@@ -26,12 +26,16 @@ public class Startup {
     @Column(length = 100)
     private String sector;
 
-    @ElementCollection(targetClass = StartupCategory.class)
-    @CollectionTable(name = "startup_categories", joinColumns = @JoinColumn(name = "startup_id"))
     @Enumerated(EnumType.STRING)
-    @Column(name = "category", length = 50)
+    @Column(nullable = false, length = 30)
+    private StartupStatus status;
+
+    @ElementCollection(targetClass = StartupDomain.class)
+    @CollectionTable(name = "startup_domains", joinColumns = @JoinColumn(name = "startup_id"))
+    @Enumerated(EnumType.STRING)
+    @Column(name = "domain", length = 40)
     @Builder.Default
-    private List<StartupCategory> categories = new ArrayList<>();
+    private List<StartupDomain> domains = new ArrayList<>();
 
     @Column(length = 255)
     private String logo;
@@ -45,7 +49,7 @@ public class Startup {
     @Column(columnDefinition = "TEXT")
     private String brief;
 
-    @Column(name = "contact_email", unique = true, length = 150)
+    @Column(name = "contact_email", length = 150)
     private String contactEmail;
 
     @ElementCollection

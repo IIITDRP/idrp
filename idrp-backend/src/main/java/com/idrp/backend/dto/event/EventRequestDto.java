@@ -59,6 +59,15 @@ public class EventRequestDto {
     @Pattern(regexp = "^(https?://.+)?$", message = "Register URL must start with http:// or https://")
     private String registerUrl;
 
+    @Size(max = 100)
+    private String initiative;
+
+    @Size(max = 500)
+    private String brochureUrl;
+
+    @Size(max = 500)
+    private String galleryUrl;
+
     private Boolean visible;
 
     private List<String> gallery;

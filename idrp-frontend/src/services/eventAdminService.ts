@@ -15,6 +15,9 @@ export type AdminEventPayload = {
   image: string
   imageFit?: string
   registerUrl?: string
+  initiative?: string
+  brochureUrl?: string
+  galleryUrl?: string
   visible?: boolean
   gallery?: string[]
 }

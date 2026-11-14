@@ -68,6 +68,8 @@ public class PartnerServiceImpl implements PartnerService {
         existingPartner.setCategory(requestDto.getCategory());
         existingPartner.setWebsiteUrl(requestDto.getWebsiteUrl());
         existingPartner.setLogoUrl(requestDto.getLogoUrl());
+        existingPartner.setAbbr(requestDto.getAbbr());
+        existingPartner.setAccentColor(requestDto.getAccentColor());
         existingPartner.setDescription(requestDto.getDescription());
         existingPartner.setContactPerson(requestDto.getContactPerson());
         existingPartner.setContactEmail(requestDto.getContactEmail());
@@ -95,6 +97,8 @@ public class PartnerServiceImpl implements PartnerService {
                 .category(dto.getCategory())
                 .websiteUrl(dto.getWebsiteUrl())
                 .logoUrl(dto.getLogoUrl())
+                .abbr(dto.getAbbr())
+                .accentColor(dto.getAccentColor())
                 .description(dto.getDescription())
                 .contactPerson(dto.getContactPerson())
                 .contactEmail(dto.getContactEmail())
@@ -110,6 +114,8 @@ public class PartnerServiceImpl implements PartnerService {
                 .category(partner.getCategory())
                 .websiteUrl(partner.getWebsiteUrl())
                 .logoUrl(partner.getLogoUrl())
+                .abbr(partner.getAbbr())
+                .accentColor(partner.getAccentColor())
                 .description(partner.getDescription())
                 .contactPerson(partner.getContactPerson())
                 .contactEmail(partner.getContactEmail())

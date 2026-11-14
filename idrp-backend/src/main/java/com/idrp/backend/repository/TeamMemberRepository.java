@@ -9,11 +9,11 @@ import java.util.Optional;
 
 public interface TeamMemberRepository extends JpaRepository<TeamMember, Long> {
 
-    boolean existsByEmail(String email);
+    boolean existsByNameIgnoreCase(String name);
 
-    boolean existsByEmailAndIdNot(String email, Long id);
+    boolean existsByNameIgnoreCaseAndIdNot(String name, Long id);
 
-    Optional<TeamMember> findByEmail(String email);
+    Optional<TeamMember> findFirstByNameIgnoreCase(String name);
 
     Page<TeamMember> findAllByActiveTrue(Pageable pageable);
 }

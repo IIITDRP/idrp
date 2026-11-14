@@ -3,7 +3,8 @@ package com.idrp.backend.service.impl;
 import com.idrp.backend.dto.startup.StartupRequestDto;
 import com.idrp.backend.dto.startup.StartupResponseDto;
 import com.idrp.backend.entity.Startup;
-import com.idrp.backend.entity.StartupCategory;
+import com.idrp.backend.entity.StartupDomain;
+import com.idrp.backend.entity.StartupStatus;
 import com.idrp.backend.exception.DuplicateResourceException;
 import com.idrp.backend.exception.ResourceNotFoundException;
 import com.idrp.backend.repository.StartupRepository;
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 
 @Service
+@org.springframework.transaction.annotation.Transactional
 @RequiredArgsConstructor
 public class StartupServiceImpl implements StartupService {
 
@@ -23,14 +25,8 @@ public class StartupServiceImpl implements StartupService {
 
     @Override
     public StartupResponseDto createStartup(StartupRequestDto requestDto) {
-        if (
-                requestDto.getContactEmail() != null &&
-                !requestDto.getContactEmail().isBlank() &&
-                startupRepository.existsByContactEmail(requestDto.getContactEmail())
-        ) {
-            throw new DuplicateResourceException(
-                    "Startup already exists with contact email: " + requestDto.getContactEmail()
-            );
+        if (startupRepository.existsByNameIgnoreCase(requestDto.getName().trim())) {
+            throw new DuplicateResourceException("Startup already exists with name: " + requestDto.getName());
         }
 
         Startup startup = mapToEntity(requestDto);
@@ -41,14 +37,14 @@ public class StartupServiceImpl implements StartupService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<StartupResponseDto> getAllStartups(int page, int size, StartupCategory category, String search) {
+    public Page<StartupResponseDto> getAllStartups(int page, int size, StartupStatus status, StartupDomain domain, String search) {
         Pageable pageable = PageRequest.of(
                 page,
                 size,
                 Sort.by(Sort.Direction.DESC, "createdAt")
         );
 
-        return startupRepository.search(category, search != null && !search.isBlank() ? search : null, pageable)
+        return startupRepository.search(status, domain, search != null && !search.isBlank() ? search : null, pageable)
                 .map(this::mapToResponseDto);
     }
 
@@ -66,19 +62,14 @@ public class StartupServiceImpl implements StartupService {
         Startup existingStartup = startupRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Startup not found with id: " + id));
 
-        if (
-                requestDto.getContactEmail() != null &&
-                !requestDto.getContactEmail().isBlank() &&
-                startupRepository.existsByContactEmailAndIdNot(requestDto.getContactEmail(), id)
-        ) {
-            throw new DuplicateResourceException(
-                    "Another startup already exists with contact email: " + requestDto.getContactEmail()
-            );
+        if (startupRepository.existsByNameIgnoreCaseAndIdNot(requestDto.getName().trim(), id)) {
+            throw new DuplicateResourceException("Another startup already exists with name: " + requestDto.getName());
         }
 
         existingStartup.setName(requestDto.getName());
         existingStartup.setSector(requestDto.getSector());
-        existingStartup.setCategories(requestDto.getCategories());
+        existingStartup.setStatus(requestDto.getStatus());
+        existingStartup.setDomains(new ArrayList<>(requestDto.getDomains()));
         existingStartup.setLogo(requestDto.getLogo());
         existingStartup.setWebsite(requestDto.getWebsite());
         existingStartup.setOnePager(requestDto.getOnePager());
@@ -108,7 +99,8 @@ public class StartupServiceImpl implements StartupService {
         return Startup.builder()
                 .name(dto.getName())
                 .sector(dto.getSector())
-                .categories(dto.getCategories())
+                .status(dto.getStatus())
+                .domains(new ArrayList<>(dto.getDomains()))
                 .logo(dto.getLogo())
                 .website(dto.getWebsite())
                 .onePager(dto.getOnePager())
@@ -126,18 +118,24 @@ public class StartupServiceImpl implements StartupService {
                 .id(startup.getId())
                 .name(startup.getName())
                 .sector(startup.getSector())
-                .categories(startup.getCategories())
+                .status(startup.getStatus())
+                .domains(copyOf(startup.getDomains()))
                 .logo(startup.getLogo())
                 .website(startup.getWebsite())
                 .onePager(startup.getOnePager())
                 .brief(startup.getBrief())
                 .contactEmail(startup.getContactEmail())
-                .techFacultyMentors(startup.getTechFacultyMentors())
-                .founders(startup.getFounders())
-                .teamMembers(startup.getTeamMembers())
-                .gallery(startup.getGallery())
+                .techFacultyMentors(copyOf(startup.getTechFacultyMentors()))
+                .founders(copyOf(startup.getFounders()))
+                .teamMembers(copyOf(startup.getTeamMembers()))
+                .gallery(copyOf(startup.getGallery()))
                 .createdAt(startup.getCreatedAt())
                 .updatedAt(startup.getUpdatedAt())
                 .build();
+    }
+
+    /** Copies a lazy JPA collection while the session is open, so serialization never touches Hibernate. */
+    private static <T> java.util.List<T> copyOf(java.util.Collection<T> source) {
+        return source == null ? new java.util.ArrayList<>() : new java.util.ArrayList<>(source);
     }
 }

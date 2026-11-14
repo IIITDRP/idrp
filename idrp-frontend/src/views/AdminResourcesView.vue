@@ -23,6 +23,8 @@ const editingId = ref<number | null>(null)
 
 const resourceTypes: ResourceType[] = ['NEWSLETTER', 'BLOG', 'RESEARCH']
 
+const highlightsText = ref('')
+
 const form = reactive<ResourceAdminPayload>({
   title: '',
   slug: '',
@@ -33,6 +35,10 @@ const form = reactive<ResourceAdminPayload>({
   coverImageUrl: '',
   publishDate: '',
   author: '',
+  issueNumber: '',
+  dateLabel: '',
+  previewText: '',
+  totalPages: 0,
   active: true,
   displayOrder: 0,
 })
@@ -65,6 +71,11 @@ const resetForm = () => {
   form.coverImageUrl = ''
   form.publishDate = ''
   form.author = ''
+  form.issueNumber = ''
+  form.dateLabel = ''
+  form.previewText = ''
+  highlightsText.value = ''
+  form.totalPages = 0
   form.active = true
   form.displayOrder = 0
 }
@@ -94,6 +105,11 @@ const editResource = (resource: ResourceAdminItem) => {
   form.coverImageUrl = resource.coverImageUrl || ''
   form.publishDate = resource.publishDate || ''
   form.author = resource.author || ''
+  form.issueNumber = resource.issueNumber || ''
+  form.dateLabel = resource.dateLabel || ''
+  form.previewText = resource.previewText || ''
+  highlightsText.value = (resource.highlights ?? []).join('\n')
+  form.totalPages = resource.totalPages || 0
   form.active = resource.active ?? true
   form.displayOrder = resource.displayOrder ?? 0
 }
@@ -124,6 +140,14 @@ const submitResource = async () => {
     coverImageUrl: form.coverImageUrl?.trim() || '',
     publishDate: form.publishDate || '',
     author: form.author?.trim() || '',
+    issueNumber: form.issueNumber?.trim() || '',
+    dateLabel: form.dateLabel?.trim() || '',
+    previewText: form.previewText?.trim() || '',
+    highlights: highlightsText.value
+      .split('\n')
+      .map((line: string) => line.trim())
+      .filter(Boolean),
+    totalPages: Number(form.totalPages) || undefined,
     active: form.active,
     displayOrder: Number(form.displayOrder) || 0,
   }
@@ -378,6 +402,66 @@ onMounted(loadResources)
               type="text"
               class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
               placeholder="IDRP"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Issue number
+            </label>
+            <input
+              v-model="form.issueNumber"
+              type="text"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="07"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Date label
+            </label>
+            <input
+              v-model="form.dateLabel"
+              type="text"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="Jul–Sep 2026"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Preview text
+            </label>
+            <input
+              v-model="form.previewText"
+              type="text"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="One or two sentences shown on the newsletter card"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Total pages
+            </label>
+            <input
+              v-model="form.totalPages"
+              type="number"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="12"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Highlights (one per line)
+            </label>
+            <textarea
+              v-model="highlightsText"
+              rows="4"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="Key stories covered in this issue"
             />
           </div>
 

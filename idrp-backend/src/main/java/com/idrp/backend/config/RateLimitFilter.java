@@ -26,13 +26,15 @@ import java.util.concurrent.ConcurrentHashMap;
 public class RateLimitFilter extends OncePerRequestFilter {
 
     private static final Set<String> FORM_SUBMISSION_PATHS = Set.of(
-            "/api/contacts",
+            "/api/inquiries",
             "/api/event-registrations",
             "/api/program-applications",
             "/api/startup-applications",
             "/api/course-registrations",
             "/api/job-applications"
     );
+
+    private static final int MAX_TRACKED_BUCKETS = 50_000;
 
     private final ConcurrentHashMap<String, Bucket> buckets = new ConcurrentHashMap<>();
 
@@ -44,6 +46,12 @@ public class RateLimitFilter extends OncePerRequestFilter {
         if (rule == null) {
             filterChain.doFilter(request, response);
             return;
+        }
+
+        if (buckets.size() > MAX_TRACKED_BUCKETS) {
+            // Crude bound on memory: an attacker rotating IPs could otherwise grow this map
+            // forever. Clearing only resets everyone's counters, which is harmless.
+            buckets.clear();
         }
 
         String bucketKey = rule.name() + ":" + clientIp(request);
@@ -85,10 +93,9 @@ public class RateLimitFilter extends OncePerRequestFilter {
     }
 
     private String clientIp(HttpServletRequest request) {
-        String forwardedFor = request.getHeader("X-Forwarded-For");
-        if (forwardedFor != null && !forwardedFor.isBlank()) {
-            return forwardedFor.split(",")[0].trim();
-        }
+        // Client IP is resolved by Tomcat (server.forward-headers-strategy=native), which only
+        // trusts X-Forwarded-For from known proxies - never parse the raw header here, since a
+        // client can set it to anything and dodge rate limits or forge audit entries.
         return request.getRemoteAddr();
     }
 

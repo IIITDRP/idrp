@@ -25,6 +25,8 @@ const form = reactive<PartnerAdminPayload>({
   category: '',
   websiteUrl: '',
   logoUrl: '',
+  abbr: '',
+  accentColor: '',
   description: '',
   contactPerson: '',
   contactEmail: '',
@@ -41,6 +43,8 @@ const resetForm = () => {
   form.category = ''
   form.websiteUrl = ''
   form.logoUrl = ''
+  form.abbr = ''
+  form.accentColor = ''
   form.description = ''
   form.contactPerson = ''
   form.contactEmail = ''
@@ -68,6 +72,8 @@ const editPartner = (partner: PartnerAdminItem) => {
   form.category = partner.category || ''
   form.websiteUrl = partner.websiteUrl || ''
   form.logoUrl = partner.logoUrl || ''
+  form.abbr = partner.abbr || ''
+  form.accentColor = partner.accentColor || ''
   form.description = partner.description || ''
   form.contactPerson = partner.contactPerson || ''
   form.contactEmail = partner.contactEmail || ''
@@ -91,6 +97,8 @@ const submitPartner = async () => {
     category: form.category?.trim() || '',
     websiteUrl: form.websiteUrl?.trim() || '',
     logoUrl: form.logoUrl?.trim() || '',
+    abbr: form.abbr?.trim() || '',
+    accentColor: form.accentColor?.trim() || '',
     description: form.description?.trim() || '',
     contactPerson: form.contactPerson?.trim() || '',
     contactEmail: form.contactEmail?.trim() || '',
@@ -352,6 +360,30 @@ onMounted(loadPartners)
             label="Logo"
             placeholder="/partners/logo.png"
           />
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Short name
+            </label>
+            <input
+              v-model="form.abbr"
+              type="text"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="Shown when there is no logo, e.g. KLEIT"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Accent colour
+            </label>
+            <input
+              v-model="form.accentColor"
+              type="text"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="CSS colour or gradient, e.g. linear-gradient(135deg,#0f766e,#14b8a6)"
+            />
+          </div>
 
           <div>
             <label class="mb-1.5 block text-sm font-semibold text-slate-700">

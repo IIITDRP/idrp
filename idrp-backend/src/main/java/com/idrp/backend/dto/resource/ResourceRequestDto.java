@@ -1,5 +1,7 @@
 package com.idrp.backend.dto.resource;
 
+import java.util.List;
+import jakarta.validation.constraints.Min;
 import com.idrp.backend.entity.ResourceType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -40,6 +42,19 @@ public class ResourceRequestDto {
 
     @Size(max = 150)
     private String author;
+
+    @Size(max = 20)
+    private String issueNumber;
+
+    @Size(max = 60)
+    private String dateLabel;
+    private String previewText;
+
+    @Min(1)
+    private Integer totalPages;
+
+    @Size(max = 12, message = "At most 12 highlights")
+    private List<@Size(max = 500) String> highlights;
 
     private Boolean active;
 

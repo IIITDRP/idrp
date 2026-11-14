@@ -21,8 +21,8 @@ public class TeamMemberServiceImpl implements TeamMemberService {
     @Override
     public TeamMemberResponseDto createTeamMember(TeamMemberRequestDto requestDto) {
 
-        if (teamMemberRepository.existsByEmail(requestDto.getEmail())) {
-            throw new DuplicateResourceException("Team member already exists with email: " + requestDto.getEmail());
+        if (teamMemberRepository.existsByNameIgnoreCase(requestDto.getName().trim())) {
+            throw new DuplicateResourceException("Team member already exists with name: " + requestDto.getName());
         }
 
         TeamMember teamMember = mapToEntity(requestDto);
@@ -64,8 +64,8 @@ public class TeamMemberServiceImpl implements TeamMemberService {
         TeamMember existingTeamMember = teamMemberRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Team member not found with id: " + id));
 
-        if (teamMemberRepository.existsByEmailAndIdNot(requestDto.getEmail(), id)) {
-            throw new DuplicateResourceException("Another team member exists with email: " + requestDto.getEmail());
+        if (teamMemberRepository.existsByNameIgnoreCaseAndIdNot(requestDto.getName().trim(), id)) {
+            throw new DuplicateResourceException("Another team member exists with name: " + requestDto.getName());
         }
 
         existingTeamMember.setName(requestDto.getName());
@@ -76,6 +76,7 @@ public class TeamMemberServiceImpl implements TeamMemberService {
         existingTeamMember.setPhone(requestDto.getPhone());
         existingTeamMember.setProfileImageUrl(requestDto.getProfileImageUrl());
         existingTeamMember.setLinkedinUrl(requestDto.getLinkedinUrl());
+        existingTeamMember.setProfileUrl(requestDto.getProfileUrl());
         existingTeamMember.setDisplayOrder(
                 requestDto.getDisplayOrder() != null ? requestDto.getDisplayOrder() : existingTeamMember.getDisplayOrder()
         );
@@ -106,6 +107,7 @@ public class TeamMemberServiceImpl implements TeamMemberService {
                 .phone(dto.getPhone())
                 .profileImageUrl(dto.getProfileImageUrl())
                 .linkedinUrl(dto.getLinkedinUrl())
+                .profileUrl(dto.getProfileUrl())
                 .displayOrder(dto.getDisplayOrder() != null ? dto.getDisplayOrder() : 0)
                 .active(dto.getActive() != null ? dto.getActive() : true)
                 .build();
@@ -122,6 +124,7 @@ public class TeamMemberServiceImpl implements TeamMemberService {
                 .phone(teamMember.getPhone())
                 .profileImageUrl(teamMember.getProfileImageUrl())
                 .linkedinUrl(teamMember.getLinkedinUrl())
+                .profileUrl(teamMember.getProfileUrl())
                 .displayOrder(teamMember.getDisplayOrder())
                 .active(teamMember.getActive())
                 .createdAt(teamMember.getCreatedAt())

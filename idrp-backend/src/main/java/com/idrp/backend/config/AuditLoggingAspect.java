@@ -120,10 +120,9 @@ public class AuditLoggingAspect {
         if (request == null) {
             return null;
         }
-        String forwardedFor = request.getHeader("X-Forwarded-For");
-        if (forwardedFor != null && !forwardedFor.isBlank()) {
-            return forwardedFor.split(",")[0].trim();
-        }
+        // Client IP is resolved by Tomcat (server.forward-headers-strategy=native), which only
+        // trusts X-Forwarded-For from known proxies - never parse the raw header here, since a
+        // client can set it to anything and dodge rate limits or forge audit entries.
         return request.getRemoteAddr();
     }
 

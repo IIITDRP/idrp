@@ -121,12 +121,13 @@ public class StaticDataSeeder implements CommandLineRunner {
                 Startup startup = existing.orElseGet(Startup::new);
                 startup.setName(d.getName());
                 startup.setSector(d.getSector());
-                startup.setCategories(d.getCategories());
+                startup.setStatus(d.getStatus());
+                startup.setDomains(d.getDomains() != null ? new ArrayList<>(d.getDomains()) : new ArrayList<>());
                 startup.setLogo(d.getLogo());
                 startup.setWebsite(d.getWebsite());
                 startup.setOnePager(d.getOnePager());
                 startup.setBrief(d.getBrief());
-                startup.setContactEmail(resolveContactEmail(d, startup));
+                startup.setContactEmail(d.getContactEmail());
                 startup.setTechFacultyMentors(d.getTechFacultyMentors() != null ? d.getTechFacultyMentors() : new ArrayList<>());
                 startup.setFounders(d.getFounders() != null ? d.getFounders() : new ArrayList<>());
                 startup.setTeamMembers(d.getTeamMembers() != null ? d.getTeamMembers() : new ArrayList<>());
@@ -138,31 +139,6 @@ public class StaticDataSeeder implements CommandLineRunner {
         logSummary("Startups", created, updated, items.size());
     }
 
-    /**
-     * Startup.contactEmail is unique per record, but the source content legitimately
-     * lists the same real person (a serial founder or a faculty mentor) as the contact
-     * for more than one startup - not a data-entry error, so there's no "correct" distinct
-     * email to substitute. Rather than relaxing the unique constraint (which is still a
-     * useful guard for the admin-facing create/update APIs), the seeder drops the
-     * duplicate down to null for whichever startup didn't claim the email first - every
-     * other field (including the real email inside founders/techFacultyMentors) is
-     * preserved untouched.
-     */
-    private String resolveContactEmail(StartupRequestDto dto, Startup startup) {
-        String contactEmail = dto.getContactEmail();
-        if (contactEmail == null || contactEmail.isBlank()) {
-            return contactEmail;
-        }
-        Optional<Startup> owner = startupRepository.findByContactEmail(contactEmail);
-        boolean belongsToAnotherStartup = owner.isPresent()
-                && !owner.get().getName().equals(startup.getName());
-        if (belongsToAnotherStartup) {
-            log.info("Startup '{}' shares contactEmail {} with '{}' - seeding without a top-level contact email for this one (still present on its founders/mentors)",
-                    startup.getName(), contactEmail, owner.get().getName());
-            return null;
-        }
-        return contactEmail;
-    }
 
     // ---------- Events ----------
     private void seedEvents() {
@@ -186,7 +162,10 @@ public class StaticDataSeeder implements CommandLineRunner {
                 event.setImage(d.getImage());
                 event.setImageFit(d.getImageFit());
                 event.setRegisterUrl(d.getRegisterUrl());
-                event.setVisible(true);
+                event.setInitiative(d.getInitiative());
+                event.setBrochureUrl(d.getBrochureUrl());
+                event.setGalleryUrl(d.getGalleryUrl());
+                event.setVisible(d.getVisible() != null ? d.getVisible() : true);
                 event.setGallery(d.getGallery() != null ? d.getGallery() : new ArrayList<>());
                 eventRepository.save(event);
                 return true;
@@ -227,7 +206,7 @@ public class StaticDataSeeder implements CommandLineRunner {
         List<MentorRequestDto> items = readSeedFile("mentors.json", new TypeReference<>() {});
         int created = 0, updated = 0;
         for (MentorRequestDto dto : items) {
-            Optional<Mentor> existing = mentorRepository.findByEmail(dto.getEmail());
+            Optional<Mentor> existing = mentorRepository.findFirstByNameIgnoreCase(dto.getName());
             boolean isNew = existing.isEmpty();
             boolean ok = safely(dto, d -> {
                 Mentor mentor = existing.orElseGet(Mentor::new);
@@ -262,6 +241,8 @@ public class StaticDataSeeder implements CommandLineRunner {
                 partner.setCategory(d.getCategory());
                 partner.setWebsiteUrl(d.getWebsiteUrl());
                 partner.setLogoUrl(d.getLogoUrl());
+                partner.setAbbr(d.getAbbr());
+                partner.setAccentColor(d.getAccentColor());
                 partner.setDescription(d.getDescription());
                 partner.setContactPerson(d.getContactPerson());
                 partner.setContactEmail(d.getContactEmail());
@@ -280,7 +261,7 @@ public class StaticDataSeeder implements CommandLineRunner {
         List<TeamMemberRequestDto> items = readSeedFile("team-members.json", new TypeReference<>() {});
         int created = 0, updated = 0;
         for (TeamMemberRequestDto dto : items) {
-            Optional<TeamMember> existing = teamMemberRepository.findByEmail(dto.getEmail());
+            Optional<TeamMember> existing = teamMemberRepository.findFirstByNameIgnoreCase(dto.getName());
             boolean isNew = existing.isEmpty();
             boolean ok = safely(dto, d -> {
                 TeamMember member = existing.orElseGet(TeamMember::new);
@@ -292,6 +273,7 @@ public class StaticDataSeeder implements CommandLineRunner {
                 member.setPhone(d.getPhone());
                 member.setProfileImageUrl(d.getProfileImageUrl());
                 member.setLinkedinUrl(d.getLinkedinUrl());
+                member.setProfileUrl(d.getProfileUrl());
                 member.setDisplayOrder(d.getDisplayOrder() != null ? d.getDisplayOrder() : 0);
                 member.setActive(d.getActive() != null ? d.getActive() : true);
                 teamMemberRepository.save(member);
@@ -307,7 +289,7 @@ public class StaticDataSeeder implements CommandLineRunner {
         List<BoardMemberRequestDto> items = readSeedFile("board-members.json", new TypeReference<>() {});
         int created = 0, updated = 0;
         for (BoardMemberRequestDto dto : items) {
-            Optional<BoardMember> existing = boardMemberRepository.findByEmail(dto.getEmail());
+            Optional<BoardMember> existing = boardMemberRepository.findFirstByNameIgnoreCase(dto.getName());
             boolean isNew = existing.isEmpty();
             boolean ok = safely(dto, d -> {
                 BoardMember member = existing.orElseGet(BoardMember::new);
@@ -320,6 +302,7 @@ public class StaticDataSeeder implements CommandLineRunner {
                 member.setPhone(d.getPhone());
                 member.setProfileImageUrl(d.getProfileImageUrl());
                 member.setLinkedinUrl(d.getLinkedinUrl());
+                member.setProfileUrl(d.getProfileUrl());
                 member.setDisplayOrder(d.getDisplayOrder() != null ? d.getDisplayOrder() : 0);
                 member.setActive(d.getActive() != null ? d.getActive() : true);
                 boardMemberRepository.save(member);
@@ -348,6 +331,11 @@ public class StaticDataSeeder implements CommandLineRunner {
                 resource.setCoverImageUrl(d.getCoverImageUrl());
                 resource.setPublishDate(d.getPublishDate());
                 resource.setAuthor(d.getAuthor());
+                resource.setIssueNumber(d.getIssueNumber());
+                resource.setDateLabel(d.getDateLabel());
+                resource.setPreviewText(d.getPreviewText());
+                resource.setTotalPages(d.getTotalPages());
+                resource.setHighlights(d.getHighlights() != null ? new ArrayList<>(d.getHighlights()) : new ArrayList<>());
                 resource.setActive(d.getActive() != null ? d.getActive() : true);
                 resource.setDisplayOrder(d.getDisplayOrder() != null ? d.getDisplayOrder() : 0);
                 if (resource.getCreatedBy() == null) {

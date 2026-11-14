@@ -44,7 +44,9 @@ import {
   eventsSections,
   getUpcomingEvents,
   getPastEvents,
+  events as staticEvents,
 } from '@/data/events'
+import { loadEvents, useRemoteContent } from '@/services/contentService'
 
 import type { EventItem } from '@/types/events'
 
@@ -71,8 +73,9 @@ function createLazyList(items: Ref<EventItem[]>) {
   }
 }
 
-const upcomingEvents = computed(() => getUpcomingEvents())
-const pastEvents = computed(() => getPastEvents())
+const allEvents = useRemoteContent('events', staticEvents, loadEvents)
+const upcomingEvents = computed(() => getUpcomingEvents(allEvents.value))
+const pastEvents = computed(() => getPastEvents(allEvents.value))
 
 const {
   visibleItems: upcomingVisibleItems,

@@ -21,6 +21,7 @@ public class BoardMemberResponseDto {
     private String phone;
     private String profileImageUrl;
     private String linkedinUrl;
+    private String profileUrl;
     private Integer displayOrder;
     private Boolean active;
     private LocalDateTime createdAt;

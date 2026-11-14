@@ -29,6 +29,7 @@ const form = reactive<TeamMemberAdminPayload>({
   phone: '',
   profileImageUrl: '',
   linkedinUrl: '',
+  profileUrl: '',
   displayOrder: 0,
   active: true,
 })
@@ -45,6 +46,7 @@ const resetForm = () => {
   form.phone = ''
   form.profileImageUrl = ''
   form.linkedinUrl = ''
+  form.profileUrl = ''
   form.displayOrder = 0
   form.active = true
 }
@@ -69,10 +71,11 @@ const editMember = (member: TeamMemberAdminItem) => {
   form.designation = member.designation || ''
   form.department = member.department || ''
   form.bio = member.bio || ''
-  form.email = member.email
+  form.email = member.email || ''
   form.phone = member.phone || ''
   form.profileImageUrl = member.profileImageUrl || ''
   form.linkedinUrl = member.linkedinUrl || ''
+  form.profileUrl = member.profileUrl || ''
   form.displayOrder = member.displayOrder ?? 0
   form.active = member.active ?? true
 }
@@ -86,10 +89,6 @@ const submitMember = async () => {
     return
   }
 
-  if (!form.email.trim()) {
-    error.value = 'Email is required'
-    return
-  }
 
   saving.value = true
 
@@ -98,10 +97,11 @@ const submitMember = async () => {
     designation: form.designation?.trim() || '',
     department: form.department?.trim() || '',
     bio: form.bio?.trim() || '',
-    email: form.email.trim(),
+    email: form.email?.trim() || undefined,
     phone: form.phone?.trim() || '',
     profileImageUrl: form.profileImageUrl?.trim() || '',
     linkedinUrl: form.linkedinUrl?.trim() || '',
+    profileUrl: form.profileUrl?.trim() || '',
     displayOrder: Number(form.displayOrder) || 0,
     active: form.active,
   }
@@ -330,7 +330,7 @@ onMounted(loadMembers)
 
           <div>
             <label class="mb-1.5 block text-sm font-semibold text-slate-700">
-              Email <span class="text-red-500">*</span>
+              Email (optional)
             </label>
             <input
               v-model="form.email"
@@ -394,6 +394,18 @@ onMounted(loadMembers)
               type="text"
               class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
               placeholder="https://www.linkedin.com/in/..."
+            />
+          </div>
+
+          <div>
+            <label class="mb-1.5 block text-sm font-semibold text-slate-700">
+              Profile page URL
+            </label>
+            <input
+              v-model="form.profileUrl"
+              type="text"
+              class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+              placeholder="Personal or faculty page (optional)"
             />
           </div>
 

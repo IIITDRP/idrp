@@ -4,7 +4,8 @@ import AdminLayout from '@/components/admin/AdminLayout.vue'
 import AdminFileUploadField from '@/components/admin/AdminFileUploadField.vue'
 import {
   startupAdminService,
-  type StartupCategory,
+  type StartupDomain,
+  type StartupStatus,
   type StartupPerson,
   type StartupRequest,
   type StartupResponse,
@@ -18,11 +19,7 @@ const successMessage = ref('')
 const editingId = ref<number | string | null>(null)
 const galleryText = ref('')
 
-const ALL_CATEGORIES: { value: StartupCategory; label: string }[] = [
-  { value: 'PRE_INCUBATED', label: 'Pre-incubated' },
-  { value: 'INCUBATED', label: 'Incubated' },
-  { value: 'FUNDED', label: 'Funded' },
-]
+import { domainLabels, domainOrder, statusLabels, statusOrder } from '@/data/startups'
 
 const emptyPerson = (): StartupPerson => ({
   name: '',
@@ -35,7 +32,8 @@ const emptyPerson = (): StartupPerson => ({
 const form = reactive<StartupRequest>({
   name: '',
   sector: '',
-  categories: ['PRE_INCUBATED'],
+  status: 'PRE_INCUBATED',
+  domains: [],
   logo: '',
   website: '',
   onePager: '',
@@ -51,7 +49,8 @@ const resetForm = () => {
   editingId.value = null
   form.name = ''
   form.sector = ''
-  form.categories = ['PRE_INCUBATED']
+  form.status = 'PRE_INCUBATED'
+  form.domains = []
   form.logo = ''
   form.website = ''
   form.onePager = ''
@@ -119,7 +118,8 @@ const editStartup = (startup: StartupResponse) => {
   editingId.value = startup.id
   form.name = startup.name
   form.sector = startup.sector
-  form.categories = startup.categories?.length ? [...startup.categories] : ['PRE_INCUBATED']
+  form.status = startup.status ?? 'PRE_INCUBATED'
+  form.domains = startup.domains?.length ? [...startup.domains] : []
   form.logo = startup.logo
   form.website = startup.website
   form.onePager = startup.onePager
@@ -138,14 +138,10 @@ const editStartup = (startup: StartupResponse) => {
   galleryText.value = (startup.gallery ?? []).join('\n')
 }
 
-const toggleCategory = (category: StartupCategory) => {
-  const index = form.categories.indexOf(category)
-
-  if (index === -1) {
-    form.categories.push(category)
-  } else if (form.categories.length > 1) {
-    form.categories.splice(index, 1)
-  }
+const toggleDomain = (domain: StartupDomain) => {
+  const index = form.domains.indexOf(domain)
+  if (index === -1) form.domains.push(domain)
+  else form.domains.splice(index, 1)
 }
 
 const deleteStartup = async (id: number | string) => {
@@ -177,11 +173,7 @@ const removePerson = (list: StartupPerson[], index: number, keepOne = false) => 
   list.splice(index, 1)
 }
 
-const categoryLabel = (category: StartupCategory) => {
-  if (category === 'PRE_INCUBATED') return 'Pre-incubated'
-  if (category === 'INCUBATED') return 'Incubated'
-  return 'Funded'
-}
+const statusLabel = (status: StartupStatus | undefined) => (status ? statusLabels[status] : '-')
 
 onMounted(fetchStartups)
 </script>
@@ -255,23 +247,40 @@ onMounted(fetchStartups)
           />
         </div>
 
-        <div class="md:col-span-2">
-          <label class="text-sm font-semibold text-slate-700">Category</label>
+        <fieldset class="md:col-span-2">
+          <legend class="text-sm font-semibold text-slate-700">Status (exactly one)</legend>
           <div class="mt-2 flex flex-wrap gap-4">
             <label
-              v-for="option in ALL_CATEGORIES"
-              :key="option.value"
+              v-for="status in statusOrder"
+              :key="status"
+              class="flex items-center gap-2 text-sm text-slate-700"
+            >
+              <input v-model="form.status" type="radio" name="startup-status" :value="status" />
+              {{ statusLabels[status] }}
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="md:col-span-2">
+          <legend class="text-sm font-semibold text-slate-700">Domains (one or more)</legend>
+          <div class="mt-2 flex flex-wrap gap-4">
+            <label
+              v-for="domain in domainOrder"
+              :key="domain"
               class="flex items-center gap-2 text-sm text-slate-700"
             >
               <input
                 type="checkbox"
-                :checked="form.categories.includes(option.value)"
-                @change="toggleCategory(option.value)"
+                :checked="form.domains.includes(domain)"
+                @change="toggleDomain(domain)"
               />
-              {{ option.label }}
+              {{ domainLabels[domain] }}
             </label>
           </div>
-        </div>
+          <p v-if="form.domains.length === 0" class="mt-1 text-xs text-amber-700">
+            Pick at least one domain (use Other if none fit).
+          </p>
+        </fieldset>
 
         <div>
           <label class="text-sm font-semibold text-slate-700">Contact Email</label>
@@ -555,7 +564,7 @@ onMounted(fetchStartups)
           <thead>
             <tr class="border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
               <th class="px-4 py-3">Startup</th>
-              <th class="px-4 py-3">Category</th>
+              <th class="px-4 py-3">Status / Domains</th>
               <th class="px-4 py-3">Sector</th>
               <th class="px-4 py-3">Contact</th>
               <th class="px-4 py-3">Founders</th>
@@ -587,7 +596,10 @@ onMounted(fetchStartups)
               </td>
 
               <td class="px-4 py-4">
-                {{ startup.categories?.map(categoryLabel).join(', ') || '-' }}
+                {{ statusLabel(startup.status) }}
+                <span class="block text-xs text-slate-500">
+                  {{ startup.domains?.map((domain) => domainLabels[domain]).join(', ') }}
+                </span>
               </td>
 
               <td class="px-4 py-4">{{ startup.sector }}</td>

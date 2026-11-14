@@ -1,5 +1,6 @@
 package com.idrp.backend.dto.resource;
 
+import java.util.List;
 import com.idrp.backend.entity.ResourceType;
 import lombok.*;
 
@@ -23,6 +24,11 @@ public class ResourceResponseDto {
     private String coverImageUrl;
     private LocalDate publishDate;
     private String author;
+    private String issueNumber;
+    private String dateLabel;
+    private String previewText;
+    private Integer totalPages;
+    private List<String> highlights;
     private Integer displayOrder;
     private Boolean active;
     private LocalDateTime createdAt;

@@ -11,6 +11,7 @@ import {
   type RouteRecordNameGeneric,
 } from 'vue-router'
 import { isAdminLoggedIn } from '@/services/authService'
+import { applyRouteSeo } from '@/router/seo'
 
 export const ROUTE_NAMES = {
   HOME: 'home',
@@ -20,22 +21,14 @@ export const ROUTE_NAMES = {
   PARTNERS: 'partners',
   MENTORS: 'mentors',
   INCUBATION: 'incubation',
-  ACCELERATION: 'acceleration',
-  FUNDING: 'funding',
-  MARKET_CONNECTS: 'market-connects',
-  BUSINESS_SERVICES: 'business-services',
-  CO_WORKING: 'co-working',
   EVENTS: 'events',
   STARTUPS: 'startups',
   APPLY: 'apply',
   CONTACT: 'contact',
-  COMMUNITY_MEMBERSHIP_APPLY: 'community-membership-apply',
   PRE_INCUBATION: 'pre-incubation',
   COURSES: 'courses',
   INDUSTRY_RESEARCH: 'industry-research',
-  PROTOTYPE_DEVELOPMENT: 'prototype-development',
   TECHNICAL_EDUCATION_ACADEMY: 'technical-education-academy',
-  CONSULTING: 'consulting',
   RESOURCES: 'resources',
   MATCHMAKING: 'matchmaking',
   STARTUP_MATCHMAKING: 'startup-matchmaking',
@@ -65,6 +58,10 @@ export const ROUTE_NAMES = {
   ADMIN_MENTORS: 'admin-mentors',
   ADMIN_TEAM_MEMBERS: 'admin-team-members',
   ADMIN_BOARD_MEMBERS: 'admin-board-members',
+  ADMIN_INQUIRIES: 'admin-inquiries',
+  ADMIN_IMPACT_NUMBERS: 'admin-impact-numbers',
+  FACILITIES: 'facilities',
+  PRIVACY_POLICY: 'privacy-policy',
 } as const
 
 type AppRouteName = (typeof ROUTE_NAMES)[keyof typeof ROUTE_NAMES]
@@ -147,13 +144,10 @@ const programRoutes: RouteRecordRaw[] = [
     'Pre Incubation',
   ),
   createPageRoute('/programs/incubation', ROUTE_NAMES.INCUBATION, 'IncubationView', 'Incubation'),
-  createPageRoute(
-    '/programs/acceleration',
-    ROUTE_NAMES.ACCELERATION,
-    'AccelerationView',
-    'Acceleration',
-  ),
-  createPageRoute('/programs/funding', ROUTE_NAMES.FUNDING, 'AccessFundingView', 'Access Funding'),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/programs/acceleration', ROUTE_NAMES.INCUBATION),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/programs/funding', ROUTE_NAMES.MATCHMAKING),
   createPageRoute(
     '/programs/nain',
     ROUTE_NAMES.NAIN,
@@ -222,38 +216,28 @@ const courseRoutes: RouteRecordRaw[] = [
 ]
 
 const ecosystemRoutes: RouteRecordRaw[] = [
-  createPageRoute(
-    '/ecosystem/market-connects',
-    ROUTE_NAMES.MARKET_CONNECTS,
-    'MarketConnectsView',
-    'Market Connects',
-  ),
-  createPageRoute(
-    '/ecosystem/business-services',
-    ROUTE_NAMES.BUSINESS_SERVICES,
-    'BusinessServicesView',
-    'Business Services',
-  ),
-  createPageRoute('/ecosystem/co-working', ROUTE_NAMES.CO_WORKING, 'CoWorkingView', 'Co-Working'),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/ecosystem/market-connects', ROUTE_NAMES.MATCHMAKING),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/ecosystem/business-services', ROUTE_NAMES.INDUSTRY_RESEARCH),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/ecosystem/co-working', ROUTE_NAMES.FACILITIES),
   createPageRoute(
     '/ecosystem/industry-research',
     ROUTE_NAMES.INDUSTRY_RESEARCH,
     'IndustryResearchView',
     'Industry Research',
   ),
-  createPageRoute(
-    '/ecosystem/prototype-development',
-    ROUTE_NAMES.PROTOTYPE_DEVELOPMENT,
-    'PrototypeDevelopmentView',
-    'Prototype Development',
-  ),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/ecosystem/prototype-development', ROUTE_NAMES.FACILITIES),
   createPageRoute(
     '/ecosystem/technical-education-academy',
     ROUTE_NAMES.TECHNICAL_EDUCATION_ACADEMY,
     'TechnicalEducationAcademyView',
     'Technical Education Academy',
   ),
-  createPageRoute('/ecosystem/consulting', ROUTE_NAMES.CONSULTING, 'ConsultingView', 'Consulting'),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/ecosystem/consulting', ROUTE_NAMES.INDUSTRY_RESEARCH),
 ]
 
 const communityRoutes: RouteRecordRaw[] = [
@@ -304,13 +288,11 @@ const careerRoutes: RouteRecordRaw[] = [
 ]
 
 const actionRoutes: RouteRecordRaw[] = [
+  createPageRoute('/facilities', ROUTE_NAMES.FACILITIES, 'FacilitiesView', 'Infrastructure and Lab Access'),
+  createPageRoute('/privacy-policy', ROUTE_NAMES.PRIVACY_POLICY, 'PrivacyPolicyView', 'Privacy Policy'),
   createPageRoute('/contact', ROUTE_NAMES.CONTACT, 'ContactView', 'Contact'),
-  createPageRoute(
-    '/community-membership/apply',
-    ROUTE_NAMES.COMMUNITY_MEMBERSHIP_APPLY,
-    'CommunityMembershipApplyView',
-    'Community Membership Application',
-  ),
+  // No page was ever built for this URL; send visitors somewhere useful.
+  createRedirectByName('/community-membership/apply', ROUTE_NAMES.CONTACT),
   createPageRoute('/apply/:program', ROUTE_NAMES.APPLY, 'ApplyView', 'Apply', {
     props: (route) => ({
       program: String(route.params.program ?? ''),
@@ -329,6 +311,8 @@ const adminRoutes: RouteRecordRaw[] = [
   createPageRoute('/admin/mentors', ROUTE_NAMES.ADMIN_MENTORS, 'AdminMentorsView', 'Admin Mentors'),
   createPageRoute('/admin/team-members', ROUTE_NAMES.ADMIN_TEAM_MEMBERS, 'AdminTeamMembersView', 'Admin Team Members'),
   createPageRoute('/admin/board-members', ROUTE_NAMES.ADMIN_BOARD_MEMBERS, 'AdminBoardMembersView', 'Admin Board Members'),
+  createPageRoute('/admin/inquiries', ROUTE_NAMES.ADMIN_INQUIRIES, 'AdminInquiriesView', 'Admin Inquiries'),
+  createPageRoute('/admin/impact-numbers', ROUTE_NAMES.ADMIN_IMPACT_NUMBERS, 'AdminImpactNumbersView', 'Admin Home Counters'),
 ]
 
 const legacyRedirects: RouteRecordRaw[] = [
@@ -340,16 +324,16 @@ const legacyRedirects: RouteRecordRaw[] = [
 
   createRedirectByName('/pre-incubation', ROUTE_NAMES.PRE_INCUBATION),
   createRedirectByName('/incubation', ROUTE_NAMES.INCUBATION),
-  createRedirectByName('/acceleration', ROUTE_NAMES.ACCELERATION),
-  createRedirectByName('/funding', ROUTE_NAMES.FUNDING),
+  createRedirectByName('/acceleration', ROUTE_NAMES.INCUBATION),
+  createRedirectByName('/funding', ROUTE_NAMES.MATCHMAKING),
 
-  createRedirectByName('/market-connects', ROUTE_NAMES.MARKET_CONNECTS),
-  createRedirectByName('/business-services', ROUTE_NAMES.BUSINESS_SERVICES),
-  createRedirectByName('/co-working', ROUTE_NAMES.CO_WORKING),
+  createRedirectByName('/market-connects', ROUTE_NAMES.MATCHMAKING),
+  createRedirectByName('/business-services', ROUTE_NAMES.INDUSTRY_RESEARCH),
+  createRedirectByName('/co-working', ROUTE_NAMES.FACILITIES),
   createRedirectByName('/industry-research', ROUTE_NAMES.INDUSTRY_RESEARCH),
-  createRedirectByName('/prototype-development', ROUTE_NAMES.PROTOTYPE_DEVELOPMENT),
+  createRedirectByName('/prototype-development', ROUTE_NAMES.FACILITIES),
   createRedirectByName('/technical-education-academy', ROUTE_NAMES.TECHNICAL_EDUCATION_ACADEMY),
-  createRedirectByName('/consulting', ROUTE_NAMES.CONSULTING),
+  createRedirectByName('/consulting', ROUTE_NAMES.INDUSTRY_RESEARCH),
 
   createRedirectByName('/events', ROUTE_NAMES.EVENTS),
   createParamRedirect('/events/:id/register', ROUTE_NAMES.EVENT_REGISTER, ['id']),
@@ -422,13 +406,7 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  const baseTitle = 'IDRP'
-  const pageTitle =
-    typeof to.meta.title === 'string' && to.meta.title.trim().length > 0
-      ? `${to.meta.title} | ${baseTitle}`
-      : baseTitle
-
-  document.title = pageTitle
+  applyRouteSeo(to)
 })
 
 function enhanceRouterPush(routerInstance: Router) {

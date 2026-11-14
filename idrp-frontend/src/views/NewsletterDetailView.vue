@@ -42,12 +42,14 @@ import { computed } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import NewsletterReaderHeader from '@/components/resources/NewsletterReaderHeader.vue'
 import NewsletterReaderBook from '@/components/resources/NewsletterReaderBook.vue'
-import { getNewsletterBySlug } from '@/data/newsletters'
+import { getNewsletterBySlug, newsletters as staticNewsletters } from '@/data/newsletters'
+import { loadNewsletters, useRemoteContent } from '@/services/contentService'
 
 const route = useRoute()
+const allNewsletters = useRemoteContent('newsletters', staticNewsletters, loadNewsletters(staticNewsletters))
 
 const newsletter = computed(() => {
   const slug = String(route.params.slug ?? '')
-  return getNewsletterBySlug(slug)
+  return getNewsletterBySlug(slug, allNewsletters.value)
 })
 </script>

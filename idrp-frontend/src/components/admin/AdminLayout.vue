@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { nextTick, ref, watch } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
-import { ADMIN_DEMO_MODE, resetAdminDemoData } from '@/services/adminDemo'
 import { getAdminUser, logoutAdmin } from '@/services/authService'
 
 const router = useRouter()
@@ -10,6 +9,7 @@ const adminUser = getAdminUser()
 
 const navItems = [
   { label: 'Dashboard', to: '/admin/dashboard' },
+  { label: 'Inquiries', to: '/admin/inquiries' },
   { label: 'Events', to: '/admin/events' },
   { label: 'Startups', to: '/admin/startups' },
   { label: 'Programs', to: '/admin/programs' },
@@ -18,6 +18,7 @@ const navItems = [
   { label: 'Mentors', to: '/admin/mentors' },
   { label: 'Team Members', to: '/admin/team-members' },
   { label: 'Board Members', to: '/admin/board-members' },
+  { label: 'Home Counters', to: '/admin/impact-numbers' },
 ]
 
 // Mobile sidebar drawer - the desktop <aside> is `hidden` below the `lg`
@@ -45,12 +46,6 @@ const closeDrawerAndFocusTrigger = () => {
 }
 
 watch(() => route.fullPath, closeDrawer)
-
-const handleResetDemoData = () => {
-  if (!window.confirm('Reset all demo changes and restore the original website content?')) return
-  resetAdminDemoData()
-  window.location.reload()
-}
 
 const handleLogout = async () => {
   await logoutAdmin()
@@ -167,24 +162,6 @@ const handleLogout = async () => {
           </button>
         </div>
       </header>
-
-      <div
-        v-if="ADMIN_DEMO_MODE"
-        class="flex flex-wrap items-center justify-between gap-3 border-b border-amber-200 bg-amber-50 px-6 py-3 text-sm text-amber-900"
-        role="status"
-      >
-        <p>
-          <span class="font-bold">Demo mode:</span>
-          changes are saved only in this browser and do not affect the live website.
-        </p>
-        <button
-          type="button"
-          class="rounded-full border border-amber-300 bg-white px-4 py-1.5 font-semibold text-amber-900 transition hover:bg-amber-100"
-          @click="handleResetDemoData"
-        >
-          Reset demo data
-        </button>
-      </div>
 
       <div class="p-6 lg:p-8">
         <slot />

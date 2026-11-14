@@ -4,7 +4,7 @@ import type { PageResponse } from './httpClient'
 export interface MentorAdminItem {
   id: number
   name: string
-  email: string
+  email?: string
   phone?: string
   designation?: string
   organization?: string
@@ -19,7 +19,7 @@ export interface MentorAdminItem {
 
 export interface MentorAdminPayload {
   name: string
-  email: string
+  email?: string
   phone?: string
   designation?: string
   organization?: string

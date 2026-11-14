@@ -9,6 +9,7 @@ export type FormType =
   | 'investor-matchmaking'
   | 'custom'
   | 'workshop-application'
+  | 'job-application'
 
 export type FormFieldType =
   | 'text'
@@ -142,7 +143,15 @@ export type FormConfig = {
   submitLabel?: string
   resetOnSuccess?: boolean
   successMessage?: string
+  /** @deprecated Forms now submit via the inquiry API (Web3Forms is only a fallback). */
   endpoint?: string
+  /**
+   * Which form fields fill the inquiry's searchable columns, when they are not named
+   * fullName / email / phone / organization / message / consent.
+   */
+  inquiryFields?: Partial<
+    Record<'fullName' | 'email' | 'phone' | 'organization' | 'message' | 'consent', string>
+  >
   sections: FormSection[]
   meta?: Omit<FormMeta, 'formType' | 'submittedAt'>
   transformPayload?: (values: FormValues, meta: FormMeta) => FormSubmitEnvelope

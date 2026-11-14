@@ -6,8 +6,11 @@ import TeamHeroSection from '@/components/team/TeamHeroSection.vue'
 import {
   investmentCommitteeCTA,
   investmentCommitteeHero,
-  investmentCommitteeMembers,
+  investmentCommitteeMembers as staticMembers,
 } from '@/data/investmentCommittee'
+import { loadInvestmentCommittee, useRemoteContent } from '@/services/contentService'
+
+const investmentCommitteeMembers = useRemoteContent('investment-committee', staticMembers, loadInvestmentCommittee)
 </script>
 
 <template>

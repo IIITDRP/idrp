@@ -27,6 +27,12 @@ public class PartnerRequestDto {
     @Size(max = 255, message = "Logo URL must not exceed 255 characters")
     private String logoUrl;
 
+    @Size(max = 40)
+    private String abbr;
+
+    @Size(max = 120)
+    private String accentColor;
+
     private String description;
 
     @Size(max = 120, message = "Contact person must not exceed 120 characters")

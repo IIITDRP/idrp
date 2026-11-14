@@ -7,10 +7,11 @@ export interface TeamMemberAdminItem {
   designation?: string
   department?: string
   bio?: string
-  email: string
+  email?: string
   phone?: string
   profileImageUrl?: string
   linkedinUrl?: string
+  profileUrl?: string
   displayOrder: number
   active: boolean
   createdAt?: string
@@ -22,10 +23,11 @@ export interface TeamMemberAdminPayload {
   designation?: string
   department?: string
   bio?: string
-  email: string
+  email?: string
   phone?: string
   profileImageUrl?: string
   linkedinUrl?: string
+  profileUrl?: string
   displayOrder: number
   active: boolean
 }

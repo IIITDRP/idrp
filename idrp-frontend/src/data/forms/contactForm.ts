@@ -9,7 +9,6 @@ export const contactFormConfig: FormConfig = {
   resetOnSuccess: true,
   successMessage:
     'Message received successfully. Our team will review your enquiry and get back to you soon.',
-  endpoint: 'https://api.web3forms.com/submit',
   meta: {
     sourcePage: '/contact',
     category: 'contact-enquiry',
@@ -55,9 +54,10 @@ export const contactFormConfig: FormConfig = {
         },
         {
           name: 'organization',
-          label: 'Organization',
+          label: 'Organization / Startup Name',
           type: 'text',
-          placeholder: 'Enter your organization name',
+          placeholder: 'Enter your organization or startup name',
+          required: true,
           width: 'full',
           autocomplete: 'organization',
         },

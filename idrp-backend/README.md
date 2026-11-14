@@ -35,9 +35,8 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO idrp_app;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO idrp_app;
 ```
 
-Schema is managed by Hibernate `ddl-auto=update` (see `application.properties`) — tables and constraints are created/updated automatically on startup. For a production deployment with real data, review generated DDL before relying on `update` long-term; a proper migration tool (Flyway/Liquibase) is recommended as the project matures.
+Schema is managed by **Flyway** (`src/main/resources/db/migration`). `V1__baseline.sql` creates every table; each later change is a new `V<n>__description.sql`. Hibernate runs with `ddl-auto=validate`, so the app refuses to start if an entity and the migrated schema disagree (the test suite checks this against a real PostgreSQL). Never edit a migration that has already run anywhere.
 
-**Gotcha:** `ddl-auto=update` only ever *adds* columns/tables — it never drops or renames them. If you rename or remove an entity field (as happened when `Startup.category` became `Startup.categories` and `NainProject` was reworked), the old column stays behind with its original constraints (often `NOT NULL`), which will silently block inserts until you manually `ALTER TABLE ... DROP COLUMN ...` it. Check `\d <table>` in `psql` after any field rename/removal.
 
 ## Configure (local dev)
 
@@ -63,7 +62,7 @@ Use the **full output as-is**. Avoid Base64-URL variants (containing `-`/`_`) �
 | `spring.datasource.url` | `DATABASE_URL` | yes | Postgres JDBC URL |
 | `spring.datasource.username` | `DATABASE_USERNAME` | yes | DB user |
 | `spring.datasource.password` | `DATABASE_PASSWORD` | yes | DB password |
-| `spring.jpa.hibernate.ddl-auto` | `JPA_DDL_AUTO` | no (default `update`) | Schema management strategy |
+| `spring.jpa.hibernate.ddl-auto` | - | fixed `validate` | Hibernate only validates; Flyway changes the schema |
 | `app.jwt.secret` | `JWT_SECRET` | yes | Standard-Base64 HMAC secret, ≥32 decoded bytes, used to sign/verify access tokens |
 | `app.jwt.expiration` | `JWT_EXPIRATION` | no (default `86400000` = 24h) | Access token TTL in ms |
 | `app.admin.bootstrap-email` | `INITIAL_ADMIN_EMAIL` | no | If set (and the `admins` table is empty), auto-creates one SUPER_ADMIN with this email on startup |
@@ -138,7 +137,7 @@ All responses are wrapped in `ApiResponse<T>` (`{success, message, data}`). List
 | Startup applications | `/api/startup-applications` | POST (submit) | list/get/update | delete |
 | Events | `/api/events` | GET (`upcoming` filter) | create/update | delete |
 | Event registrations | `/api/event-registrations` | POST (submit) | list/get/update | delete |
-| Contacts | `/api/contacts` | POST (submit) | list/get/update | delete |
+| Inquiries (all website forms) | `/api/inquiries` | POST (submit; honeypot + rate limit) | list (`status`, `formType`, `search`), get, summary, PATCH status/notes | delete |
 | Programs | `/api/programs` | GET (`category`, `search` filters); now includes `brochureUrl`, `applyUrl`, `features[]` | create/update | delete |
 | Program applications | `/api/program-applications` | POST (submit) | list/get/update | delete |
 | Mentors | `/api/mentors` | GET (`search` filter); now includes `profileImageUrl` | create/update | delete |
@@ -171,12 +170,11 @@ app.seed-static-data=true
 - **Never auto-runs in production** — defaults to `false`/absent in both `application.properties.example` and `application-prod.properties`; you must explicitly opt in.
 - A failure on one record (e.g. a duplicate unique key) is logged and skipped — it does not abort the rest of the batch. Check the startup log for `Seeded <Module>: N created, M updated` summaries and any `Failed to seed ...` warnings.
 - `CoeUpdate` has no seed file — no matching content exists anywhere in the frontend's static data (checked every CoE-related page file); nothing to import there.
-- Two startup pairs share a `contactEmail` in the source data (`Kisan Voice`/`Vocal Drone` via a shared student founder; `SmartNest`/`ManoSetu AI` via a shared faculty mentor) — genuinely the same real person listed as contact for two ventures, not a typo, so there's no distinct email to substitute. `Startup.contactEmail` stays unique (still enforced for admin-created startups); the seeder instead seeds the second startup in each pair with a `null` top-level `contactEmail` (the real email is still visible on that startup's `founders`/`techFacultyMentors`) rather than skipping the record. All 46 startups seed successfully.
-- **After changing the seed JSON or re-running against a fresh schema**: if you rename/remove an entity field (see the `ddl-auto=update` gotcha above), drop the orphaned old column manually first, or the seeder will fail on every insert into that table.
+- Two startup pairs legitimately share a contact person, so `Startup.contactEmail` is **not** unique (startup names are). Mentors, team and board members are matched by name; their e-mail is optional, so no placeholder addresses are invented.
+- The seed JSON is generated from the frontend's `src/data/*.ts` by `npm run export-seed` (in `idrp-frontend`); do not edit it by hand. CI fails if it is out of date.
 
 ## Known limitations / recommendations for later
 
 - Refresh tokens are stored as plaintext UUIDs (not hashed) and aren't rotated on use — acceptable for now given server-side revocation works, but hashing + rotation would be a meaningful hardening step.
-- `spring.jpa.hibernate.ddl-auto=update` is convenient for now but not a long-term production migration strategy — consider Flyway/Liquibase before the schema stabilizes.
-- File storage is local disk — fine for a single persistent server, but needs a mounted volume (or a move to S3-compatible object storage) on any platform that doesn't guarantee disk persistence across deploys.
+- File storage is local disk (`/var/idrp/uploads` on the VPS, included in `deploy/backup.sh`). Rate-limit buckets are in memory, which is correct for one instance; move them to Redis if the app is ever scaled out.
 - No full-text search — the `search` query params added to Startup/Program/Mentor/Resource/Job do a simple case-insensitive `LIKE` match on name/title only.

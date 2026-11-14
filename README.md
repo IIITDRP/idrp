@@ -1,64 +1,60 @@
 # IDRP
 
-Monorepo for the IDRP frontend and backend.
+Monorepo for the IIIT Dharwad Research Park website and its backend.
 
 ```
 idrp/
-  idrp-frontend/   Vue 3 + Vite frontend (currently using static data)
-  idrp-backend/    Spring Boot backend
+  idrp-frontend/   Vue 3 + Vite + TypeScript site and admin panel
+  idrp-backend/    Spring Boot 4 + PostgreSQL API (Flyway migrations)
+  deploy/          VPS deployment kit: nginx, systemd, deploy/rollback/backup scripts, guide
+  .github/         CI: backend tests (PostgreSQL via Testcontainers), frontend type-check + build
 ```
 
-## Running the frontend
+## How the pieces fit
 
-```
-cd idrp-frontend
-npm install
-npm run dev
-```
+- **Content**: public pages render the bundled snapshot in `idrp-frontend/src/data/*.ts`
+  immediately, then replace it with live data from the API. If the API is unreachable the
+  snapshot stays on screen (`src/services/contentService.ts`).
+- **Single source for content**: edit `src/data/*.ts`, then run `npm run export-seed`; this
+  regenerates `idrp-backend/src/main/resources/seed/*.json`, which the backend imports
+  when `app.seed-static-data=true`. CI fails if the two drift apart.
+- **Forms**: every public form posts to `POST /api/inquiries`; submissions appear in
+  **Admin → Inquiries**. Web3Forms is used only if the backend cannot accept the
+  submission (`src/services/inquiryService.ts`).
+- **Schema**: Flyway owns it (`idrp-backend/src/main/resources/db/migration`); Hibernate only
+  validates. Add a new `V<n>__description.sql` for every change.
 
-The frontend currently uses static data (see `src/data/`) and is intentionally not wired
-up to the backend APIs.
+## Local development
 
-## Running the backend
+Needs Java 21, Node 22, and Docker (for the tests and the simplest local database).
 
-### Prerequisites
+```bash
+# 1. Database (throwaway PostgreSQL 16, same as production)
+docker run -d --name idrp-local-db -e POSTGRES_USER=idrp_app -e POSTGRES_PASSWORD=local-dev-only \
+  -e POSTGRES_DB=idrp_db -p 127.0.0.1:6543:5432 -v idrp-local-pgdata:/var/lib/postgresql/data postgres:16-alpine
 
-- Java 17+ and Maven
-- A running PostgreSQL instance
-
-### Database setup
-
-Use a dedicated, scoped role for the app rather than the postgres superuser:
-
-```sql
-CREATE ROLE idrp_app WITH LOGIN PASSWORD '<choose-a-strong-password>';
-CREATE DATABASE idrp_db OWNER idrp_app;
--- if the database already existed under a different owner:
-GRANT ALL ON SCHEMA public TO idrp_app;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO idrp_app;
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO idrp_app;
-```
-
-### Configure
-
-```
+# 2. Backend: copy and fill application.properties (gitignored), then run.
+#    First run: add --app.seed-static-data=true to import the site content.
 cd idrp-backend
 cp src/main/resources/application.properties.example src/main/resources/application.properties
+./mvnw spring-boot:run
+
+# 3. Frontend
+cd ../idrp-frontend
+cp .env.example .env
+npm install
+npm run dev            # http://localhost:5173, admin at /admin
 ```
 
-Fill in `application.properties` with your local DB credentials and a generated JWT secret.
-This file is gitignored and must never be committed.
+| Command | Where | What |
+|---|---|---|
+| `./mvnw test` | idrp-backend | All backend tests (starts PostgreSQL in Docker) |
+| `npm run build` | idrp-frontend | Sitemap + type-check + production build |
+| `npm run export-seed` | idrp-frontend | Regenerate backend seed JSON from `src/data` |
 
-### Run
+Secrets (DB password, JWT secret) are never committed: `application.properties` and `.env`
+are gitignored.
 
-```
-cd idrp-backend
-mvn spring-boot:run
-```
+## Deployment
 
-## Notes
-
-- This is a single git repository combining the previously separate idrp-frontend and
-  idrp-backend projects and their commit histories.
-- Secrets (DB passwords, JWT secret) are never committed — `application.properties` is
-  gitignored; use `application.properties.example` as a template.
+See [deploy/README.md](deploy/README.md).

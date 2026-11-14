@@ -5,17 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "npm run sitemap && run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit",
-    "format": "prettier --write --experimental-cli src/"
+    "type-check": "vue-tsc --build --force",
+    "format": "prettier --write --experimental-cli src/",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "export-seed": "node scripts/export-seed.mjs"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
-    "@vueuse/head": "^2.0.0",
     "lucide-vue-next": "^1.0.0",
     "pinia": "^3.0.4",
     "swiper": "^12.1.3",

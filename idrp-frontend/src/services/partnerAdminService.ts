@@ -7,6 +7,8 @@ export interface PartnerAdminItem {
   category?: string
   websiteUrl?: string
   logoUrl?: string
+  abbr?: string
+  accentColor?: string
   description?: string
   contactPerson?: string
   contactEmail?: string
@@ -21,6 +23,8 @@ export interface PartnerAdminPayload {
   category?: string
   websiteUrl?: string
   logoUrl?: string
+  abbr?: string
+  accentColor?: string
   description?: string
   contactPerson?: string
   contactEmail?: string

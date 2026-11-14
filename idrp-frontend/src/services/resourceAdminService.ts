@@ -14,6 +14,11 @@ export interface ResourceAdminItem {
   coverImageUrl?: string
   publishDate?: string
   author?: string
+  issueNumber?: string
+  dateLabel?: string
+  previewText?: string
+  totalPages?: number
+  highlights?: string[]
   active: boolean
   displayOrder: number
   createdBy?: string
@@ -32,6 +37,11 @@ export interface ResourceAdminPayload {
   coverImageUrl?: string
   publishDate?: string
   author?: string
+  issueNumber?: string
+  dateLabel?: string
+  previewText?: string
+  totalPages?: number
+  highlights?: string[]
   active: boolean
   displayOrder: number
 }

@@ -2,7 +2,8 @@
 import { computed } from 'vue'
 import EventCard from '@/components/events/EventCard.vue'
 import SectionHeading from '@/components/common/SectionHeading.vue'
-import { getEventsByInitiative, isEventUpcoming } from '@/data/events'
+import { getEventsByInitiative, isEventUpcoming, events as staticEvents } from '@/data/events'
+import { loadEvents, useRemoteContent } from '@/services/contentService'
 
 const props = withDefaults(
   defineProps<{
@@ -16,7 +17,8 @@ const props = withDefaults(
   },
 )
 
-const events = computed(() => getEventsByInitiative(props.initiativeKey))
+const allEvents = useRemoteContent('events', staticEvents, loadEvents)
+const events = computed(() => getEventsByInitiative(props.initiativeKey, allEvents.value))
 </script>
 
 <template>

@@ -17,6 +17,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Service
+@org.springframework.transaction.annotation.Transactional
 @RequiredArgsConstructor
 public class EventServiceImpl implements EventService {
 
@@ -96,6 +97,9 @@ public class EventServiceImpl implements EventService {
         existingEvent.setImage(requestDto.getImage());
         existingEvent.setImageFit(requestDto.getImageFit());
         existingEvent.setRegisterUrl(requestDto.getRegisterUrl());
+        existingEvent.setInitiative(requestDto.getInitiative());
+        existingEvent.setBrochureUrl(requestDto.getBrochureUrl());
+        existingEvent.setGalleryUrl(requestDto.getGalleryUrl());
         existingEvent.setVisible(requestDto.getVisible() != null ? requestDto.getVisible() : true);
         existingEvent.setGallery(
                 requestDto.getGallery() != null ? requestDto.getGallery() : new ArrayList<>()
@@ -130,6 +134,9 @@ public class EventServiceImpl implements EventService {
                 .image(dto.getImage())
                 .imageFit(dto.getImageFit() != null ? dto.getImageFit() : "cover")
                 .registerUrl(dto.getRegisterUrl())
+                .initiative(dto.getInitiative())
+                .brochureUrl(dto.getBrochureUrl())
+                .galleryUrl(dto.getGalleryUrl())
                 .visible(dto.getVisible() != null ? dto.getVisible() : true)
                 .gallery(dto.getGallery() != null ? dto.getGallery() : new ArrayList<>())
                 .build();
@@ -151,10 +158,18 @@ public class EventServiceImpl implements EventService {
                 .image(event.getImage())
                 .imageFit(event.getImageFit())
                 .registerUrl(event.getRegisterUrl())
+                .initiative(event.getInitiative())
+                .brochureUrl(event.getBrochureUrl())
+                .galleryUrl(event.getGalleryUrl())
                 .visible(event.getVisible())
-                .gallery(event.getGallery())
+                .gallery(copyOf(event.getGallery()))
                 .createdAt(event.getCreatedAt())
                 .updatedAt(event.getUpdatedAt())
                 .build();
+    }
+
+    /** Copies a lazy JPA collection while the session is open, so serialization never touches Hibernate. */
+    private static <T> java.util.List<T> copyOf(java.util.Collection<T> source) {
+        return source == null ? new java.util.ArrayList<>() : new java.util.ArrayList<>(source);
     }
 }

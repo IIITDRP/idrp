@@ -416,7 +416,7 @@ import {
   engagementTypeOptions,
   introductionPreferenceOptions,
 } from '@/data/forms/investorMatchmakingForm'
-import { useSimulatedSubmit } from '@/composables/useSimulatedSubmit'
+import { useInquirySubmit } from '@/composables/useInquirySubmit'
 
 type InvestorForm = {
   investorName: string
@@ -440,7 +440,7 @@ type InvestorForm = {
 }
 
 const showHeroImage = ref(true)
-const { submitting, submitted, errorMessage, submit } = useSimulatedSubmit()
+const { submitting, submitted, errorMessage, submit } = useInquirySubmit()
 
 const form = reactive<InvestorForm>({
   investorName: '',
@@ -485,7 +485,21 @@ function resetForm() {
 }
 
 function submitForm() {
-  submit(resetForm)
+  submit(
+    {
+      formType: 'investor-matchmaking',
+      title: 'Investor Matchmaking',
+      sourcePage: '/community/matchmaking/investor',
+      fullName: form.contactName || form.investorName,
+      email: form.email,
+      phone: form.phone,
+      organization: form.investorName,
+      message: form.investmentThesis,
+      consent: form.consent,
+      payload: { ...form },
+    },
+    resetForm,
+  )
 }
 </script>
 

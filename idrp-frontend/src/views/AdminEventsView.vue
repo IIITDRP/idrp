@@ -34,6 +34,9 @@ const form = reactive<AdminEventPayload>({
   image: '',
   imageFit: 'cover',
   registerUrl: '',
+  initiative: '',
+  brochureUrl: '',
+  galleryUrl: '',
   visible: true,
   slug: '',
   gallery: [],
@@ -54,6 +57,9 @@ const resetForm = () => {
   form.image = ''
   form.imageFit = 'cover'
   form.registerUrl = ''
+  form.initiative = ''
+  form.brochureUrl = ''
+  form.galleryUrl = ''
   form.visible = true
   form.slug = ''
   form.gallery = []
@@ -114,6 +120,9 @@ const editEvent = (event: AdminEvent) => {
   form.image = event.image || ''
   form.imageFit = event.imageFit || 'cover'
   form.registerUrl = event.registerUrl || ''
+  form.initiative = event.initiative || ''
+  form.brochureUrl = event.brochureUrl || ''
+  form.galleryUrl = event.galleryUrl || ''
   form.visible = event.visible !== false
   form.slug = event.slug || ''
   form.gallery = event.gallery || []
@@ -314,6 +323,30 @@ onMounted(loadEvents)
           <input
             v-model="form.registerUrl"
             placeholder="Register / Meet URL"
+            class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+          />
+
+          <input
+            v-model="form.initiative"
+            type="text"
+            placeholder="Initiative this event ran under, e.g. NAIN 2.0, CBDE (optional)"
+            aria-label="Initiative"
+            class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+          />
+
+          <input
+            v-model="form.brochureUrl"
+            type="text"
+            placeholder="Brochure PDF path or URL (optional)"
+            aria-label="Brochure URL"
+            class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
+          />
+
+          <input
+            v-model="form.galleryUrl"
+            type="text"
+            placeholder="External photo gallery link (optional)"
+            aria-label="Gallery link"
             class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary-soft)]"
           />
 

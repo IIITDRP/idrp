@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import type { Stat } from '@/data/home'
 
 type AnimatedStat = Stat & { displayed: number }
@@ -78,6 +78,18 @@ const animatedStats = ref<AnimatedStat[]>(props.stats.map((stat) => ({ ...stat, 
 
 let statsObserver: IntersectionObserver | null = null
 let hasAnimatedStats = false
+
+// Stats can arrive after mount (live values from the API replace the bundled ones).
+// If the count-up already ran, show the new values directly; otherwise it animates them.
+watch(
+  () => props.stats,
+  (next) => {
+    animatedStats.value = next.map((stat) => ({
+      ...stat,
+      displayed: hasAnimatedStats ? (stat.target ?? 0) : 0,
+    }))
+  },
+)
 
 function animateStats() {
   if (hasAnimatedStats) return

@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (tests on PostgreSQL via Testcontainers)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: idrp-backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Build and test
+        run: ./mvnw -B verify
+
+  frontend:
+    name: Frontend (type-check + build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: idrp-frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: idrp-frontend/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - name: Seed JSON is in sync with src/data
+        run: |
+          npm run export-seed
+          git diff --exit-code -- ../idrp-backend/src/main/resources/seed \
+            || (echo "::error::Run 'npm run export-seed' in idrp-frontend and commit the seed files." && exit 1)
+      - name: Type-check and build
+        run: npm run build

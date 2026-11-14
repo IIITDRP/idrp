@@ -21,8 +21,8 @@ public class BoardMemberServiceImpl implements BoardMemberService {
     @Override
     public BoardMemberResponseDto createBoardMember(BoardMemberRequestDto requestDto) {
 
-        if (boardMemberRepository.existsByEmail(requestDto.getEmail())) {
-            throw new DuplicateResourceException("Board member already exists with email: " + requestDto.getEmail());
+        if (boardMemberRepository.existsByNameIgnoreCase(requestDto.getName().trim())) {
+            throw new DuplicateResourceException("Board member already exists with name: " + requestDto.getName());
         }
 
         BoardMember boardMember = mapToEntity(requestDto);
@@ -64,8 +64,8 @@ public class BoardMemberServiceImpl implements BoardMemberService {
         BoardMember existingBoardMember = boardMemberRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Board member not found with id: " + id));
 
-        if (boardMemberRepository.existsByEmailAndIdNot(requestDto.getEmail(), id)) {
-            throw new DuplicateResourceException("Another board member exists with email: " + requestDto.getEmail());
+        if (boardMemberRepository.existsByNameIgnoreCaseAndIdNot(requestDto.getName().trim(), id)) {
+            throw new DuplicateResourceException("Another board member exists with name: " + requestDto.getName());
         }
 
         existingBoardMember.setName(requestDto.getName());
@@ -77,6 +77,7 @@ public class BoardMemberServiceImpl implements BoardMemberService {
         existingBoardMember.setPhone(requestDto.getPhone());
         existingBoardMember.setProfileImageUrl(requestDto.getProfileImageUrl());
         existingBoardMember.setLinkedinUrl(requestDto.getLinkedinUrl());
+        existingBoardMember.setProfileUrl(requestDto.getProfileUrl());
         existingBoardMember.setDisplayOrder(
                 requestDto.getDisplayOrder() != null ? requestDto.getDisplayOrder() : existingBoardMember.getDisplayOrder()
         );
@@ -108,6 +109,7 @@ public class BoardMemberServiceImpl implements BoardMemberService {
                 .phone(dto.getPhone())
                 .profileImageUrl(dto.getProfileImageUrl())
                 .linkedinUrl(dto.getLinkedinUrl())
+                .profileUrl(dto.getProfileUrl())
                 .displayOrder(dto.getDisplayOrder() != null ? dto.getDisplayOrder() : 0)
                 .active(dto.getActive() != null ? dto.getActive() : true)
                 .build();
@@ -125,6 +127,7 @@ public class BoardMemberServiceImpl implements BoardMemberService {
                 .phone(boardMember.getPhone())
                 .profileImageUrl(boardMember.getProfileImageUrl())
                 .linkedinUrl(boardMember.getLinkedinUrl())
+                .profileUrl(boardMember.getProfileUrl())
                 .displayOrder(boardMember.getDisplayOrder())
                 .active(boardMember.getActive())
                 .createdAt(boardMember.getCreatedAt())

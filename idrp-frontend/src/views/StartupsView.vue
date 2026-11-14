@@ -9,7 +9,7 @@
     />
 
     <StartupsIntroSection
-      :stats="startupStats"
+      :stats="stats"
       :eyebrow="startupsIntro.eyebrow"
       :title="startupsIntro.title"
       :paragraphs="startupsIntro.paragraphs"
@@ -24,10 +24,20 @@
 </template>
 
 <script setup lang="ts">
-import { startupStats, startups, startupsHero, startupsIntro } from '@/data/startups'
+import { computed } from 'vue'
+import {
+  buildStartupStats,
+  startups as staticStartups,
+  startupsHero,
+  startupsIntro,
+} from '@/data/startups'
+import { loadStartups, useRemoteContent } from '@/services/contentService'
 
 import StartupsPortfolioSection from '@/components/startups/StartupsPortfolioSection.vue'
 import StartupsHeroSection from '@/components/startups/StartupsHeroSection.vue'
 import StartupsIntroSection from '@/components/startups/StartupsIntroSection.vue'
 import StartupsCTASection from '@/components/startups/StartupsCTASection.vue'
+
+const startups = useRemoteContent('startups', staticStartups, loadStartups)
+const stats = computed(() => buildStartupStats(startups.value))
 </script>

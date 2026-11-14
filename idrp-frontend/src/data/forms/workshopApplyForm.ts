@@ -11,8 +11,8 @@ export function createWorkshopApplicationFormConfig(workshop: Workshop): FormCon
     successMessage:
       'Application received successfully. Our team will review your workshop application and contact you with the next steps.',
     resetOnSuccess: true,
-    endpoint: 'https://api.web3forms.com/submit',
 
+    inquiryFields: { message: 'motivation' },
     meta: {
       sourcePage: 'workshop-application',
       sourceSlug: workshop.slug,

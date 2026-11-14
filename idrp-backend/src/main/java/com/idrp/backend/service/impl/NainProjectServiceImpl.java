@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 
 @Service
+@org.springframework.transaction.annotation.Transactional
 @RequiredArgsConstructor
 public class NainProjectServiceImpl implements NainProjectService {
 
@@ -130,16 +131,21 @@ public class NainProjectServiceImpl implements NainProjectService {
                 .academicYear(nainProject.getAcademicYear())
                 .pmuTechMentor(nainProject.getPmuTechMentor())
                 .dia(nainProject.getDia())
-                .misExecutives(nainProject.getMisExecutives())
+                .misExecutives(copyOf(nainProject.getMisExecutives()))
                 .nainCoordinator(nainProject.getNainCoordinator())
                 .title(nainProject.getTitle())
                 .facultyGuideName(nainProject.getFacultyGuideName())
                 .teamLeaderName(nainProject.getTeamLeaderName())
-                .teamMembers(nainProject.getTeamMembers())
+                .teamMembers(copyOf(nainProject.getTeamMembers()))
                 .displayOrder(nainProject.getDisplayOrder())
                 .visible(nainProject.getVisible())
                 .createdAt(nainProject.getCreatedAt())
                 .updatedAt(nainProject.getUpdatedAt())
                 .build();
+    }
+
+    /** Copies a lazy JPA collection while the session is open, so serialization never touches Hibernate. */
+    private static <T> java.util.List<T> copyOf(java.util.Collection<T> source) {
+        return source == null ? new java.util.ArrayList<>() : new java.util.ArrayList<>(source);
     }
 }

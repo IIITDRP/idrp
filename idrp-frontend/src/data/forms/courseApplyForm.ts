@@ -11,8 +11,8 @@ export function createCourseApplicationFormConfig(course: CertificationCourse): 
     successMessage:
       'Application received successfully. Our team will review your course application and contact you with the next steps.',
     resetOnSuccess: true,
-    endpoint: 'https://api.web3forms.com/submit',
 
+    inquiryFields: { message: 'motivation' },
     meta: {
       sourcePage: 'course-application',
       sourceSlug: course.slug,

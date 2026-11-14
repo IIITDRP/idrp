@@ -30,6 +30,12 @@ public class Partner {
     @Column(name = "logo_url", length = 255)
     private String logoUrl;
 
+    @Column(length = 40)
+    private String abbr;
+
+    @Column(name = "accent_color", length = 120)
+    private String accentColor;
+
     @Column(columnDefinition = "TEXT")
     private String description;
 

@@ -65,6 +65,15 @@ public class Event {
     @Column(name = "register_url", length = 500)
     private String registerUrl;
 
+    @Column(length = 100)
+    private String initiative;
+
+    @Column(name = "brochure_url", length = 500)
+    private String brochureUrl;
+
+    @Column(name = "gallery_url", length = 500)
+    private String galleryUrl;
+
     @Column(nullable = false)
     private Boolean visible;
 

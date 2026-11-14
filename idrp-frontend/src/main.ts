@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { createHead } from '@vueuse/head'
 import App from './App.vue'
 import router from './router'
 import './style.css'
@@ -11,16 +10,13 @@ const app = createApp(App)
 // Create store instance (better for future plugins)
 const pinia = createPinia()
 
-const head = createHead()
-
 // Register plugins
 app.use(pinia)
 app.use(router)
-app.use(head)
+
+app.config.errorHandler = (err) => {
+  console.error('Global Error:', err)
+}
 
 // Mount app
 app.mount('#app')
-
-app.config.errorHandler = (err, instance, info) => {
-  console.error('Global Error:', err)
-}

@@ -1,7 +1,8 @@
 package com.idrp.backend.repository;
 
 import com.idrp.backend.entity.Startup;
-import com.idrp.backend.entity.StartupCategory;
+import com.idrp.backend.entity.StartupDomain;
+import com.idrp.backend.entity.StartupStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,16 +15,15 @@ import java.util.Optional;
 @Repository
 public interface StartupRepository extends JpaRepository<Startup, Long> {
 
-    boolean existsByContactEmail(String contactEmail);
+    boolean existsByNameIgnoreCase(String name);
 
-    boolean existsByContactEmailAndIdNot(String contactEmail, Long id);
+    boolean existsByNameIgnoreCaseAndIdNot(String name, Long id);
 
     Optional<Startup> findByName(String name);
 
-    Optional<Startup> findByContactEmail(String contactEmail);
-
     @Query("SELECT s FROM Startup s WHERE " +
-            "(:category IS NULL OR :category MEMBER OF s.categories) AND " +
+            "(:status IS NULL OR s.status = :status) AND " +
+            "(:domain IS NULL OR :domain MEMBER OF s.domains) AND " +
             "(:search IS NULL OR LOWER(s.name) LIKE LOWER(CONCAT('%', CAST(:search AS string), '%')))")
-    Page<Startup> search(@Param("category") StartupCategory category, @Param("search") String search, Pageable pageable);
+    Page<Startup> search(@Param("status") StartupStatus status, @Param("domain") StartupDomain domain, @Param("search") String search, Pageable pageable);
 }

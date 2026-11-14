@@ -119,14 +119,54 @@ public class GlobalExceptionHandler {
         response.put("success", false);
         response.put("status", HttpStatus.BAD_REQUEST.value());
         response.put("error", "Validation Failed");
-        response.put("message", "Input validation failed");
+        // Surface the first field message so forms can show something actionable.
+        response.put("message", validationErrors.isEmpty()
+                ? "Input validation failed"
+                : validationErrors.values().iterator().next());
         response.put("fieldErrors", validationErrors);
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    /**
+     * Spring MVC's own client errors (bad enum/query param, unknown route, wrong method,
+     * oversized upload...) keep their proper 4xx status instead of falling through to the
+     * 500 handler below.
+     */
+    private ResponseEntity<Map<String, Object>> frameworkError(HttpStatus status) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("success", false);
+        response.put("status", status.value());
+        response.put("error", status.getReasonPhrase());
+        response.put("message", status.is4xxClientError() ? "The request could not be processed" : "An unexpected error occurred");
+
+        return new ResponseEntity<>(response, status);
+    }
+
+    @ExceptionHandler(org.springframework.http.converter.HttpMessageNotReadableException.class)
+    public ResponseEntity<Map<String, Object>> handleUnreadableBody(Exception ex) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("success", false);
+        response.put("status", HttpStatus.BAD_REQUEST.value());
+        response.put("error", "Bad Request");
+        response.put("message", "The request body could not be read");
 
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
+        if (ex instanceof org.springframework.beans.TypeMismatchException) {
+            return frameworkError(HttpStatus.BAD_REQUEST);
+        }
+        if (ex instanceof org.springframework.web.ErrorResponse errorResponse) {
+            HttpStatus status = HttpStatus.resolve(errorResponse.getStatusCode().value());
+            if (status != null && status.is4xxClientError()) {
+                return frameworkError(status);
+            }
+        }
         log.error("Unhandled exception", ex);
 
         Map<String, Object> response = new HashMap<>();

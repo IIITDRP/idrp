@@ -1,5 +1,6 @@
 package com.idrp.backend.service.impl;
 
+import java.util.ArrayList;
 import com.idrp.backend.dto.resource.ResourceRequestDto;
 import com.idrp.backend.dto.resource.ResourceResponseDto;
 import com.idrp.backend.entity.Resource;
@@ -15,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
+@org.springframework.transaction.annotation.Transactional
 @RequiredArgsConstructor
 public class ResourceServiceImpl implements ResourceService {
 
@@ -90,6 +92,11 @@ public class ResourceServiceImpl implements ResourceService {
         existingResource.setCoverImageUrl(requestDto.getCoverImageUrl());
         existingResource.setPublishDate(requestDto.getPublishDate());
         existingResource.setAuthor(requestDto.getAuthor());
+        existingResource.setIssueNumber(requestDto.getIssueNumber());
+        existingResource.setDateLabel(requestDto.getDateLabel());
+        existingResource.setPreviewText(requestDto.getPreviewText());
+        existingResource.setTotalPages(requestDto.getTotalPages());
+        existingResource.setHighlights(requestDto.getHighlights() != null ? new ArrayList<>(requestDto.getHighlights()) : new ArrayList<>());
 
         existingResource.setDisplayOrder(
                 requestDto.getDisplayOrder() != null ? requestDto.getDisplayOrder()
@@ -125,6 +132,11 @@ public class ResourceServiceImpl implements ResourceService {
                 .coverImageUrl(dto.getCoverImageUrl())
                 .publishDate(dto.getPublishDate())
                 .author(dto.getAuthor())
+                .issueNumber(dto.getIssueNumber())
+                .dateLabel(dto.getDateLabel())
+                .previewText(dto.getPreviewText())
+                .totalPages(dto.getTotalPages())
+                .highlights(dto.getHighlights() != null ? new ArrayList<>(dto.getHighlights()) : new ArrayList<>())
                 .displayOrder(dto.getDisplayOrder() != null ? dto.getDisplayOrder() : 0)
                 .active(dto.getActive() != null ? dto.getActive() : true)
                 .build();
@@ -144,6 +156,11 @@ public class ResourceServiceImpl implements ResourceService {
                 .coverImageUrl(resource.getCoverImageUrl())
                 .publishDate(resource.getPublishDate())
                 .author(resource.getAuthor())
+                .issueNumber(resource.getIssueNumber())
+                .dateLabel(resource.getDateLabel())
+                .previewText(resource.getPreviewText())
+                .totalPages(resource.getTotalPages())
+                .highlights(copyOf(resource.getHighlights()))
                 .displayOrder(resource.getDisplayOrder())
                 .active(resource.getActive())
                 .createdAt(resource.getCreatedAt())
@@ -154,5 +171,10 @@ public class ResourceServiceImpl implements ResourceService {
                 .createdBy(isAdmin ? resource.getCreatedBy() : null)
                 .updatedBy(isAdmin ? resource.getUpdatedBy() : null)
                 .build();
+    }
+
+    /** Copies a lazy JPA collection while the session is open, so serialization never touches Hibernate. */
+    private static <T> java.util.List<T> copyOf(java.util.Collection<T> source) {
+        return source == null ? new java.util.ArrayList<>() : new java.util.ArrayList<>(source);
     }
 }

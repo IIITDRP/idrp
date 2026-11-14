@@ -21,7 +21,7 @@ public class Mentor {
     @Column(name = "mentor_name", nullable = false, length = 150)
     private String name;
 
-    @Column(nullable = false, unique = true, length = 150)
+    @Column(length = 150)
     private String email;
 
     @Column(length = 20)

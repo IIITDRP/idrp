@@ -1,0 +1,31 @@
+# /etc/systemd/system/idrp-backend.service
+[Unit]
+Description=IDRP backend (Spring Boot)
+After=network-online.target postgresql.service
+Wants=network-online.target
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=idrp
+Group=idrp
+WorkingDirectory=/opt/idrp/backend
+EnvironmentFile=/etc/idrp/backend.env
+# KVM 4 has 16 GB RAM; 1 GB heap is plenty for this app and leaves room for PostgreSQL.
+ExecStart=/usr/bin/java -Xms256m -Xmx1g -XX:+ExitOnOutOfMemoryError -jar /opt/idrp/backend/current.jar
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=5
+
+# Hardening: the app may write only to its upload directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/idrp/uploads
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

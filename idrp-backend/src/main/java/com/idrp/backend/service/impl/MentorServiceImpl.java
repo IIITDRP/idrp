@@ -21,8 +21,8 @@ public class MentorServiceImpl implements MentorService {
     @Override
     public MentorResponseDto createMentor(MentorRequestDto requestDto) {
 
-        if (mentorRepository.existsByEmail(requestDto.getEmail())) {
-            throw new DuplicateResourceException("Mentor already exists with email: " + requestDto.getEmail());
+        if (mentorRepository.existsByNameIgnoreCase(requestDto.getName().trim())) {
+            throw new DuplicateResourceException("Mentor already exists with name: " + requestDto.getName());
         }
 
         Mentor mentor = mapToEntity(requestDto);
@@ -60,8 +60,8 @@ public class MentorServiceImpl implements MentorService {
         Mentor existingMentor = mentorRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Mentor not found with id: " + id));
 
-        if (mentorRepository.existsByEmailAndIdNot(requestDto.getEmail(), id)) {
-            throw new DuplicateResourceException("Another mentor exists with email: " + requestDto.getEmail());
+        if (mentorRepository.existsByNameIgnoreCaseAndIdNot(requestDto.getName().trim(), id)) {
+            throw new DuplicateResourceException("Another mentor exists with name: " + requestDto.getName());
         }
 
         existingMentor.setName(requestDto.getName());

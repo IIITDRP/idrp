@@ -28,7 +28,6 @@ public class BoardMemberRequestDto {
 
     private String bio;
 
-    @NotBlank(message = "Email is required")
     @Email(message = "Enter a valid email address")
     @Size(max = 150, message = "Email must not exceed 150 characters")
     private String email;
@@ -42,6 +41,9 @@ public class BoardMemberRequestDto {
     @Size(max = 255, message = "LinkedIn URL must not exceed 255 characters")
     @Pattern(regexp = "^(https?://.+)?$", message = "LinkedIn URL must start with http:// or https://")
     private String linkedinUrl;
+
+    @Size(max = 255)
+    private String profileUrl;
 
     private Integer displayOrder;
 

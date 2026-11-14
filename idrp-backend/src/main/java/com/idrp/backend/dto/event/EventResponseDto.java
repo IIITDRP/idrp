@@ -27,6 +27,9 @@ public class EventResponseDto {
     private String image;
     private String imageFit;
     private String registerUrl;
+    private String initiative;
+    private String brochureUrl;
+    private String galleryUrl;
     private Boolean visible;
     private List<String> gallery;
     private LocalDateTime createdAt;

@@ -349,7 +349,13 @@
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
           <p>© {{ currentYear }} IDRP. All rights reserved.</p>
-          <button type="button" class="footer-top-link" @click="scrollToTop">Back to top ↑</button>
+          <nav class="footer-legal" aria-label="Legal">
+            <RouterLink to="/privacy-policy" class="footer-top-link">Privacy policy</RouterLink>
+            <button type="button" class="footer-top-link" @click="openConsentSettings">
+              Cookie settings
+            </button>
+            <button type="button" class="footer-top-link" @click="scrollToTop">Back to top ↑</button>
+          </nav>
         </div>
       </div>
     </footer>
@@ -371,6 +377,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { openConsentSettings } from '@/services/analyticsConsent'
 
 type NavItem = {
   label: string
@@ -435,6 +442,7 @@ const navSections: NavSection[] = [
         children: [
           { label: 'Industry Research and Consulting', to: '/ecosystem/industry-research' },
           { label: 'Technical Education Academy', to: '/ecosystem/technical-education-academy' },
+          { label: 'Infrastructure and Lab Access', to: '/facilities' },
         ],
       },
     ],
@@ -1084,7 +1092,19 @@ onBeforeUnmount(() => {
   color: #b8cadc;
 }
 
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .footer-top-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.875rem;
+  text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.06);
   color: #ffffff;

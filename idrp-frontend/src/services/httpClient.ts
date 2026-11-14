@@ -4,7 +4,9 @@
 // only centralizes the bits that are identical either way: the base URL,
 // the backend's ApiResponse<T> envelope shape, and the rate-limit message.
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'
+// Empty (the production default) means same origin: nginx on the VPS serves the site and
+// proxies /api and /uploads to the backend, so no CORS is involved.
+export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? '').replace(/\/$/, '')
 
 export type ApiResponse<T> = {
   success: boolean

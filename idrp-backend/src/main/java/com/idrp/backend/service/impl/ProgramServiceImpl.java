@@ -12,6 +12,7 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 @Service
+@org.springframework.transaction.annotation.Transactional
 @RequiredArgsConstructor
 public class ProgramServiceImpl implements ProgramService {
 
@@ -105,9 +106,14 @@ public class ProgramServiceImpl implements ProgramService {
                 .description(program.getDescription())
                 .brochureUrl(program.getBrochureUrl())
                 .applyUrl(program.getApplyUrl())
-                .features(program.getFeatures())
+                .features(copyOf(program.getFeatures()))
                 .createdAt(program.getCreatedAt())
                 .updatedAt(program.getUpdatedAt())
                 .build();
+    }
+
+    /** Copies a lazy JPA collection while the session is open, so serialization never touches Hibernate. */
+    private static <T> java.util.List<T> copyOf(java.util.Collection<T> source) {
+        return source == null ? new java.util.ArrayList<>() : new java.util.ArrayList<>(source);
     }
 }

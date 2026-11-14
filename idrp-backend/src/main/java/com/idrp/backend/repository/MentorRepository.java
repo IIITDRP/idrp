@@ -11,11 +11,11 @@ import java.util.Optional;
 
 public interface MentorRepository extends JpaRepository<Mentor, Long> {
 
-    boolean existsByEmail(String email);
+    boolean existsByNameIgnoreCase(String name);
 
-    boolean existsByEmailAndIdNot(String email, Long id);
+    boolean existsByNameIgnoreCaseAndIdNot(String name, Long id);
 
-    Optional<Mentor> findByEmail(String email);
+    Optional<Mentor> findFirstByNameIgnoreCase(String name);
 
     Page<Mentor> findAllByActiveTrue(Pageable pageable);
 

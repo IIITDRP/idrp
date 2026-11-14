@@ -14,7 +14,12 @@ export function createApplicationFormConfig(
     resetOnSuccess: true,
     successMessage:
       'Application received successfully. Our team will review your submission and contact you regarding the next steps.',
-    endpoint: 'https://api.web3forms.com/submit',
+    inquiryFields: {
+      fullName: 'founderName',
+      organization: 'startupName',
+      message: 'description',
+      consent: 'declaration',
+    },
     meta: {
       sourcePage: `/apply/${program.slug}`,
       programSlug: program.slug,

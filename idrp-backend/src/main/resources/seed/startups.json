@@ -1,115 +1,10 @@
 [
   {
-    "name": "Agri Indus",
-    "sector": "AGRI TECH",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": null,
-    "website": null,
-    "onePager": null,
-    "brief": "Agri-Indus is a digital platform designed to bridge the gap between farmers and industries by enabling direct, transparent, and fair trade. It eliminates middlemen, ensures real-time pricing, and connects farmers with bulk buyers and companies. With streamlined logistics and improved market access, Agri-Indus empowers farmers to earn better and reduces inefficiencies in the agri-supply chain.",
-    "contactEmail": "24bcs125@iiitdwd.ac.in",
-    "techFacultyMentors": [
-      {
-        "name": "Dr. Prakash Pawar",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/dr-prakash-pawar-78224356",
-        "email": "prakashpawar@iiitdwd.ac.in",
-        "imageUrl": "/faculty-prakash.jfif"
-      }
-    ],
-    "founders": [
-      {
-        "name": "Sachin Kumar",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/sachin-kumar-a96735380",
-        "email": "24bcs125@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "teamMembers": [
-      {
-        "name": "Sachin Kumar",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/sachin-kumar-a96735380",
-        "email": "24bcs125@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Udit Dadhich",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/udit-dadhich-324b353a2",
-        "email": "24bcs158@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Sudhanshu Baberwal",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/sudhanshu-baberwal",
-        "email": "24bcs147@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ]
-  },
-  {
-    "name": "C^3",
-    "sector": "SOCIAL TECH",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": "/startups/logo/c_3.jpg",
-    "website": null,
-    "onePager": null,
-    "brief": "C^3 is an all-in-one platform revolutionizing academic and entrepreneurial collaboration by seamlessly integrating networking, project collaboration, and event management. It empowers students to find peers and research opportunities, enables professors to connect and recruit talent, and helps colleges streamline event promotion and registrations.",
-    "contactEmail": "22bcs041@iiitdwd.ac.in",
-    "techFacultyMentors": [
-      {
-        "name": "Dr. Sandesh Phalke",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/sandesh-phalke-ph-d-63658b137",
-        "email": "s.phalke@iiitdwd.ac.in",
-        "imageUrl": "/faculty-sandesh.jfif"
-      },
-      {
-        "name": "Dr. Siddharth R",
-        "role": null,
-        "linkedin": null,
-        "email": "siddharth_r@iiitdwd.ac.in",
-        "imageUrl": "/faculty-siddharth.jfif"
-      }
-    ],
-    "founders": [
-      {
-        "name": "G Rohith Yadav",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/grohithyadav",
-        "email": "22bcs041@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "teamMembers": [
-      {
-        "name": "G Rohith Yadav",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/grohithyadav",
-        "email": "22bcs041@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "V Shanmukha Sai",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/v-shanmukha-sai-0a3080270",
-        "email": "22BCS135@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ]
-  },
-  {
     "name": "Cre8Hub",
     "sector": "SOCIAL TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/cre8hub.png",
     "website": null,
@@ -168,8 +63,9 @@
   {
     "name": "Evento",
     "sector": "SOCIAL TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/evento.png",
     "website": null,
@@ -228,8 +124,9 @@
   {
     "name": "Friend In Fog",
     "sector": "AUTO TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "AUTO_TECH"
     ],
     "logo": "/startups/logo/Friend In Fog.png",
     "website": null,
@@ -238,18 +135,11 @@
     "contactEmail": "24bec062@iiitdwd.ac.in",
     "techFacultyMentors": [
       {
-        "name": "Dr. Sandesh Phalke",
+        "name": "Dr. Rajesh Kumar",
         "role": null,
-        "linkedin": "https://www.linkedin.com/in/sandesh-phalke-ph-d-63658b137",
-        "email": "s.phalke@iiitdwd.ac.in",
-        "imageUrl": "/faculty-sandesh.jfif"
-      },
-      {
-        "name": "Mr. Mallikarjun Kande",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/mallikarjun-kande-18709342",
-        "email": "mallikarjun.kande@space-e.org",
-        "imageUrl": "/business-mallikarjun.jfif"
+        "linkedin": "https://www.linkedin.com/in/dr-rajesh-kumar-2417ab11b/",
+        "email": "rajeshk@iiitdwd.ac.in",
+        "imageUrl": "/faculty-rajesh.jfif"
       }
     ],
     "founders": [
@@ -279,16 +169,16 @@
     ]
   },
   {
-    "name": "Attrangi",
+    "name": "Aatrangi",
     "sector": "HEALTH TECH",
-    "categories": [
-      "INCUBATED",
-      "FUNDED"
+    "status": "FUNDED",
+    "domains": [
+      "HEALTH_TECH"
     ],
     "logo": "/startups/logo/heyattrangi.jpeg",
     "website": null,
     "onePager": null,
-    "brief": "Attrangi is a community-driven mental health and support platform designed for neurodivergent individuals and those facing mental health challenges. Through curated resources, peer support groups, and accessible professional guidance, Attrangi creates a safe, stigma-free space for students and working professionals.",
+    "brief": "Aatrangi is a community-driven mental health and support platform designed for neurodivergent individuals and those facing mental health challenges. Through curated resources, peer support groups, and accessible professional guidance, Aatrangi creates a safe, stigma-free space for students and working professionals.",
     "contactEmail": "22bcs068@iiitdwd.ac.in",
     "techFacultyMentors": [],
     "founders": [
@@ -341,8 +231,9 @@
   {
     "name": "MLera",
     "sector": "ED TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "EDTECH"
     ],
     "logo": "/startups/logo/MLera.png",
     "website": null,
@@ -385,91 +276,11 @@
     ]
   },
   {
-    "name": "Natanaswara.AI",
-    "sector": "COMMERCE TECH",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": "/startups/logo/Natanasvara.jpg",
-    "website": null,
-    "onePager": null,
-    "brief": "Natanaswara.AI is a first-of-its-kind dance analysis and correction platform that revolutionizes classical dance training through an AI-powered mobile platform providing real-time feedback on postures, expressions, and movements. It combines pose and gesture analytics, motion tracking, and emotion recognition to act like a virtual guru.",
-    "contactEmail": "chinmay@iiitdwd.ac.in",
-    "techFacultyMentors": [
-      {
-        "name": "Dr. Chinmayananda A.",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/chinmayananda-a-941b06307",
-        "email": "chinmay@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "founders": [
-      {
-        "name": "Dr. Chinmayananda A.",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/chinmayananda-a-941b06307",
-        "email": "chinmay@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "teamMembers": [
-      {
-        "name": "Raksha Karthik",
-        "role": null,
-        "linkedin": null,
-        "email": "raksha.jayaram@gmail.com",
-        "imageUrl": null
-      },
-      {
-        "name": "Devaraju B V",
-        "role": null,
-        "linkedin": null,
-        "email": "dev.nkm@gmail.com",
-        "imageUrl": null
-      },
-      {
-        "name": "Tanmay Gupta",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/tanmay-gupta-29b7b8256",
-        "email": "23bds061@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Dhrupad Das",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/dhrupad-das-7b71b5290",
-        "email": "23bds018@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Yashpreet Singh Reejak",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/yashpreet-singh-345456280",
-        "email": "23bds072@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Thirumala Teena Chowdary",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/teena-chowdary-12a389286",
-        "email": "22bds059@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Aditya Guntur",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/aditya-guntur-38448b28a",
-        "email": "23bds003@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ]
-  },
-  {
     "name": "BookMyTurf",
     "sector": "COMMERCE TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/bookmyturf.png",
     "website": null,
@@ -528,8 +339,9 @@
   {
     "name": "V-Gyan",
     "sector": "ED TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "EDTECH"
     ],
     "logo": "/startups/logo/VGyan.png",
     "website": null,
@@ -574,8 +386,9 @@
   {
     "name": "Deep Traits",
     "sector": "PEOPLE TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/deep_traits.PNG",
     "website": null,
@@ -648,8 +461,9 @@
   {
     "name": "Kisan Voice",
     "sector": "AGRI TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/Kisan_Voice.png",
     "website": null,
@@ -701,8 +515,9 @@
   {
     "name": "Removation",
     "sector": "DESIGN TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/removation.jpeg",
     "website": null,
@@ -754,8 +569,9 @@
   {
     "name": "SmartNest",
     "sector": "DEEP TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "DEEP_TECH"
     ],
     "logo": "/startups/logo/Smart Nest.png",
     "website": null,
@@ -800,8 +616,9 @@
   {
     "name": "Sparkle Studio",
     "sector": "DESIGN TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/Sparkle Studio.jpeg",
     "website": null,
@@ -853,9 +670,9 @@
   {
     "name": "Cipherion",
     "sector": "CYBERSECURITY",
-    "categories": [
-      "INCUBATED",
-      "FUNDED"
+    "status": "FUNDED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/cipherion.png",
     "website": null,
@@ -868,7 +685,7 @@
         "role": null,
         "linkedin": "https://www.linkedin.com/in/girish-revadigar-phd-55a33b28",
         "email": null,
-        "imageUrl": "/faculty-girish.jfif"
+        "imageUrl": "/faculty-girish-revadigar.jpg"
       }
     ],
     "founders": [
@@ -899,8 +716,9 @@
   {
     "name": "NEXR Technology Private Limited",
     "sector": "HEALTH TECH",
-    "categories": [
-      "INCUBATED"
+    "status": "INCUBATED",
+    "domains": [
+      "HEALTH_TECH"
     ],
     "logo": "/startups/logo/NeXR.jpeg",
     "website": null,
@@ -937,11 +755,11 @@
   {
     "name": "Neuraforesight Private Limited",
     "sector": "HEALTH TECH",
-    "categories": [
-      "INCUBATED",
-      "FUNDED"
+    "status": "FUNDED",
+    "domains": [
+      "HEALTH_TECH"
     ],
-    "logo": "/startups/logo/neuraforesight.jpeg",
+    "logo": "/startups/logo/Neuraforesight.jpeg",
     "website": null,
     "onePager": null,
     "brief": "Neuraforesight Private Limited is a TechBio startup transforming how pharmaceutical and biopharmaceutical companies make critical decisions. It develops intelligent, modular AI tools for literature analysis, patent evaluation, portfolio strategy, and global product planning, enabling pharma teams to turn complex data into actionable foresight.",
@@ -983,8 +801,9 @@
   {
     "name": "SphuraNex",
     "sector": "HEALTH TECH",
-    "categories": [
-      "INCUBATED"
+    "status": "INCUBATED",
+    "domains": [
+      "HEALTH_TECH"
     ],
     "logo": "/startups/logo/sphuranex.jpeg",
     "website": null,
@@ -1029,8 +848,9 @@
   {
     "name": "Step-In",
     "sector": "DEEP TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "DEEP_TECH"
     ],
     "logo": "/startups/logo/Step-In.jpg",
     "website": null,
@@ -1074,9 +894,10 @@
   },
   {
     "name": "MediRaksha",
-    "sector": "HEALTHCARE",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "HEALTH TECH",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "HEALTH_TECH"
     ],
     "logo": "/startups/logo/MediRaksha.png",
     "website": null,
@@ -1142,8 +963,9 @@
   {
     "name": "VayuCharge",
     "sector": "DEEP TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "DEEP_TECH"
     ],
     "logo": "/startups/logo/Vayucharge.jpeg",
     "website": null,
@@ -1163,56 +985,11 @@
     "teamMembers": []
   },
   {
-    "name": "Vocal Drone",
-    "sector": "DEEP TECH",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": "/startups/logo/Vocal Drone.jpeg",
-    "website": null,
-    "onePager": null,
-    "brief": null,
-    "contactEmail": "prashantb@iiitdwd.ac.in",
-    "techFacultyMentors": [
-      {
-        "name": "Dr. Deepak K. T.",
-        "role": null,
-        "linkedin": null,
-        "email": "deepak@iiitdwd.ac.in",
-        "imageUrl": "/board-deepak.jfif"
-      }
-    ],
-    "founders": [
-      {
-        "name": "Prashant G. B.",
-        "role": "Founder",
-        "linkedin": null,
-        "email": "prashantb@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "teamMembers": [
-      {
-        "name": "Prashant Bannulmath",
-        "role": null,
-        "linkedin": null,
-        "email": "prashantb@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Swapnil Sontakke",
-        "role": null,
-        "linkedin": null,
-        "email": "swapnil.sontakke@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ]
-  },
-  {
     "name": "Jnana Setu",
     "sector": "ED TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "EDTECH"
     ],
     "logo": "/startups/logo/Jnanasetu.png",
     "website": null,
@@ -1283,50 +1060,13 @@
     ]
   },
   {
-    "name": "FreshDot",
-    "sector": "FOOD TECH",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": "/startups/logo/freshdot.png",
-    "website": null,
-    "onePager": null,
-    "brief": "FreshDot is a packaging-integrated freshness indicator for dairy brands that visually signals spoilage, reducing consumer complaints and building trust with zero change to existing packaging lines.",
-    "contactEmail": "25bcs095@iiitdwd.ac.in",
-    "techFacultyMentors": [
-      {
-        "name": "Dr. Prakash Pawar",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/dr-prakash-pawar-78224356",
-        "email": "prakashpawar@iiitdwd.ac.in",
-        "imageUrl": "/faculty-prakash.jfif"
-      }
-    ],
-    "founders": [
-      {
-        "name": "Moksh A. Gundecha",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/moksh-jain-54b036311",
-        "email": "25bcs095@iiitdwd.ac.in",
-        "imageUrl": "startups/people/freshdot/moksh.pdf"
-      },
-      {
-        "name": "Sandesh Sanjeev Phalke",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/sandesh-phalke-ph-d-63658b137",
-        "email": "s.phalke@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "teamMembers": []
-  },
-  {
     "name": "CheTechs",
     "sector": "AUTO TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "AUTO_TECH"
     ],
-    "logo": "/startups/logo/chetechs.png",
+    "logo": "/startups/logo/CheTechs.jpeg",
     "website": null,
     "onePager": null,
     "brief": "CheTechs builds driver safety systems using alcohol monitoring sensors and driver behaviour monitoring. The system helps ensure driver and vehicle safety by bringing the vehicle to a gradual halt when alcohol is detected.",
@@ -1359,57 +1099,13 @@
     "teamMembers": []
   },
   {
-    "name": "Tryggva",
-    "sector": "AUTO TECH",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": "/startups/logo/tryggva.png",
-    "website": null,
-    "onePager": null,
-    "brief": "Tryggva is an India-first, behaviour-aware ADAS platform that connects vehicles with traffic infrastructure to predict and prevent accidents in chaotic traffic environments.",
-    "contactEmail": "25bcs214@iiitdwd.ac.in",
-    "techFacultyMentors": [
-      {
-        "name": "Jagadeesh Kanade",
-        "role": null,
-        "linkedin": null,
-        "email": "jbkanade@gmail.com",
-        "imageUrl": "/faculty-jagadish.jfif"
-      }
-    ],
-    "founders": [
-      {
-        "name": "Tusharika Jagwani",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/tusharika-jagwani-3a74603a9",
-        "email": "25bcs214@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Yash Mathur",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/yash-mathur-6ba200373",
-        "email": "25bcs201@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Pantham Anish Satya Srikar",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/anish-pantham-aa5644375",
-        "email": "25bcs114@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "teamMembers": []
-  },
-  {
     "name": "Acumen Intelligence",
     "sector": "AI / SAAS",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "AI_SAAS"
     ],
-    "logo": "/startups/logo/acumen-intelligence.png",
+    "logo": "/startups/logo/Acumen.png",
     "website": null,
     "onePager": null,
     "brief": "Acumen Intelligence is developing a SaaS platform that empowers MSMEs to analyse customer feedback and generate data-driven recommendations to enhance service quality.",
@@ -1444,10 +1140,11 @@
   {
     "name": "Sleepy1",
     "sector": "TRAVEL TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "TRAVEL_TECH"
     ],
-    "logo": "/startups/logo/sleepy1.png",
+    "logo": "/startups/logo/Sleepy1.jpeg",
     "website": null,
     "onePager": null,
     "brief": "Sleepy1 delivers smart, private sleep and nap pods in high-traffic public spaces like airports, offering comfortable resting solutions through a scalable session-based pricing model.",
@@ -1489,22 +1186,16 @@
   {
     "name": "Yntra Sparks",
     "sector": "ED TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "EDTECH"
     ],
-    "logo": "/startups/logo/yntra-sparks.png",
+    "logo": "/startups/logo/Yntra Sparks.jpeg",
     "website": null,
     "onePager": null,
     "brief": "Yntra Sparks designs hands-on STEM kits for middle and secondary school students, replacing rote learning with physical understanding through app-supported kits built for Tier 2 and Tier 3 Indian homes.",
     "contactEmail": "25bda126@iiitdwd.ac.in",
     "techFacultyMentors": [
-      {
-        "name": "Dr. Sandesh Phalke",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/sandesh-phalke-ph-d-63658b137",
-        "email": "s.phalke@iiitdwd.ac.in",
-        "imageUrl": "/faculty-sandesh.jfif"
-      },
       {
         "name": "Dr. Suvadip Hazra",
         "role": null,
@@ -1522,13 +1213,6 @@
         "imageUrl": null
       },
       {
-        "name": "Kush Kumar",
-        "role": "Founder",
-        "linkedin": "https://www.linkedin.com/in/kush-kumar-1095ab379",
-        "email": "25bda059@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
         "name": "Dhanashri Udhavrao Bende",
         "role": "Founder",
         "linkedin": "https://www.linkedin.com/in/dhanashri-bende-6a30b8382",
@@ -1541,10 +1225,11 @@
   {
     "name": "Gigzy",
     "sector": "PLATFORM TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "PLATFORM_TECH"
     ],
-    "logo": "/startups/logo/gigzy.png",
+    "logo": "/startups/logo/GIGZY.png",
     "website": null,
     "onePager": null,
     "brief": "Gigzy is a hyperlocal platform connecting people who need quick, short-term help with individuals offering flexible services, creating a trusted ecosystem for micro-tasks with verified users and structured support.",
@@ -1593,10 +1278,11 @@
   {
     "name": "PetalPath",
     "sector": "ED TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "EDTECH"
     ],
-    "logo": "/startups/logo/petalpath.png",
+    "logo": "/startups/logo/PetalPath.jpeg",
     "website": null,
     "onePager": null,
     "brief": "PetalPath is an AI-powered early learning platform that delivers structured 10–20 minute sessions combining interactive videos and activities for children aged 2–6, transforming passive screen time into adaptive learning experiences.",
@@ -1638,10 +1324,11 @@
   {
     "name": "Fuelwise",
     "sector": "LOGISTICS TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
-    "logo": "/startups/logo/fuelwise.png",
+    "logo": "/startups/logo/Fuelwise.jpeg",
     "website": null,
     "onePager": null,
     "brief": "Fuelwise is route-based fuel cost optimisation software for B2B logistics companies, helping them identify where along a route they should refuel to spend the least on fuel.",
@@ -1690,10 +1377,11 @@
   {
     "name": "Rescrapx",
     "sector": "AUTO TECH",
-    "categories": [
-      "PRE_INCUBATED"
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "AUTO_TECH"
     ],
-    "logo": "/startups/logo/rescrapx.png",
+    "logo": "/startups/logo/Rescrapx.png",
     "website": null,
     "onePager": null,
     "brief": "Rescrapx is building a safe and transparent platform for car scrapping, helping users scrap their vehicles through a more reliable and structured process.",
@@ -1727,11 +1415,12 @@
   },
   {
     "name": "AUKAAT",
-    "sector": "FinTech",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "FINTECH",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
-    "logo": "/startups/logo/aukaat.png",
+    "logo": "/startups/logo/Aukaat.jpeg",
     "website": null,
     "onePager": null,
     "brief": "AUKAAT is a Gen-Z focused fintech app that goes beyond tracking expenses by actively changing spending behavior.",
@@ -1771,50 +1460,14 @@
     "teamMembers": []
   },
   {
-    "name": "Paralax",
-    "sector": "AI / Aerial Security",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": "/startups/logo/paralax.png",
-    "website": null,
-    "onePager": null,
-    "brief": "PARALAX develops software-centric AI architectures for real-time aerial monitoring and threat detection.",
-    "contactEmail": "25bcs195@iiitdwd.ac.in",
-    "techFacultyMentors": [
-      {
-        "name": "Dr. Sunil Saumya",
-        "role": null,
-        "linkedin": "https://linkedin.com/in/sunil-saumya-158856b1",
-        "email": "sunil.saumya@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "founders": [
-      {
-        "name": "Venkatesh K",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/ven007",
-        "email": "25bcs195@iiitdwd.ac.in",
-        "imageUrl": null
-      },
-      {
-        "name": "Subhash K V",
-        "role": null,
-        "linkedin": "https://www.linkedin.com/in/subhash-k-v-6a6034304",
-        "email": "25bcs176@iiitdwd.ac.in",
-        "imageUrl": null
-      }
-    ],
-    "teamMembers": []
-  },
-  {
     "name": "ManoSetu AI",
-    "sector": "AI / Mental Health",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "AI / MENTAL HEALTH",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "AI_SAAS",
+      "HEALTH_TECH"
     ],
-    "logo": "/startups/logo/manosetu-ai.png",
+    "logo": "/startups/logo/Manosetu.png",
     "website": null,
     "onePager": null,
     "brief": "Bridging modern AI with ancient wisdom for mental health well-being.",
@@ -1833,11 +1486,12 @@
   },
   {
     "name": "Aitric",
-    "sector": "IoT / Smart Energy",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "IOT / SMART ENERGY",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "IOT_SMART_ENERGY"
     ],
-    "logo": "/startups/logo/aitric.png",
+    "logo": "/startups/logo/Aitric.jpeg",
     "website": null,
     "onePager": null,
     "brief": "AITRIC is an AI-powered smart socket with real-time energy monitoring and protection features.",
@@ -1899,9 +1553,10 @@
   },
   {
     "name": "HostelSync",
-    "sector": "Hostel Management",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "HOSTEL MANAGEMENT",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
     "logo": "/startups/logo/hostelsync.png",
     "website": null,
@@ -1937,11 +1592,12 @@
   },
   {
     "name": "Benzene",
-    "sector": "Decentralized Computing",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "DECENTRALIZED COMPUTING",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
-    "logo": "/startups/logo/benzene.png",
+    "logo": "/startups/logo/Benzene.jpeg",
     "website": null,
     "onePager": null,
     "brief": "Benzene enables decentralized GPU compute sharing for AI workloads and rendering.",
@@ -1989,11 +1645,12 @@
   },
   {
     "name": "Mentiq",
-    "sector": "AI / Career Advisory",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "AI / CAREER ADVISORY",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "AI_SAAS"
     ],
-    "logo": "/startups/logo/mentiq.png",
+    "logo": "/startups/logo/menti_q.jpg",
     "website": null,
     "onePager": null,
     "brief": "Mentiq is an AI-powered advisory platform for career and financial decision-making.",
@@ -2033,27 +1690,13 @@
     "teamMembers": []
   },
   {
-    "name": "QS-TRNG",
-    "sector": "Quantum Security",
-    "categories": [
-      "PRE_INCUBATED"
-    ],
-    "logo": "/startups/logo/qs-trng.png",
-    "website": null,
-    "onePager": null,
-    "brief": "QS-TRNG focuses on quantum-secure true random number generation technologies.",
-    "contactEmail": null,
-    "techFacultyMentors": [],
-    "founders": [],
-    "teamMembers": []
-  },
-  {
     "name": "MotionIQ",
-    "sector": "Sports Tech",
-    "categories": [
-      "PRE_INCUBATED"
+    "sector": "SPORTS TECH",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "OTHER"
     ],
-    "logo": "/startups/logo/motioniq.png",
+    "logo": "/startups/logo/MotionIQ.jpg",
     "website": null,
     "onePager": null,
     "brief": "MotionIQ uses wearable sensors and AI-driven motion analysis for athlete performance tracking.",
@@ -2086,45 +1729,78 @@
     "teamMembers": []
   },
   {
-    "name": "Trividhi Labs",
-    "sector": "Deep Tech / R&D",
-    "categories": [
-      "PRE_INCUBATED"
+    "name": "Trividhi Labs Pvt Ltd",
+    "sector": "DEEP TECH",
+    "status": "INCUBATED",
+    "domains": [
+      "DEEP_TECH"
     ],
-    "logo": "/startups/logo/trividhi.png",
+    "logo": "/startups/logo/Trividhi.png",
     "website": null,
     "onePager": null,
     "brief": "Trividhi Labs focuses on research-driven innovation in emerging technologies, developing intelligent solutions across AI, robotics, embedded systems, and advanced engineering domains.",
-    "contactEmail": null,
-    "techFacultyMentors": [],
-    "founders": [],
+    "contactEmail": "contact@trividhilabs.com",
+    "techFacultyMentors": [
+      {
+        "name": "Dr. Girish Revadigar",
+        "role": null,
+        "linkedin": "https://www.linkedin.com/in/girish-revadigar-phd-55a33b28",
+        "email": null,
+        "imageUrl": "/faculty-girish-revadigar.jpg"
+      }
+    ],
+    "founders": [
+      {
+        "name": "Dr. Chitra Javali",
+        "role": "Founder",
+        "linkedin": "https://www.linkedin.com/in/chitra-javali-phd-785ba34b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        "email": "chitra.javali@trividhilabs.com",
+        "imageUrl": null
+      },
+      {
+        "name": "Dr. Girish Revadigar",
+        "role": "Founder",
+        "linkedin": "https://linkedin.com/in/girish-revadigar-phd-55a33b28",
+        "email": "girishrevadigar@iiitdwd.ac.in",
+        "imageUrl": "/faculty-girish-revadigar.jpg"
+      }
+    ],
     "teamMembers": []
   },
   {
     "name": "Exobios Private Limited",
     "sector": "HEALTH TECH",
-    "categories": [
-      "INCUBATED"
+    "status": "INCUBATED",
+    "domains": [
+      "HEALTH_TECH"
     ],
-    "logo": "/startups/logo/exobios.png",
+    "logo": "/startups/logo/Exobios.jpeg",
     "website": null,
     "onePager": null,
     "brief": "Exobios Private Limited is a health technology startup developing AI-enabled digital healthcare solutions that assist clinicians with patient assessment, monitoring, and intelligent decision support.",
-    "contactEmail": "dr.anup.iras@gmail.com",
-    "techFacultyMentors": [],
+    "contactEmail": "mca.exobios@gmail.com",
+    "techFacultyMentors": [
+      {
+        "name": "Dr. Manjunath Vanahalli",
+        "role": null,
+        "linkedin": "https://www.linkedin.com/in/manjunath-vanahalli-4b24ab69",
+        "email": "manjunathkv@iiitdwd.ac.in",
+        "imageUrl": "/faculty-manjunath.jfif"
+      }
+    ],
     "founders": [
       {
         "name": "Ashwini Hegadekatti",
         "role": "Co-Founder",
         "linkedin": null,
-        "email": "dr.kartik.h@gmail.com",
+        "email": "ashuhegde91@gmail.com",
         "imageUrl": null
       },
       {
         "name": "Nanjunda Swamy Geetha",
         "role": "Co-Founder",
         "linkedin": null,
-        "email": "dr.anup.iras@gmail.com",
+        "email": "geetha.spacebios@gmail.com",
         "imageUrl": null
       }
     ],
@@ -2133,15 +1809,24 @@
   {
     "name": "ANUTHANTRA PRIVATE LIMITED",
     "sector": "HEALTH TECH",
-    "categories": [
-      "INCUBATED"
+    "status": "INCUBATED",
+    "domains": [
+      "HEALTH_TECH"
     ],
-    "logo": "/startups/logo/anuthantra.png",
+    "logo": "/startups/logo/Anuthantra.jpeg",
     "website": null,
     "onePager": null,
-    "brief": "ANUTHANTRA Private Limited is a healthcare technology startup focused on developing innovative medical technologies and digital health solutions to improve patient care and clinical outcomes.",
+    "brief": null,
     "contactEmail": "vraghav1240nm@gmail.com",
-    "techFacultyMentors": [],
+    "techFacultyMentors": [
+      {
+        "name": "Dr. Aswath Babu H",
+        "role": null,
+        "linkedin": null,
+        "email": null,
+        "imageUrl": null
+      }
+    ],
     "founders": [
       {
         "name": "Venkatraman Raghavendra",
@@ -2183,6 +1868,114 @@
         "role": "Co-Founder",
         "linkedin": null,
         "email": "aswath.babu@gmail.com",
+        "imageUrl": null
+      }
+    ],
+    "teamMembers": []
+  },
+  {
+    "name": "TrueEd",
+    "sector": "EDTECH",
+    "status": "PRE_INCUBATED",
+    "domains": [
+      "EDTECH"
+    ],
+    "logo": "/startups/logo/TrueEd.jpeg",
+    "website": null,
+    "onePager": null,
+    "brief": "TrueEd is an edtech platform that connects students with verified teachers for personalized online, offline, and group-class learning.",
+    "contactEmail": "25bda097@iiitdwd.ac.in",
+    "techFacultyMentors": [
+      {
+        "name": "Dr. Chinmayananda A",
+        "role": null,
+        "linkedin": "https://linkedin.com/in/chinmayananda-a-941b06307",
+        "email": null,
+        "imageUrl": null
+      }
+    ],
+    "founders": [
+      {
+        "name": "Rohit Kumar",
+        "role": "Team Lead",
+        "linkedin": "https://www.linkedin.com/in/rohit-kumar-b91937365?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        "email": "25bda097@iiitdwd.ac.in",
+        "imageUrl": null
+      },
+      {
+        "name": "Sugyan Singh",
+        "role": "Co-Founder",
+        "linkedin": "https://www.linkedin.com/in/sugyan-singh/",
+        "email": "24bcs148@iiitdwd.ac.in",
+        "imageUrl": null
+      },
+      {
+        "name": "Hari Prasad L",
+        "role": "Co-Founder",
+        "linkedin": "https://www.linkedin.com/in/hariprasadkishan/",
+        "email": "23bds022@iiitdwd.ac.in",
+        "imageUrl": null
+      }
+    ],
+    "teamMembers": []
+  },
+  {
+    "name": "Satatham Kritam Innovative Technology Solutions Pvt Ltd",
+    "sector": "DEEP TECH",
+    "status": "INCUBATED",
+    "domains": [
+      "DEEP_TECH"
+    ],
+    "logo": "/startups/logo/SatathamKritam.png",
+    "website": null,
+    "onePager": null,
+    "brief": "Satatham Kritam Innovative Technology Solutions Pvt. Ltd. (SKITS) is an AI and SaaS-based technology company that develops intelligent digital platforms for research, innovation, intellectual property (IP), and commercialization. The company helps researchers, universities, startups, enterprises, and R&D organizations transform complex scientific, technical, patent, and market data into actionable insights, supporting the complete innovation lifecycle from idea evaluation and IP creation to product strategy, licensing, and commercialization.",
+    "contactEmail": "sk@skitstech.com",
+    "techFacultyMentors": [],
+    "founders": [
+      {
+        "name": "S K Murthy",
+        "role": "Founder",
+        "linkedin": null,
+        "email": "sk@skitstech.com",
+        "imageUrl": null
+      },
+      {
+        "name": "Deepa Murthy",
+        "role": "Founder",
+        "linkedin": null,
+        "email": "deepa@skitstech.com",
+        "imageUrl": null
+      }
+    ],
+    "teamMembers": []
+  },
+  {
+    "name": "Quantum-World Ventures Private Limited",
+    "sector": "DEEP TECH / QUANTUM",
+    "status": "INCUBATED",
+    "domains": [
+      "DEEP_TECH"
+    ],
+    "logo": "/startups/logo/QuantumWorldVentures.png",
+    "website": "https://www.quantumworld.in",
+    "onePager": null,
+    "brief": "Quantum World Ventures (QWV) is a Bengaluru-based deep-technology company building indigenous, applied quantum solutions for India. Its flagship programme is QEIS: the Quantum Endoscopic Imaging & Sensing Platform, an AI-enabled, multimodal sensing system for minimally invasive diagnostics. Conventional endoscopy shows only what the eye can see. QEIS adds a quantum and advanced-photonic sensing layer to existing endoscopes, combining spectroscopy and single-photon detection with physics-informed AI reconstruction on GPUs. The aim is to give clinicians objective, quantitative tissue information during the same procedure, synchronised with the live video, without replacing their equipment. The platform is designed in India to be affordable for Tier 2 and Tier 3 hospitals, and follows ISO 13485, ISO 14971, IEC 60601 and IEC 62304 from the outset. Alongside MedTech, QWV runs applied quantum labs in EdTech, FinTech and SecureTech, including quantum-skilling programmes with academic partners.",
+    "contactEmail": "ceo@quantumworld.in",
+    "techFacultyMentors": [],
+    "founders": [
+      {
+        "name": "Santosh Talaghatti",
+        "role": "Founder, CEO & Director",
+        "linkedin": "https://www.linkedin.com/in/santoshtalghatti",
+        "email": "ceo@quantumworld.in",
+        "imageUrl": "/startups/people/quantumworld/santosh.jpg"
+      },
+      {
+        "name": "Suraj Hanchinal",
+        "role": "Director",
+        "linkedin": null,
+        "email": "director@quantumworld.in",
         "imageUrl": null
       }
     ],

@@ -3,312 +3,520 @@
     "name": "Boltstart Academy",
     "category": "academic",
     "websiteUrl": "https://www.linkedin.com/in/boltstart-academy-842a913b8/",
-    "logoUrl": "/partners/boltstart.jpeg"
+    "logoUrl": "/partners/boltstart.jpeg",
+    "description": null,
+    "abbr": "Boltstart",
+    "accentColor": "linear-gradient(135deg,#7c3aed,#a78bfa)",
+    "active": true
   },
   {
     "name": "KLE Institute of Technology, Hubli",
     "category": "academic",
     "websiteUrl": "https://kleit.ac.in/",
-    "logoUrl": "/partners/kleit.png"
+    "logoUrl": "/partners/kleit.png",
+    "description": null,
+    "abbr": "KLEIT",
+    "accentColor": "linear-gradient(135deg,#0f766e,#14b8a6)",
+    "active": true
   },
   {
     "name": "Dharwad Institute of Mental Health & Neurosciences (DIMHANS)",
     "category": "academic",
     "websiteUrl": "https://dimhans.karnataka.gov.in/en",
-    "logoUrl": "/partners/dimhans.png"
+    "logoUrl": "/partners/dimhans.png",
+    "description": null,
+    "abbr": "DIM",
+    "accentColor": "linear-gradient(135deg,#2563eb,#60a5fa)",
+    "active": true
   },
   {
     "name": "Mahatma Gandhi Rural Development & Panchayat Raj University, Gadag",
     "category": "academic",
     "websiteUrl": "https://ksrdpru.ac.in/en/",
-    "logoUrl": "/partners/mgrdpru.jpeg"
+    "logoUrl": "/partners/mgrdpru.jpeg",
+    "description": null,
+    "abbr": "MGRDPRU",
+    "accentColor": "linear-gradient(135deg,#0ea5e9,#38bdf8)",
+    "active": true
   },
   {
     "name": "KLE College of Pharmacy, Belagavi",
     "category": "academic",
     "websiteUrl": "https://klepharm.edu/",
-    "logoUrl": "/partners/klepharm.png"
+    "logoUrl": "/partners/klepharm.png",
+    "description": null,
+    "abbr": "KLEP",
+    "accentColor": "linear-gradient(135deg,#7c3aed,#a78bfa)",
+    "active": true
   },
   {
     "name": "S. G. Balekundri Institute of Technology, Belagavi",
     "category": "academic",
     "websiteUrl": "https://sgbit.edu.in/",
-    "logoUrl": "/partners/sgbit.png"
+    "logoUrl": "/partners/sgbit.png",
+    "description": null,
+    "abbr": "SGB",
+    "accentColor": "linear-gradient(135deg,#0891b2,#22d3ee)",
+    "active": true
   },
   {
     "name": "BLDEA's V.P. Dr. P. G. Halakatti College of Engineering and Technology, Vijayapura",
     "category": "academic",
     "websiteUrl": "https://www.bldeacet.ac.in/",
-    "logoUrl": "/partners/bldeacet.png"
+    "logoUrl": "/partners/bldeacet.png",
+    "description": null,
+    "abbr": "BLD",
+    "accentColor": "linear-gradient(135deg,#ea580c,#fb923c)",
+    "active": true
   },
   {
     "name": "Jain College of Engineering and Research",
     "category": "academic",
     "websiteUrl": "https://jcer.in/",
-    "logoUrl": "/partners/jcer.png"
+    "logoUrl": "/partners/jcer.png",
+    "description": null,
+    "abbr": "JCER",
+    "accentColor": "linear-gradient(135deg,#0f766e,#2dd4bf)",
+    "active": true
   },
   {
     "name": "Poojya Doddappa Appa College of Engineering, Gulbarga",
     "category": "academic",
     "websiteUrl": "https://www.pdacek.ac.in/",
-    "logoUrl": "/partners/pda.png"
+    "logoUrl": "/partners/pda.png",
+    "description": null,
+    "abbr": "PDA",
+    "accentColor": "linear-gradient(135deg,#2563eb,#60a5fa)",
+    "active": true
   },
   {
     "name": "D.K.T.E. Society's Textile & Engineering Institute, Ichalkaranji",
     "category": "academic",
     "websiteUrl": "https://www.dkte.ac.in/index.php",
-    "logoUrl": "/partners/dkte.png"
+    "logoUrl": "/partners/dkte.png",
+    "description": null,
+    "abbr": "DKTE",
+    "accentColor": "linear-gradient(135deg,#7c3aed,#a78bfa)",
+    "active": true
   },
   {
     "name": "FUEL",
     "category": "academic",
     "websiteUrl": "https://fuelfornation.com/",
-    "logoUrl": "/partners/fuel.png"
+    "logoUrl": "/partners/fuel.png",
+    "description": null,
+    "abbr": "FUEL",
+    "accentColor": "linear-gradient(135deg,#f59e0b,#fde68a)",
+    "active": true
   },
   {
     "name": "GM University, Davangere",
     "category": "academic",
     "websiteUrl": "https://gmu.ac.in/",
-    "logoUrl": "/partners/gmu.png"
+    "logoUrl": "/partners/gmu.png",
+    "description": null,
+    "abbr": "GMU",
+    "accentColor": "linear-gradient(135deg,#059669,#34d399)",
+    "active": true
   },
   {
     "name": "Head Held High Foundation",
     "category": "academic",
     "websiteUrl": "https://in.linkedin.com/company/head-held-high-foundation",
-    "logoUrl": "/partners/hhh.png"
+    "logoUrl": "/partners/hhh.png",
+    "description": null,
+    "abbr": "HHH",
+    "accentColor": "linear-gradient(135deg,#7c3aed,#c084fc)",
+    "active": true
   },
   {
     "name": "Rani Channamma University, Belagavi",
     "category": "academic",
     "websiteUrl": "https://rcub.ac.in/en/index.php",
-    "logoUrl": "/partners/rcu.png"
+    "logoUrl": "/partners/rcu.png",
+    "description": null,
+    "abbr": "RCU",
+    "accentColor": "linear-gradient(135deg,#0ea5e9,#67e8f9)",
+    "active": true
   },
   {
     "name": "Shridevi Institute of Engineering & Technology, Tumakuru",
     "category": "academic",
     "websiteUrl": "https://shrideviengineering.org/",
-    "logoUrl": "/partners/shridevi.png"
+    "logoUrl": "/partners/shridevi.png",
+    "description": null,
+    "abbr": "SIET",
+    "accentColor": "linear-gradient(135deg,#ea580c,#fb923c)",
+    "active": true
   },
   {
     "name": "VSM's Somashekhar R. Kothiwale Institute of Technology",
     "category": "academic",
     "websiteUrl": "https://www.vsmsrkit.edu.in/",
-    "logoUrl": "/partners/vsm.png"
+    "logoUrl": "/partners/vsm.png",
+    "description": null,
+    "abbr": "VSM",
+    "accentColor": "linear-gradient(135deg,#16a34a,#86efac)",
+    "active": true
   },
   {
     "name": "RNS Institute of Technology, Bengaluru",
     "category": "academic",
     "websiteUrl": "https://www.rnsit.ac.in/",
-    "logoUrl": "/partners/rnsit.png"
+    "logoUrl": "/partners/rnsit.png",
+    "description": null,
+    "abbr": "RNSIT",
+    "accentColor": "linear-gradient(135deg,#0891b2,#22d3ee)",
+    "active": true
   },
   {
     "name": "VTU, Belagavi",
     "category": "academic",
     "websiteUrl": "https://vtu.ac.in/en/",
-    "logoUrl": "/partners/vtu.png"
+    "logoUrl": "/partners/vtu.png",
+    "description": null,
+    "abbr": "VTU",
+    "accentColor": "linear-gradient(135deg,#1d4ed8,#60a5fa)",
+    "active": true
   },
   {
     "name": "Vidya Shakti",
     "category": "academic",
     "websiteUrl": "https://www.vishwa-vidya-shakti.org/",
-    "logoUrl": "/partners/vidya.png"
+    "logoUrl": "/partners/vidya.png",
+    "description": null,
+    "abbr": "VS",
+    "accentColor": "linear-gradient(135deg,#15803d,#4ade80)",
+    "active": true
   },
   {
     "name": "Bapuji Institute of Engineering and Technology, Davangere",
     "category": "academic",
     "websiteUrl": "https://bietdvg.edu/",
-    "logoUrl": "/partners/biet.png"
+    "logoUrl": "/partners/biet.png",
+    "description": null,
+    "abbr": "BIET",
+    "accentColor": "linear-gradient(135deg,#2563eb,#60a5fa)",
+    "active": true
   },
   {
     "name": "Basaveshwar Engineering College, Bagalkote",
     "category": "academic",
     "websiteUrl": "https://www.becbgk.edu/",
-    "logoUrl": "/partners/bec.png"
+    "logoUrl": "/partners/bec.png",
+    "description": null,
+    "abbr": "BEC",
+    "accentColor": "linear-gradient(135deg,#0f766e,#5eead4)",
+    "active": true
   },
   {
     "name": "Jain Institute of Technology, Davangere",
     "category": "academic",
     "websiteUrl": "https://jitdvg.edu.in/",
-    "logoUrl": "/partners/jit.png"
+    "logoUrl": "/partners/jit.png",
+    "description": null,
+    "abbr": "JIT",
+    "accentColor": "linear-gradient(135deg,#7c3aed,#c084fc)",
+    "active": true
   },
   {
     "name": "Moodlakatte Institute of Technology, Kundapura",
     "category": "academic",
     "websiteUrl": "https://mitkundapura.com/",
-    "logoUrl": "/partners/mitk.png"
+    "logoUrl": "/partners/mitk.png",
+    "description": null,
+    "abbr": "MITK",
+    "accentColor": "linear-gradient(135deg,#ea580c,#fdba74)",
+    "active": true
   },
   {
     "name": "Shri Madhwa Vadiraja Institute of Technology and Management",
     "category": "academic",
     "websiteUrl": "https://smvitm.org/",
-    "logoUrl": "/partners/smvitm.png"
+    "logoUrl": "/partners/smvitm.png",
+    "description": null,
+    "abbr": "SMVITM",
+    "accentColor": "linear-gradient(135deg,#0891b2,#67e8f9)",
+    "active": true
   },
   {
     "name": "Smt. Kamala & Sri Venkappa M. Agadi College of Engineering and Technology",
     "category": "academic",
     "websiteUrl": "https://sksvmacet.ac.in/",
-    "logoUrl": "/partners/sksvmacet.png"
+    "logoUrl": "/partners/sksvmacet.png",
+    "description": null,
+    "abbr": "SKSVMACET",
+    "accentColor": "linear-gradient(135deg,#be123c,#fb7185)",
+    "active": true
   },
   {
     "name": "University BDT College of Engineering, Davangere",
     "category": "academic",
     "websiteUrl": "https://www.ubdtce.org/",
-    "logoUrl": "/partners/ubdtce.png"
+    "logoUrl": "/partners/ubdtce.png",
+    "description": null,
+    "abbr": "UBDTCE",
+    "accentColor": "linear-gradient(135deg,#4338ca,#818cf8)",
+    "active": true
   },
   {
     "name": "Infosys",
     "category": "technology",
     "websiteUrl": "https://www.infosys.com/",
-    "logoUrl": "/partners/infosys.png"
+    "logoUrl": "/partners/infosys.png",
+    "description": null,
+    "abbr": "INF",
+    "accentColor": "linear-gradient(135deg,#2563eb,#60a5fa)",
+    "active": true
   },
   {
     "name": "Mercedes-Benz Research & Development India (MBRDI)",
     "category": "technology",
     "websiteUrl": "https://www.mbrdi.co.in/",
-    "logoUrl": "/partners/mbrdi.png"
+    "logoUrl": "/partners/mbrdi.png",
+    "description": null,
+    "abbr": "MBRDI",
+    "accentColor": "linear-gradient(135deg,#0f172a,#475569)",
+    "active": true
   },
   {
     "name": "DocketRun",
     "category": "technology",
     "websiteUrl": "https://docketrun.com/",
-    "logoUrl": "/partners/docketrun.jpeg"
+    "logoUrl": "/partners/docketrun.jpeg",
+    "description": null,
+    "abbr": "DR",
+    "accentColor": "linear-gradient(135deg,#0ea5e9,#2563eb)",
+    "active": true
   },
   {
     "name": "Nanopix",
     "category": "technology",
     "websiteUrl": "https://www.nanopix-iss.com/",
-    "logoUrl": "/partners/nanopix.png"
+    "logoUrl": "/partners/nanopix.png",
+    "description": null,
+    "abbr": "NP",
+    "accentColor": "linear-gradient(135deg,#0ea5e9,#67e8f9)",
+    "active": true
   },
   {
     "name": "HAL",
     "category": "technology",
     "websiteUrl": "https://hal-india.co.in/",
-    "logoUrl": "/partners/hal.jpeg"
+    "logoUrl": "/partners/hal.jpeg",
+    "description": null,
+    "abbr": "HAL",
+    "accentColor": "linear-gradient(135deg,#2563eb,#93c5fd)",
+    "active": true
   },
   {
     "name": "JSW",
     "category": "technology",
     "websiteUrl": "https://www.jswsteel.in/vijayanagar-works",
-    "logoUrl": "/partners/jsw.png"
+    "logoUrl": "/partners/jsw.png",
+    "description": null,
+    "abbr": "JSW",
+    "accentColor": "linear-gradient(135deg,#2563eb,#93c5fd)",
+    "active": true
   },
   {
     "name": "QpiAi Technologies",
     "category": "technology",
     "websiteUrl": "https://qpiai.tech/",
-    "logoUrl": "/partners/qpiai.png"
+    "logoUrl": "/partners/qpiai.png",
+    "description": null,
+    "abbr": "QPI",
+    "accentColor": "linear-gradient(135deg,#4f46e5,#818cf8)",
+    "active": true
   },
   {
     "name": "TalkingLands Technologies Pvt. Ltd.",
     "category": "technology",
     "websiteUrl": "https://www.talkinglands.com/",
-    "logoUrl": "/partners/talkinglands.png"
+    "logoUrl": "/partners/talkinglands.png",
+    "description": null,
+    "abbr": "TL",
+    "accentColor": "linear-gradient(135deg,#0f766e,#5eead4)",
+    "active": true
   },
   {
     "name": "Teamlease EdTech",
     "category": "technology",
     "websiteUrl": "https://www.teamleaseedtech.com/",
-    "logoUrl": "/partners/teamlease-edtech.png"
+    "logoUrl": "/partners/teamlease-edtech.png",
+    "description": null,
+    "abbr": "TLE",
+    "accentColor": "linear-gradient(135deg,#dc2626,#f87171)",
+    "active": true
   },
   {
     "name": "Centre of Excellence for Cybersecurity (CysecK)",
     "category": "technology",
     "websiteUrl": "https://cyseck.in/",
-    "logoUrl": "/partners/cyseck.png"
+    "logoUrl": "/partners/cyseck.png",
+    "description": null,
+    "abbr": "CY",
+    "accentColor": "linear-gradient(135deg,#111827,#4b5563)",
+    "active": true
   },
   {
     "name": "KEONICS",
     "category": "technology",
     "websiteUrl": "https://www.keonics.in/english/",
-    "logoUrl": "/partners/keonics.png"
+    "logoUrl": "/partners/keonics.png",
+    "description": null,
+    "abbr": "KEO",
+    "accentColor": "linear-gradient(135deg,#0f766e,#2dd4bf)",
+    "active": true
   },
   {
     "name": "STPI",
     "category": "technology",
     "websiteUrl": "https://stpi.in/en/about-stpi",
-    "logoUrl": "/partners/stpi.png"
+    "logoUrl": "/partners/stpi.png",
+    "description": null,
+    "abbr": "STPI",
+    "accentColor": "linear-gradient(135deg,#2563eb,#60a5fa)",
+    "active": true
   },
   {
     "name": "Space Energy Systems",
     "category": "technology",
     "websiteUrl": "https://spaceenergysystems.com/",
-    "logoUrl": "/partners/ses.jpeg"
+    "logoUrl": "/partners/ses.jpeg",
+    "description": null,
+    "abbr": "SES",
+    "accentColor": "linear-gradient(135deg,#1e3a8a,#38bdf8)",
+    "active": true
   },
   {
     "name": "TiE",
     "category": "ecosystem",
     "websiteUrl": "https://tie.org/",
-    "logoUrl": "/partners/tie.png"
+    "logoUrl": "/partners/tie.png",
+    "description": null,
+    "abbr": "TiE",
+    "accentColor": "linear-gradient(135deg,#dc2626,#fb7185)",
+    "active": true
   },
   {
     "name": "CII",
     "category": "ecosystem",
     "websiteUrl": "https://www.cii.in/",
-    "logoUrl": "/partners/cii.png"
+    "logoUrl": "/partners/cii.png",
+    "description": null,
+    "abbr": "CII",
+    "accentColor": "linear-gradient(135deg,#0f766e,#2dd4bf)",
+    "active": true
   },
   {
     "name": "Deshpande Foundation",
     "category": "ecosystem",
     "websiteUrl": "https://deshpandefoundationindia.org/",
-    "logoUrl": "/partners/deshpande.png"
+    "logoUrl": "/partners/deshpande.png",
+    "description": null,
+    "abbr": "DF",
+    "accentColor": "linear-gradient(135deg,#16a34a,#4ade80)",
+    "active": true
   },
   {
     "name": "EkStep Foundation",
     "category": "ecosystem",
     "websiteUrl": "https://ekstep.org/",
-    "logoUrl": "/partners/ekstep.png"
+    "logoUrl": "/partners/ekstep.png",
+    "description": null,
+    "abbr": "EK",
+    "accentColor": "linear-gradient(135deg,#0ea5e9,#38bdf8)",
+    "active": true
   },
   {
     "name": "Culkey Foundation",
     "category": "ecosystem",
     "websiteUrl": "https://culkey.org/",
-    "logoUrl": "/partners/culkey.png"
+    "logoUrl": "/partners/culkey.png",
+    "description": null,
+    "abbr": "CF",
+    "accentColor": "linear-gradient(135deg,#b45309,#f59e0b)",
+    "active": true
   },
   {
     "name": "CoCreate Ventures",
     "category": "ecosystem",
     "websiteUrl": "https://cocreate.ventures/",
-    "logoUrl": "/partners/cocreate.png"
+    "logoUrl": "/partners/cocreate.png",
+    "description": null,
+    "abbr": "CCV",
+    "accentColor": "linear-gradient(135deg,#374151,#9ca3af)",
+    "active": true
   },
   {
     "name": "CX First",
     "category": "ecosystem",
     "websiteUrl": "https://cxfirst.com/en/",
-    "logoUrl": "/partners/cxfirst.png"
+    "logoUrl": "/partners/cxfirst.png",
+    "description": null,
+    "abbr": "CXF",
+    "accentColor": "linear-gradient(135deg,#111827,#4b5563)",
+    "active": true
   },
   {
     "name": "iDeCK",
     "category": "ecosystem",
     "websiteUrl": "https://ideck.in/",
-    "logoUrl": "/partners/ideck.png"
+    "logoUrl": "/partners/ideck.png",
+    "description": null,
+    "abbr": "IDECK",
+    "accentColor": "linear-gradient(135deg,#0ea5e9,#38bdf8)",
+    "active": true
   },
   {
     "name": "Zoho",
     "category": "ecosystem",
     "websiteUrl": "https://www.zoho.com/",
-    "logoUrl": "/partners/zoho.png"
+    "logoUrl": "/partners/zoho.png",
+    "description": null,
+    "abbr": "ZOHO",
+    "accentColor": "linear-gradient(135deg,#dc2626,#fb7185)",
+    "active": true
   },
   {
     "name": "State Bank of India",
     "category": "ecosystem",
     "websiteUrl": "https://bank.sbi/",
-    "logoUrl": "/partners/sbi.png"
+    "logoUrl": "/partners/sbi.png",
+    "description": null,
+    "abbr": "SBI",
+    "accentColor": "linear-gradient(135deg,#1d4ed8,#93c5fd)",
+    "active": true
   },
   {
     "name": "Vakil Search",
     "category": "ecosystem",
     "websiteUrl": "https://vakilsearch.com/",
-    "logoUrl": "/partners/vakil.png"
+    "logoUrl": "/partners/vakil.png",
+    "description": null,
+    "abbr": "VS",
+    "accentColor": "linear-gradient(135deg,#b45309,#f59e0b)",
+    "active": true
   },
   {
     "name": "100X.VC",
     "category": "investor",
     "websiteUrl": "https://www.100x.vc/",
-    "logoUrl": "/partners/100x.png"
+    "logoUrl": "/partners/100x.png",
+    "description": null,
+    "abbr": "100X",
+    "accentColor": "linear-gradient(135deg,#1e1b4b,#4338ca)",
+    "active": true
   },
   {
     "name": "Campus Fund",
     "category": "investor",
     "websiteUrl": "https://yourcampusfund.com/",
-    "logoUrl": "/partners/campusfund.png"
+    "logoUrl": "/partners/campusfund.png",
+    "description": null,
+    "abbr": "CF",
+    "accentColor": "linear-gradient(135deg,#7c3aed,#c084fc)",
+    "active": true
   }
 ]

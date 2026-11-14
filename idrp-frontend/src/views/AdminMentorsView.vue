@@ -67,7 +67,7 @@ const editMentor = (mentor: MentorAdminItem) => {
   editingId.value = mentor.id
 
   form.name = mentor.name
-  form.email = mentor.email
+  form.email = mentor.email || ''
   form.phone = mentor.phone || ''
   form.designation = mentor.designation || ''
   form.organization = mentor.organization || ''
@@ -87,16 +87,12 @@ const submitMentor = async () => {
     return
   }
 
-  if (!form.email.trim()) {
-    error.value = 'Email is required'
-    return
-  }
 
   saving.value = true
 
   const payload: MentorAdminPayload = {
     name: form.name.trim(),
-    email: form.email.trim(),
+    email: form.email?.trim() || undefined,
     phone: form.phone?.trim() || '',
     designation: form.designation?.trim() || '',
     organization: form.organization?.trim() || '',
@@ -312,7 +308,7 @@ onMounted(loadMentors)
 
           <div>
             <label class="mb-1.5 block text-sm font-semibold text-slate-700">
-              Email <span class="text-red-500">*</span>
+              Email (optional)
             </label>
             <input
               v-model="form.email"

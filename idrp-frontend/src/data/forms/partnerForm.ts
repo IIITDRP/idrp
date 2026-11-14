@@ -10,7 +10,7 @@ export const partnerFormConfig: FormConfig = {
   resetOnSuccess: true,
   successMessage:
     'Partnership enquiry received successfully. Our team will review your submission and connect with you shortly.',
-  endpoint: 'https://api.web3forms.com/submit',
+  inquiryFields: { fullName: 'contactPerson', organization: 'organizationName' },
   meta: {
     sourcePage: '/partners',
     category: 'partner-enquiry',

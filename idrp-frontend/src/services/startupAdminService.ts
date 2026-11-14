@@ -1,7 +1,9 @@
 import { adminFetch } from '@/services/authService'
 import type { PageResponse } from '@/services/httpClient'
 
-export type StartupCategory = 'PRE_INCUBATED' | 'INCUBATED' | 'FUNDED'
+import type { StartupDomain, StartupStatus } from '@/types/startups'
+
+export type { StartupDomain, StartupStatus }
 
 export type StartupPerson = {
   name: string
@@ -14,7 +16,8 @@ export type StartupPerson = {
 export type StartupRequest = {
   name: string
   sector: string
-  categories: StartupCategory[]
+  status: StartupStatus
+  domains: StartupDomain[]
   logo: string
   website: string
   onePager: string

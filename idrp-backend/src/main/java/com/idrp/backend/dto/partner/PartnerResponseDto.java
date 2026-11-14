@@ -16,6 +16,8 @@ public class PartnerResponseDto {
     private String category;
     private String websiteUrl;
     private String logoUrl;
+    private String abbr;
+    private String accentColor;
     private String description;
     private String contactPerson;
     private String contactEmail;

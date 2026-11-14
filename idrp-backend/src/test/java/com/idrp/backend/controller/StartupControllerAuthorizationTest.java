@@ -8,7 +8,8 @@ import com.idrp.backend.dto.startup.StartupRequestDto;
 import com.idrp.backend.dto.startup.StartupResponseDto;
 import com.idrp.backend.entity.Admin;
 import com.idrp.backend.entity.AdminRole;
-import com.idrp.backend.entity.StartupCategory;
+import com.idrp.backend.entity.StartupDomain;
+import com.idrp.backend.entity.StartupStatus;
 import com.idrp.backend.repository.AdminRepository;
 import com.idrp.backend.service.CustomAdminDetailsService;
 import com.idrp.backend.service.JwtService;
@@ -68,7 +69,8 @@ class StartupControllerAuthorizationTest {
     private StartupRequestDto validPayload() {
         StartupRequestDto dto = new StartupRequestDto();
         dto.setName("Test Startup");
-        dto.setCategories(List.of(StartupCategory.INCUBATED));
+        dto.setStatus(StartupStatus.INCUBATED);
+        dto.setDomains(List.of(StartupDomain.DEEP_TECH));
         return dto;
     }
 

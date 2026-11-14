@@ -148,6 +148,22 @@
             />
           </div>
 
+          <label class="flex items-start gap-3 text-sm leading-6 text-gray-600">
+            <input
+              v-model="form.consent"
+              type="checkbox"
+              required
+              class="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-primary)]"
+            />
+            <span>
+              I consent to IDRP storing and using these details to assess my application, as
+              described in the
+              <RouterLink to="/privacy-policy" class="font-semibold text-[var(--color-primary)] underline">
+                privacy policy</RouterLink>.
+              <span class="text-red-500">*</span>
+            </span>
+          </label>
+
           <div class="pt-2">
             <button
               type="submit"
@@ -195,16 +211,17 @@
 import { computed, reactive } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { getJobBySlug } from '@/data/careers'
-import { useSimulatedSubmit } from '@/composables/useSimulatedSubmit'
+import { useInquirySubmit } from '@/composables/useInquirySubmit'
 
-// TODO(admin-integration): This form currently only simulates submission locally.
-// Wire it to POST /api/job-applications once the Careers page is connected to the backend.
+// Applications are stored as inquiries (formType "job-application") and appear in the
+// admin Inquiries inbox, filterable by type.
 type ApplicationForm = {
   applicantName: string
   email: string
   phone: string
   resumeUrl: string
   coverLetter: string
+  consent: boolean
 }
 
 const route = useRoute()
@@ -221,7 +238,7 @@ const formattedDeadline = computed(() => {
   })
 })
 
-const { submitting, submitted, errorMessage, submit } = useSimulatedSubmit()
+const { submitting, submitted, errorMessage, submit } = useInquirySubmit()
 
 const form = reactive<ApplicationForm>({
   applicantName: '',
@@ -229,6 +246,7 @@ const form = reactive<ApplicationForm>({
   phone: '',
   resumeUrl: '',
   coverLetter: '',
+  consent: false,
 })
 
 function resetForm() {
@@ -237,10 +255,24 @@ function resetForm() {
   form.phone = ''
   form.resumeUrl = ''
   form.coverLetter = ''
+  form.consent = false
 }
 
 function submitForm() {
-  submit(resetForm)
+  submit(
+    {
+      formType: 'job-application',
+      title: job.value ? `Job application - ${job.value.title}` : 'Job application',
+      sourcePage: route.fullPath,
+      fullName: form.applicantName,
+      email: form.email,
+      phone: form.phone,
+      message: form.coverLetter,
+      consent: form.consent,
+      payload: { ...form, jobSlug: slug.value, jobTitle: job.value?.title ?? '' },
+    },
+    resetForm,
+  )
 }
 </script>
 

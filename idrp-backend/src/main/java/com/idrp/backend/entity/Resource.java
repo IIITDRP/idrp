@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.ArrayList;
 import java.time.LocalDateTime;
 
 @Entity
@@ -46,6 +48,25 @@ public class Resource {
 
     @Column(length = 150)
     private String author;
+
+    @Column(name = "issue_number", length = 20)
+    private String issueNumber;
+
+    @Column(name = "date_label", length = 60)
+    private String dateLabel;
+
+    @Column(name = "preview_text", columnDefinition = "TEXT")
+    private String previewText;
+
+    @Column(name = "total_pages")
+    private Integer totalPages;
+
+    @ElementCollection
+    @CollectionTable(name = "resource_highlights", joinColumns = @JoinColumn(name = "resource_id"))
+    @OrderColumn(name = "position")
+    @Column(name = "highlight", length = 500)
+    @Builder.Default
+    private List<String> highlights = new ArrayList<>();
 
     @Column(nullable = false)
     @Builder.Default

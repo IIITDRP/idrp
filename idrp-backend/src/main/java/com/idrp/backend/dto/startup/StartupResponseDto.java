@@ -1,6 +1,7 @@
 package com.idrp.backend.dto.startup;
 
-import com.idrp.backend.entity.StartupCategory;
+import com.idrp.backend.entity.StartupDomain;
+import com.idrp.backend.entity.StartupStatus;
 import com.idrp.backend.entity.StartupPerson;
 import lombok.*;
 
@@ -17,7 +18,8 @@ public class StartupResponseDto {
     private Long id;
     private String name;
     private String sector;
-    private List<StartupCategory> categories;
+    private StartupStatus status;
+    private List<StartupDomain> domains;
     private String logo;
     private String website;
     private String onePager;

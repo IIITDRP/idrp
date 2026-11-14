@@ -1,9 +1,12 @@
 <template>
   <AppLayout />
-  <Analytics/>
+  <ConsentBanner />
 </template>
 
 <script setup lang="ts">
 import AppLayout from '@/components/AppLayout.vue'
-import { Analytics } from '@vercel/analytics/vue'
+import ConsentBanner from '@/components/common/ConsentBanner.vue'
+import { initAnalytics } from '@/services/analyticsConsent'
+
+initAnalytics()
 </script>

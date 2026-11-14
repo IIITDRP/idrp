@@ -11,5 +11,8 @@ import TeamHeroSection from '@/components/team/TeamHeroSection.vue'
 import TeamGridSection from '@/components/team/TeamGridSection.vue'
 import TeamCTASection from '@/components/team/TeamCTASection.vue'
 
-import { teamMembers, teamHero, teamCTA } from '@/data/team'
+import { teamMembers as staticTeamMembers, teamHero, teamCTA } from '@/data/team'
+import { loadTeamMembers, useRemoteContent } from '@/services/contentService'
+
+const teamMembers = useRemoteContent('team-members', staticTeamMembers, loadTeamMembers)
 </script>

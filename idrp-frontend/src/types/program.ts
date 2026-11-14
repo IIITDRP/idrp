@@ -43,8 +43,8 @@ export type PageCTAContent = {
   eyebrow?: string
   title: string
   description: string
-  primaryActionLabel: string
-  primaryActionTo: string
+  primaryActionLabel?: string
+  primaryActionTo?: string
   secondaryActionLabel?: string
   secondaryActionTo?: string
 }

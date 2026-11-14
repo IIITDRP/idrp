@@ -1041,18 +1041,18 @@ function parseLocalDate(dateString: string, endOfDay = false) {
 
   return new Date(year, month - 1, day, 0, 0, 0, 0)
 }
-export const getVisibleEvents = () => events.filter((event) => event.visible !== false)
+export const getVisibleEvents = (list: EventItem[] = events) => list.filter((event) => event.visible !== false)
 
-export const getEventById = (id: number) =>
-  events.find((event) => event.id === id && event.visible !== false)
+export const getEventById = (id: number, list: EventItem[] = events) =>
+  list.find((event) => event.id === id && event.visible !== false)
 
-export const getEventBySlug = (slug: string) =>
-  events.find((event) => event.slug === slug && event.visible !== false)
+export const getEventBySlug = (slug: string, list: EventItem[] = events) =>
+  list.find((event) => event.slug === slug && event.visible !== false)
 
-export const getUpcomingEvents = () => {
+export const getUpcomingEvents = (list: EventItem[] = events) => {
   const now = new Date()
 
-  return events
+  return list
     .filter(
       (event) =>
         parseLocalDate(event.endDate, true).getTime() >= now.getTime() && event.visible !== false,
@@ -1060,10 +1060,10 @@ export const getUpcomingEvents = () => {
     .sort((a, b) => parseLocalDate(a.startDate).getTime() - parseLocalDate(b.startDate).getTime())
 }
 
-export const getPastEvents = () => {
+export const getPastEvents = (list: EventItem[] = events) => {
   const now = new Date()
 
-  return events
+  return list
     .filter(
       (event) =>
         parseLocalDate(event.endDate, true).getTime() < now.getTime() && event.visible !== false,
@@ -1078,8 +1078,8 @@ export const isEventUpcoming = (event: EventItem) =>
 // explicit `initiative` tag or, for events whose category already names the
 // initiative (e.g. category 'NAIN 2.0'), via `category`. Upcoming events are
 // listed first (soonest first), then past events (most recent first).
-export const getEventsByInitiative = (initiativeKey: string) => {
-  const matching = getVisibleEvents().filter(
+export const getEventsByInitiative = (initiativeKey: string, list: EventItem[] = events) => {
+  const matching = getVisibleEvents(list).filter(
     (event) => event.initiative === initiativeKey || event.category === initiativeKey,
   )
 

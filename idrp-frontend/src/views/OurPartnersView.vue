@@ -9,11 +9,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { partnerCategories } from '@/data/partners'
+import { partnerCategories as staticPartnerCategories } from '@/data/partners'
+import { loadPartnerCategories, useRemoteContent } from '@/services/contentService'
 import PartnersGridSection from '@/components/partners/PartnersGridSection.vue'
 import PartnerFormSection from '@/components/partners/PartnerFormSection.vue'
 import PartnersHeroSection from '@/components/partners/PartnersHeroSection.vue'
 import PartnersIntroSection from '@/components/partners/PartnersIntroSection.vue'
 
 const showHeroImage = ref(true)
+const partnerCategories = useRemoteContent('partner-categories', staticPartnerCategories, loadPartnerCategories(staticPartnerCategories))
 </script>

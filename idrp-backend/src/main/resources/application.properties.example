@@ -1,10 +1,14 @@
 spring.application.name=idrp-backend
 spring.datasource.url=jdbc:postgresql://localhost:5432/idrp_db
-spring.datasource.username=postgres
+spring.datasource.username=idrp_app
 spring.datasource.password=change-me
 
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+# Flyway owns the schema (src/main/resources/db/migration). Hibernate only checks
+# that the entities match it and refuses to start if they don't.
+spring.flyway.enabled=true
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.open-in-view=false
+spring.jpa.show-sql=false
 spring.jpa.properties.hibernate.format_sql=true
 
 server.port=8080
@@ -19,7 +23,8 @@ app.admin.bootstrap-password=
 
 # Set to true to import the static frontend content (seed/*.json) into the database
 # on startup. Safe to re-run - matches existing records by natural key and updates
-# them in place instead of duplicating.
+# them in place instead of duplicating. Regenerate the JSON with
+# `npm run export-seed` in idrp-frontend after editing src/data/*.ts.
 app.seed-static-data=false
 
 spring.servlet.multipart.max-file-size=100MB
@@ -30,6 +35,21 @@ app.upload.base-url=http://localhost:8080/uploads
 
 app.cors.allowed-origins=http://localhost:5173
 
+# Inquiry e-mail notifications (optional). Nothing is sent unless spring.mail.host
+# AND app.inquiry.notify-to are set; inquiries are always stored in the database.
+#spring.mail.host=smtp.hostinger.com
+#spring.mail.port=465
+#spring.mail.username=
+#spring.mail.password=
+#spring.mail.properties.mail.smtp.ssl.enable=true
+app.inquiry.notify-to=
+app.inquiry.notify-from=
+app.inquiry.admin-url=http://localhost:5173
+
 # Only the health endpoint is exposed - never widen this without also locking it
 # down behind admin auth, since other actuator endpoints can leak internal details.
 management.endpoints.web.exposure.include=health
+
+# The mail health check would report DOWN whenever SMTP is not configured; inquiry
+# notification is optional, so it must not fail the app health endpoint.
+management.health.mail.enabled=false

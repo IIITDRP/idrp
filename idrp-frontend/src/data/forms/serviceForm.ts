@@ -11,7 +11,7 @@ export function createServiceFormConfig(options: ServiceFormOption[] = []): Form
     resetOnSuccess: true,
     successMessage:
       'Enquiry received successfully. Our team will review your requirement and get in touch with you shortly.',
-    endpoint: 'https://api.web3forms.com/submit',
+    inquiryFields: { message: 'details' },
     meta: {
       sourcePage: '/services',
       category: 'service-enquiry',

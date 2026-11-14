@@ -429,7 +429,7 @@ import {
   businessModelOptions,
   investorTypeOptions,
 } from '@/data/forms/startupMatchmakingForm'
-import { useSimulatedSubmit } from '@/composables/useSimulatedSubmit'
+import { useInquirySubmit } from '@/composables/useInquirySubmit'
 
 type StartupForm = {
   startupName: string
@@ -455,7 +455,7 @@ type StartupForm = {
 }
 
 const showHeroImage = ref(true)
-const { submitting, submitted, errorMessage, submit } = useSimulatedSubmit()
+const { submitting, submitted, errorMessage, submit } = useInquirySubmit()
 
 const form = reactive<StartupForm>({
   startupName: '',
@@ -504,7 +504,21 @@ function resetForm() {
 }
 
 function submitForm() {
-  submit(resetForm)
+  submit(
+    {
+      formType: 'startup-matchmaking',
+      title: 'Startup Matchmaking',
+      sourcePage: '/community/matchmaking/startup',
+      fullName: form.founderName,
+      email: form.email,
+      phone: form.phone,
+      organization: form.startupName,
+      message: form.startupDescription,
+      consent: form.consent,
+      payload: { ...form },
+    },
+    resetForm,
+  )
 }
 </script>
 
