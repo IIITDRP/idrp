@@ -1794,4 +1794,38 @@ export const startups: Startup[] = [
     ],
     teamMembers: [],
   },
+  {
+    id: 50,
+    name: 'PHYNETIX',
+    sector: 'DEEP TECH / SEMICONDUCTOR AI',
+    categories: ['INCUBATED'],
+    logo: '/startups/logo/phynetix.jpg',
+    website: 'https://phynetix.com',
+    onePager: '',
+    brief:
+      'PHYNETIX is a deep-tech company developing physics-informed AI models and cross-process intelligence for semiconductor manufacturing and advanced packaging. Its technology combines physical laws, simulation and process data to predict thermal and mechanical behaviour, connect insights across manufacturing steps, guide process optimization and accelerate development, with an initial focus on hybrid bonding.',
+    contactEmail: 'aswin.pitchiya@phynetix.com',
+    techFacultyMentors: [],
+    founders: [
+      {
+        name: 'Aswin Prathap Pitchiya',
+        image: '',
+        role: 'Founder',
+        email: 'aswin.pitchiya@phynetix.com',
+      },
+      {
+        name: 'Karthik Raja',
+        image: '',
+        role: 'Founder',
+        email: 'pkrajamech@gmail.com',
+      },
+      {
+        name: 'Lakshmi',
+        image: '',
+        role: 'Founder',
+        email: 'pkrajamechanical@gmail.com',
+      },
+    ],
+    teamMembers: [],
+  },
 ]
