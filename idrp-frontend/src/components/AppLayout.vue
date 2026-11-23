@@ -662,11 +662,6 @@ onBeforeUnmount(() => {
     sans-serif;
 }
 
-:global(a) {
-  color: inherit;
-  text-decoration: none;
-}
-
 :global(button) {
   font: inherit;
 }
