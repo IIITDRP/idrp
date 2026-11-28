@@ -1,4 +1,4 @@
-/** PRD Phase 1 SP-02: every startup has exactly one status. */
+/** Portfolio stage. A startup may hold several (e.g. Incubated and Funded). */
 export type StartupStatus = 'PRE_INCUBATED' | 'INCUBATED' | 'FUNDED'
 
 /** PRD Phase 1 SP-03 domain taxonomy (plus OTHER). A startup may carry several. */
@@ -31,7 +31,7 @@ export interface Startup {
   name: string
   /** Free-text sector shown on the card, e.g. "AI / MENTAL HEALTH". */
   sector: string
-  status: StartupStatus
+  statuses: StartupStatus[]
   domains: StartupDomain[]
   logo?: string
   website?: string

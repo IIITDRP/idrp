@@ -16,7 +16,7 @@ export type StartupPerson = {
 export type StartupRequest = {
   name: string
   sector: string
-  status: StartupStatus
+  statuses: StartupStatus[]
   domains: StartupDomain[]
   logo: string
   website: string

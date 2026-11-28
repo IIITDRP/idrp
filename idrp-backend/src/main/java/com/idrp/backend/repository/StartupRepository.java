@@ -22,7 +22,7 @@ public interface StartupRepository extends JpaRepository<Startup, Long> {
     Optional<Startup> findByName(String name);
 
     @Query("SELECT s FROM Startup s WHERE " +
-            "(:status IS NULL OR s.status = :status) AND " +
+            "(:status IS NULL OR :status MEMBER OF s.statuses) AND " +
             "(:domain IS NULL OR :domain MEMBER OF s.domains) AND " +
             "(:search IS NULL OR LOWER(s.name) LIKE LOWER(CONCAT('%', CAST(:search AS string), '%')))")
     Page<Startup> search(@Param("status") StartupStatus status, @Param("domain") StartupDomain domain, @Param("search") String search, Pageable pageable);

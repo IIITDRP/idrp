@@ -18,7 +18,7 @@ public class StartupResponseDto {
     private Long id;
     private String name;
     private String sector;
-    private StartupStatus status;
+    private List<StartupStatus> statuses;
     private List<StartupDomain> domains;
     private String logo;
     private String website;

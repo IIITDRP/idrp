@@ -68,7 +68,7 @@ public class StartupServiceImpl implements StartupService {
 
         existingStartup.setName(requestDto.getName());
         existingStartup.setSector(requestDto.getSector());
-        existingStartup.setStatus(requestDto.getStatus());
+        existingStartup.setStatuses(distinct(requestDto.getStatuses()));
         existingStartup.setDomains(new ArrayList<>(requestDto.getDomains()));
         existingStartup.setLogo(requestDto.getLogo());
         existingStartup.setWebsite(requestDto.getWebsite());
@@ -99,7 +99,7 @@ public class StartupServiceImpl implements StartupService {
         return Startup.builder()
                 .name(dto.getName())
                 .sector(dto.getSector())
-                .status(dto.getStatus())
+                .statuses(distinct(dto.getStatuses()))
                 .domains(new ArrayList<>(dto.getDomains()))
                 .logo(dto.getLogo())
                 .website(dto.getWebsite())
@@ -118,7 +118,7 @@ public class StartupServiceImpl implements StartupService {
                 .id(startup.getId())
                 .name(startup.getName())
                 .sector(startup.getSector())
-                .status(startup.getStatus())
+                .statuses(copyOf(startup.getStatuses()))
                 .domains(copyOf(startup.getDomains()))
                 .logo(startup.getLogo())
                 .website(startup.getWebsite())
@@ -132,6 +132,13 @@ public class StartupServiceImpl implements StartupService {
                 .createdAt(startup.getCreatedAt())
                 .updatedAt(startup.getUpdatedAt())
                 .build();
+    }
+
+    /** De-duplicates statuses and keeps them in stage order (Pre-Incubated, Incubated, Funded). */
+    private static java.util.List<StartupStatus> distinct(java.util.Collection<StartupStatus> source) {
+        java.util.EnumSet<StartupStatus> set = java.util.EnumSet.noneOf(StartupStatus.class);
+        if (source != null) set.addAll(source);
+        return new java.util.ArrayList<>(set);
     }
 
     /** Copies a lazy JPA collection while the session is open, so serialization never touches Hibernate. */

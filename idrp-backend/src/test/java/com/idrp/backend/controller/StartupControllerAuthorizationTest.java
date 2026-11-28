@@ -69,7 +69,7 @@ class StartupControllerAuthorizationTest {
     private StartupRequestDto validPayload() {
         StartupRequestDto dto = new StartupRequestDto();
         dto.setName("Test Startup");
-        dto.setStatus(StartupStatus.INCUBATED);
+        dto.setStatuses(List.of(StartupStatus.INCUBATED));
         dto.setDomains(List.of(StartupDomain.DEEP_TECH));
         return dto;
     }

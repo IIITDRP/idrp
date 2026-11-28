@@ -2,7 +2,7 @@
   {
     "name": "Cre8Hub",
     "sector": "SOCIAL TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -63,7 +63,7 @@
   {
     "name": "Evento",
     "sector": "SOCIAL TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -124,7 +124,7 @@
   {
     "name": "Friend In Fog",
     "sector": "AUTO TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "AUTO_TECH"
     ],
@@ -171,7 +171,7 @@
   {
     "name": "Aatrangi",
     "sector": "HEALTH TECH",
-    "status": "FUNDED",
+    "statuses": ["INCUBATED", "FUNDED"],
     "domains": [
       "HEALTH_TECH"
     ],
@@ -231,7 +231,7 @@
   {
     "name": "MLera",
     "sector": "ED TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "EDTECH"
     ],
@@ -278,7 +278,7 @@
   {
     "name": "BookMyTurf",
     "sector": "COMMERCE TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -339,7 +339,7 @@
   {
     "name": "V-Gyan",
     "sector": "ED TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "EDTECH"
     ],
@@ -386,7 +386,7 @@
   {
     "name": "Deep Traits",
     "sector": "PEOPLE TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -461,7 +461,7 @@
   {
     "name": "Kisan Voice",
     "sector": "AGRI TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -515,7 +515,7 @@
   {
     "name": "Removation",
     "sector": "DESIGN TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -569,7 +569,7 @@
   {
     "name": "SmartNest",
     "sector": "DEEP TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "DEEP_TECH"
     ],
@@ -616,7 +616,7 @@
   {
     "name": "Sparkle Studio",
     "sector": "DESIGN TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -670,7 +670,7 @@
   {
     "name": "Cipherion",
     "sector": "CYBERSECURITY",
-    "status": "FUNDED",
+    "statuses": ["INCUBATED", "FUNDED"],
     "domains": [
       "OTHER"
     ],
@@ -716,7 +716,7 @@
   {
     "name": "NEXR Technology Private Limited",
     "sector": "HEALTH TECH",
-    "status": "INCUBATED",
+    "statuses": ["INCUBATED", "FUNDED"],
     "domains": [
       "HEALTH_TECH"
     ],
@@ -755,7 +755,7 @@
   {
     "name": "Neuraforesight Private Limited",
     "sector": "HEALTH TECH",
-    "status": "FUNDED",
+    "statuses": ["FUNDED"],
     "domains": [
       "HEALTH_TECH"
     ],
@@ -801,7 +801,7 @@
   {
     "name": "SphuraNex",
     "sector": "HEALTH TECH",
-    "status": "INCUBATED",
+    "statuses": ["INCUBATED"],
     "domains": [
       "HEALTH_TECH"
     ],
@@ -848,7 +848,7 @@
   {
     "name": "Step-In",
     "sector": "DEEP TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "DEEP_TECH"
     ],
@@ -895,7 +895,7 @@
   {
     "name": "MediRaksha",
     "sector": "HEALTH TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "HEALTH_TECH"
     ],
@@ -963,7 +963,7 @@
   {
     "name": "VayuCharge",
     "sector": "DEEP TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "DEEP_TECH"
     ],
@@ -987,7 +987,7 @@
   {
     "name": "Jnana Setu",
     "sector": "ED TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "EDTECH"
     ],
@@ -1062,7 +1062,7 @@
   {
     "name": "CheTechs",
     "sector": "AUTO TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "AUTO_TECH"
     ],
@@ -1101,7 +1101,7 @@
   {
     "name": "Acumen Intelligence",
     "sector": "AI / SAAS",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "AI_SAAS"
     ],
@@ -1140,7 +1140,7 @@
   {
     "name": "Sleepy1",
     "sector": "TRAVEL TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "TRAVEL_TECH"
     ],
@@ -1186,7 +1186,7 @@
   {
     "name": "Yntra Sparks",
     "sector": "ED TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "EDTECH"
     ],
@@ -1225,7 +1225,7 @@
   {
     "name": "Gigzy",
     "sector": "PLATFORM TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "PLATFORM_TECH"
     ],
@@ -1278,7 +1278,7 @@
   {
     "name": "PetalPath",
     "sector": "ED TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "EDTECH"
     ],
@@ -1324,7 +1324,7 @@
   {
     "name": "Fuelwise",
     "sector": "LOGISTICS TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -1377,7 +1377,7 @@
   {
     "name": "Rescrapx",
     "sector": "AUTO TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "AUTO_TECH"
     ],
@@ -1416,7 +1416,7 @@
   {
     "name": "AUKAAT",
     "sector": "FINTECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -1462,7 +1462,7 @@
   {
     "name": "ManoSetu AI",
     "sector": "AI / MENTAL HEALTH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "AI_SAAS",
       "HEALTH_TECH"
@@ -1487,7 +1487,7 @@
   {
     "name": "Aitric",
     "sector": "IOT / SMART ENERGY",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "IOT_SMART_ENERGY"
     ],
@@ -1554,7 +1554,7 @@
   {
     "name": "HostelSync",
     "sector": "HOSTEL MANAGEMENT",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -1593,7 +1593,7 @@
   {
     "name": "Benzene",
     "sector": "DECENTRALIZED COMPUTING",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -1646,7 +1646,7 @@
   {
     "name": "Mentiq",
     "sector": "AI / CAREER ADVISORY",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "AI_SAAS"
     ],
@@ -1692,7 +1692,7 @@
   {
     "name": "MotionIQ",
     "sector": "SPORTS TECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "OTHER"
     ],
@@ -1731,7 +1731,7 @@
   {
     "name": "Trividhi Labs Pvt Ltd",
     "sector": "DEEP TECH",
-    "status": "INCUBATED",
+    "statuses": ["INCUBATED"],
     "domains": [
       "DEEP_TECH"
     ],
@@ -1770,7 +1770,7 @@
   {
     "name": "Exobios Private Limited",
     "sector": "HEALTH TECH",
-    "status": "INCUBATED",
+    "statuses": ["INCUBATED"],
     "domains": [
       "HEALTH_TECH"
     ],
@@ -1809,7 +1809,7 @@
   {
     "name": "ANUTHANTRA PRIVATE LIMITED",
     "sector": "HEALTH TECH",
-    "status": "INCUBATED",
+    "statuses": ["INCUBATED"],
     "domains": [
       "HEALTH_TECH"
     ],
@@ -1876,7 +1876,7 @@
   {
     "name": "TrueEd",
     "sector": "EDTECH",
-    "status": "PRE_INCUBATED",
+    "statuses": ["PRE_INCUBATED"],
     "domains": [
       "EDTECH"
     ],
@@ -1922,7 +1922,7 @@
   {
     "name": "Satatham Kritam Innovative Technology Solutions Pvt Ltd",
     "sector": "DEEP TECH",
-    "status": "INCUBATED",
+    "statuses": ["INCUBATED"],
     "domains": [
       "DEEP_TECH"
     ],
@@ -1953,7 +1953,7 @@
   {
     "name": "Quantum-World Ventures Private Limited",
     "sector": "DEEP TECH / QUANTUM",
-    "status": "INCUBATED",
+    "statuses": ["INCUBATED"],
     "domains": [
       "DEEP_TECH"
     ],

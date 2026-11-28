@@ -96,8 +96,13 @@ const websiteLabel = computed(() => shown.value?.website?.replace(/^https?:\/\//
                     {{ shown.sector }}
                   </p>
                   <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="rounded-full px-3 py-1 text-xs font-semibold" :class="statusBadgeClass[shown.status]">
-                      {{ statusLabels[shown.status] }}
+                    <span
+                      v-for="status in shown.statuses"
+                      :key="status"
+                      class="rounded-full px-3 py-1 text-xs font-semibold"
+                      :class="statusBadgeClass[status]"
+                    >
+                      {{ statusLabels[status] }}
                     </span>
                     <span
                       v-for="domain in shown.domains"

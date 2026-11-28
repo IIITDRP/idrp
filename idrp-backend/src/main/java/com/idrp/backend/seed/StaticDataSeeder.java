@@ -121,7 +121,7 @@ public class StaticDataSeeder implements CommandLineRunner {
                 Startup startup = existing.orElseGet(Startup::new);
                 startup.setName(d.getName());
                 startup.setSector(d.getSector());
-                startup.setStatus(d.getStatus());
+                startup.setStatuses(d.getStatuses() != null ? new ArrayList<>(d.getStatuses()) : new ArrayList<>());
                 startup.setDomains(d.getDomains() != null ? new ArrayList<>(d.getDomains()) : new ArrayList<>());
                 startup.setLogo(d.getLogo());
                 startup.setWebsite(d.getWebsite());

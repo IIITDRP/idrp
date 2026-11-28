@@ -55,8 +55,13 @@ watch(
     </div>
 
     <div class="mt-4 flex flex-wrap gap-2">
-      <span class="rounded-full px-3 py-1 text-xs font-semibold" :class="statusBadgeClass[startup.status]">
-        {{ statusLabels[startup.status] }}
+      <span
+        v-for="status in startup.statuses"
+        :key="status"
+        class="rounded-full px-3 py-1 text-xs font-semibold"
+        :class="statusBadgeClass[status]"
+      >
+        {{ statusLabels[status] }}
       </span>
       <span
         v-for="domain in startup.domains"

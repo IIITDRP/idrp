@@ -34,7 +34,7 @@ function matchesSearch(startup: Startup, query: string) {
     startup.name,
     startup.sector,
     startup.brief ?? '',
-    statusLabels[startup.status],
+    startup.statuses.map((status) => statusLabels[status]).join(' '),
     startup.domains.map((domain) => domainLabels[domain]).join(' '),
     personText(startup.founders),
     personText(startup.teamMembers),
@@ -46,11 +46,14 @@ function matchesSearch(startup: Startup, query: string) {
 }
 
 const matchesStatus = (startup: Startup) =>
-  selectedStatuses.value.length === 0 || selectedStatuses.value.includes(startup.status)
+  selectedStatuses.value.length === 0 ||
+  startup.statuses.some((status) => selectedStatuses.value.includes(status))
 
 const matchesDomain = (startup: Startup) =>
   selectedDomains.value.length === 0 ||
   startup.domains.some((domain) => selectedDomains.value.includes(domain))
+
+const highestStage = (startup: Startup) => Math.max(-1, ...startup.statuses.map((status) => statusOrder.indexOf(status)))
 
 const visibleStartups = computed(() => {
   const query = searchQuery.value.trim().toLowerCase()
@@ -62,7 +65,7 @@ const visibleStartups = computed(() => {
   if (sortBy.value === 'status') {
     return list.sort(
       (a, b) =>
-        statusOrder.indexOf(b.status) - statusOrder.indexOf(a.status) ||
+        highestStage(b) - highestStage(a) ||
         a.name.localeCompare(b.name),
     )
   }
@@ -72,7 +75,7 @@ const visibleStartups = computed(() => {
 // Chip counts reflect the other active filters, so a chip never promises results it can't show.
 const statusCounts = computed(() => {
   const counts = Object.fromEntries(statusOrder.map((status) => [status, 0])) as Record<StartupStatus, number>
-  props.startups.filter(matchesDomain).forEach((startup) => counts[startup.status]++)
+  props.startups.filter(matchesDomain).forEach((startup) => startup.statuses.forEach((status) => counts[status]++))
   return counts
 })
 

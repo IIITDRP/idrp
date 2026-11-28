@@ -32,7 +32,7 @@ const emptyPerson = (): StartupPerson => ({
 const form = reactive<StartupRequest>({
   name: '',
   sector: '',
-  status: 'PRE_INCUBATED',
+  statuses: ['PRE_INCUBATED'],
   domains: [],
   logo: '',
   website: '',
@@ -49,7 +49,7 @@ const resetForm = () => {
   editingId.value = null
   form.name = ''
   form.sector = ''
-  form.status = 'PRE_INCUBATED'
+  form.statuses = ['PRE_INCUBATED']
   form.domains = []
   form.logo = ''
   form.website = ''
@@ -118,7 +118,7 @@ const editStartup = (startup: StartupResponse) => {
   editingId.value = startup.id
   form.name = startup.name
   form.sector = startup.sector
-  form.status = startup.status ?? 'PRE_INCUBATED'
+  form.statuses = startup.statuses?.length ? [...startup.statuses] : ['PRE_INCUBATED']
   form.domains = startup.domains?.length ? [...startup.domains] : []
   form.logo = startup.logo
   form.website = startup.website
@@ -136,6 +136,12 @@ const editStartup = (startup: StartupResponse) => {
     : []
   form.gallery = startup.gallery ?? []
   galleryText.value = (startup.gallery ?? []).join('\n')
+}
+
+const toggleStatus = (status: StartupStatus) => {
+  const index = form.statuses.indexOf(status)
+  if (index === -1) form.statuses.push(status)
+  else form.statuses.splice(index, 1)
 }
 
 const toggleDomain = (domain: StartupDomain) => {
@@ -173,7 +179,8 @@ const removePerson = (list: StartupPerson[], index: number, keepOne = false) => 
   list.splice(index, 1)
 }
 
-const statusLabel = (status: StartupStatus | undefined) => (status ? statusLabels[status] : '-')
+const statusLabel = (statuses: StartupStatus[] | undefined) =>
+  statuses?.length ? statuses.map((status) => statusLabels[status]).join(', ') : '-'
 
 onMounted(fetchStartups)
 </script>
@@ -248,17 +255,24 @@ onMounted(fetchStartups)
         </div>
 
         <fieldset class="md:col-span-2">
-          <legend class="text-sm font-semibold text-slate-700">Status (exactly one)</legend>
+          <legend class="text-sm font-semibold text-slate-700">Status (one or more)</legend>
           <div class="mt-2 flex flex-wrap gap-4">
             <label
               v-for="status in statusOrder"
               :key="status"
               class="flex items-center gap-2 text-sm text-slate-700"
             >
-              <input v-model="form.status" type="radio" name="startup-status" :value="status" />
+              <input
+                type="checkbox"
+                :checked="form.statuses.includes(status)"
+                @change="toggleStatus(status)"
+              />
               {{ statusLabels[status] }}
             </label>
           </div>
+          <p v-if="form.statuses.length === 0" class="mt-1 text-xs text-amber-700">
+            Pick at least one status.
+          </p>
         </fieldset>
 
         <fieldset class="md:col-span-2">
@@ -596,7 +610,7 @@ onMounted(fetchStartups)
               </td>
 
               <td class="px-4 py-4">
-                {{ statusLabel(startup.status) }}
+                {{ statusLabel(startup.statuses) }}
                 <span class="block text-xs text-slate-500">
                   {{ startup.domains?.map((domain) => domainLabels[domain]).join(', ') }}
                 </span>

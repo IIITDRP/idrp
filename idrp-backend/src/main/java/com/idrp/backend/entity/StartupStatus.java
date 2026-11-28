@@ -1,8 +1,8 @@
 package com.idrp.backend.entity;
 
 /**
- * PRD Phase 1 SP-02: every startup has exactly one status.
- * Funded supersedes Incubated, which supersedes Pre-Incubated.
+ * Portfolio stage of a startup. A startup may hold several at once
+ * (for example one that is both Incubated and Funded).
  */
 public enum StartupStatus {
     PRE_INCUBATED,

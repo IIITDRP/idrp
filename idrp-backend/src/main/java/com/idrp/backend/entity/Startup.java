@@ -26,9 +26,12 @@ public class Startup {
     @Column(length = 100)
     private String sector;
 
+    @ElementCollection(targetClass = StartupStatus.class)
+    @CollectionTable(name = "startup_statuses", joinColumns = @JoinColumn(name = "startup_id"))
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 30)
-    private StartupStatus status;
+    @Column(name = "status", length = 30)
+    @Builder.Default
+    private List<StartupStatus> statuses = new ArrayList<>();
 
     @ElementCollection(targetClass = StartupDomain.class)
     @CollectionTable(name = "startup_domains", joinColumns = @JoinColumn(name = "startup_id"))

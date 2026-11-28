@@ -69,7 +69,7 @@ type ApiStartup = {
   id: number
   name: string
   sector?: string
-  status: StartupStatus
+  statuses?: StartupStatus[]
   domains?: StartupDomain[]
   logo?: string
   website?: string
@@ -95,7 +95,7 @@ export async function loadStartups(): Promise<Startup[]> {
     id: item.id,
     name: item.name,
     sector: item.sector ?? '',
-    status: item.status,
+    statuses: item.statuses ?? [],
     domains: item.domains?.length ? item.domains : ['OTHER'],
     logo: orUndefined(item.logo),
     website: orUndefined(item.website),
